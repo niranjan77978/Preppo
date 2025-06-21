@@ -88,7 +88,7 @@ const Home = () => {
           <div 
           onClick={() => window.location.href = '/quiz'}
           className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-rotate-1">
-            <div className="text-4xl mb-4">🧠</div>
+            <div className="text-4xl mb-4 group-hover:animate-bounce">🧠</div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Smart Quizzes</h3>
             <p className="text-gray-300 text-sm md:text-base">Test your knowledge with adaptive quizzes that level up</p>
           </div>
