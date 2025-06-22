@@ -9,6 +9,7 @@ import { RouterProvider } from 'react-router-dom';
 import Header from './components/common/Header';
 import DynamicQuiz from './components/DynamicQuiz';
 import AllQuizzes from './components/quiz/AllQuizzes';
+import TopicList from './components/subjects/TopicList';
 
 const Layout = ({ children, showHeader = false }) => (
   <div className="flex min-h-screen bg-gray-50">
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
   {
     path:"quiz/:subject/:quizNumber",
     element: <Layout><DynamicQuiz/></Layout>  
+  },
+  
+  {
+    path: "/learn/:subject",
+    element: <Layout showHeader={true}><TopicList /></Layout>
   }
 ]);
 function App() {

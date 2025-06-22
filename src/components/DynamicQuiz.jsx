@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import QuizCard from './quiz/cards/QuizCard'; 
-import cnquizData from '../data/cnquiz.json'; 
-import osData from '../data/osquiz.json';
-import dsData from '../data/dsquiz.json';
-import dbmsData from '../data/dbmsquiz.json';
-import oopsData from '../data/oopsquiz.json';
-import webDevData from '../data/webdevquiz.json';
+import cnquizData from '../quizData/cnquiz.json'; 
+import osData from '../quizData/osquiz.json';
+import dsData from '../quizData/dsquiz.json';
+import dbmsData from '../quizData/dbmsquiz.json';
+import oopsData from '../quizData/oopsquiz.json';
+import webDevData from '../quizData/webdevquiz.json';
 
 const quizDataMap = {
     'cnquiz': cnquizData,

@@ -1,0 +1,906 @@
+{
+  "quiz_title": "Computer Networks",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "question": "In the OSI reference model, which layer is responsible for end-to-end delivery of the entire message?",
+      "option1": "Session Layer",
+      "option2": "Data Link Layer",
+      "option3": "Network Layer",
+      "option4": "Transport Layer",
+      "correct_option": "option4"
+    },
+    {
+      "id": 2,
+      "question": "What is the main difference between TCP/IP and OSI reference models regarding the number of layers?",
+      "option1": "TCP/IP has 5 layers, OSI has 7 layers",
+      "option2": "TCP/IP has 4 layers, OSI has 7 layers",
+      "option3": "Both have 7 layers",
+      "option4": "TCP/IP has 6 layers, OSI has 7 layers",
+      "correct_option": "option2"
+    },
+    {
+      "id": 3,
+      "question": "In Quadrature Amplitude Modulation (QAM), what determines the number of bits that can be transmitted per symbol?",
+      "option1": "Number of constellation points",
+      "option2": "Phase shift interval",
+      "option3": "Amplitude of carrier signal",
+      "option4": "Frequency of carrier signal",
+      "correct_option": "option1"
+    },
+    {
+      "id": 4,
+      "question": "Which encoding technique is used to convert digital data to digital signals where each bit is represented by two signal elements?",
+      "option1": "Differential Manchester",
+      "option2": "AMI",
+      "option3": "Manchester",
+      "option4": "NRZ-L",
+      "correct_option": "option3"
+    },
+    {
+      "id": 5,
+      "question": "In Pulse Code Modulation (PCM), what is the purpose of the quantization step?",
+      "option1": "To filter noise from the signal",
+      "option2": "To convert continuous amplitude values to discrete levels",
+      "option3": "To encode the digital values",
+      "option4": "To sample the analog signal",
+      "correct_option": "option2"
+    },
+    {
+      "id": 6,
+      "question": "What is the main advantage of single-mode fiber optic cable over multimode fiber?",
+      "option1": "Better flexibility",
+      "option2": "Lower cost",
+      "option3": "Easier installation",
+      "option4": "Higher bandwidth and longer transmission distance",
+      "correct_option": "option4"
+    },
+    {
+      "id": 7,
+      "question": "In microwave transmission, what causes signal fading?",
+      "option1": "Multipath propagation and atmospheric conditions",
+      "option2": "Insufficient power",
+      "option3": "Interference from other signals",
+      "option4": "Atmospheric absorption only",
+      "correct_option": "option1"
+    },
+    {
+      "id": 8,
+      "question": "What is the main difference between packet switching and circuit switching?",
+      "option1": "Packet switching uses dedicated paths, circuit switching shares paths",
+      "option2": "Circuit switching is only used for data transmission",
+      "option3": "Circuit switching establishes dedicated paths, packet switching shares network resources",
+      "option4": "Packet switching is slower than circuit switching",
+      "correct_option": "option3"
+    },
+    {
+      "id": 9,
+      "question": "In CRC (Cyclic Redundancy Check), what happens when the remainder after division is zero?",
+      "option1": "The generator polynomial is incorrect",
+      "option2": "No error is detected",
+      "option3": "An error is detected",
+      "option4": "The data needs retransmission",
+      "correct_option": "option2"
+    },
+    {
+      "id": 10,
+      "question": "In Stop-and-Wait ARQ, what happens when an ACK is lost?",
+      "option1": "The connection is terminated",
+      "option2": "The sender immediately sends the next frame",
+      "option3": "The receiver sends a NAK",
+      "option4": "The sender retransmits the frame after timeout",
+      "correct_option": "option4"
+    },
+    {
+      "id": 11,
+      "question": "What is the main advantage of Selective Repeat ARQ over Go-Back-N ARQ?",
+      "option1": "Better bandwidth utilization",
+      "option2": "Lower memory requirements",
+      "option3": "Simpler implementation",
+      "option4": "Faster acknowledgment process",
+      "correct_option": "option1"
+    },
+    {
+      "id": 12,
+      "question": "In CSMA/CD, what does the collision detection mechanism do when a collision is detected?",
+      "option1": "Switch to CSMA/CA mode",
+      "option2": "Send a jam signal and then back off",
+      "option3": "Increase transmission power",
+      "option4": "Immediately retransmit the frame",
+      "correct_option": "option2"
+    },
+    {
+      "id": 13,
+      "question": "What is the main difference between CSMA/CD and CSMA/CA?",
+      "option1": "CD is faster than CA",
+      "option2": "CD is for wireless, CA is for wired networks",
+      "option3": "CD detects collisions, CA avoids collisions",
+      "option4": "CD uses tokens, CA doesn't",
+      "correct_option": "option3"
+    },
+    {
+      "id": 14,
+      "question": "In IEEE 802.5 Token Ring, what happens when a station wants to transmit data?",
+      "option1": "It uses collision detection",
+      "option2": "It broadcasts a request to all stations",
+      "option3": "It waits for the channel to be idle",
+      "option4": "It captures the free token and converts it to a data frame",
+      "correct_option": "option4"
+    },
+    {
+      "id": 15,
+      "question": "What is the main characteristic of Pure ALOHA protocol?",
+      "option1": "Stations transmit only at specific time slots",
+      "option2": "Stations can transmit anytime without checking channel status",
+      "option3": "Stations use token passing mechanism",
+      "option4": "Stations use carrier sensing before transmission",
+      "correct_option": "option2"
+    },
+    {
+      "id": 16,
+      "question": "What is the maximum number of hosts possible in a Class B network?",
+      "option1": "254",
+      "option2": "1,073,741,822",
+      "option3": "65,534",
+      "option4": "16,777,214",
+      "correct_option": "option3"
+    },
+    {
+      "id": 17,
+      "question": "What is the main advantage of IPv6 over IPv4?",
+      "option1": "Larger address space and built-in IPSec support",
+      "option2": "Better error correction",
+      "option3": "Simpler header structure",
+      "option4": "Faster processing speed",
+      "correct_option": "option1"
+    },
+    {
+      "id": 18,
+      "question": "What is the primary function of a bridge in a network?",
+      "option1": "Provide routing between different networks",
+      "option2": "Filter and forward frames based on MAC addresses",
+      "option3": "Connect networks with different protocols",
+      "option4": "Amplify signals for long-distance transmission",
+      "correct_option": "option2"
+    },
+    {
+      "id": 19,
+      "question": "In distance vector routing, what problem does the 'count to infinity' refer to?",
+      "option1": "Excessive memory usage",
+      "option2": "Security vulnerabilities",
+      "option3": "Slow convergence when links fail",
+      "option4": "Network congestion",
+      "correct_option": "option3"
+    },
+    {
+      "id": 20,
+      "question": "What is the main advantage of link state routing over distance vector routing?",
+      "option1": "Lower bandwidth usage",
+      "option2": "Better scalability",
+      "option3": "Simpler implementation",
+      "option4": "Faster convergence and loop-free operation",
+      "correct_option": "option4"
+    },
+    {
+      "id": 21,
+      "question": "What type of address does ARP (Address Resolution Protocol) resolve?",
+      "option1": "IP address to MAC address",
+      "option2": "Domain name to IP address",
+      "option3": "MAC address to IP address",
+      "option4": "Port number to process ID",
+      "correct_option": "option1"
+    },
+    {
+      "id": 22,
+      "question": "What is the primary purpose of ICMP (Internet Control Message Protocol)?",
+      "option1": "Web Browse",
+      "option2": "Error reporting and diagnostic information",
+      "option3": "Email delivery",
+      "option4": "File transfer",
+      "correct_option": "option2"
+    },
+    {
+      "id": 23,
+      "question": "In IGMP (Internet Group Management Protocol), what is the main function?",
+      "option1": "Managing network security",
+      "option2": "Managing unicast routing",
+      "option3": "Managing multicast group membership",
+      "option4": "Managing broadcast domains",
+      "correct_option": "option3"
+    },
+    {
+      "id": 24,
+      "question": "What is the main difference between UDP and TCP?",
+      "option1": "UDP is faster but less secure than TCP",
+      "option2": "TCP uses smaller headers than UDP",
+      "option3": "UDP is connection-oriented, TCP is connectionless",
+      "option4": "TCP is connection-oriented and reliable, UDP is connectionless and unreliable",
+      "correct_option": "option4"
+    },
+    {
+      "id": 25,
+      "question": "In TCP congestion control, what does the slow start algorithm do?",
+      "option1": "Exponentially increases congestion window until threshold",
+      "option2": "Maintains constant window size",
+      "option3": "Randomly adjusts window size",
+      "option4": "Reduces window size linearly",
+      "correct_option": "option1"
+    },
+    {
+      "id": 26,
+      "question": "What is the purpose of the TCP three-way handshake?",
+      "option1": "Flow control",
+      "option2": "Establishing a reliable connection",
+      "option3": "Data encryption",
+      "option4": "Error detection",
+      "correct_option": "option2"
+    },
+    {
+      "id": 27,
+      "question": "In Quality of Service (QoS), what does traffic shaping accomplish?",
+      "option1": "Compresses data for faster transmission",
+      "option2": "Increases network bandwidth",
+      "option3": "Controls the rate of data transmission to smooth traffic flow",
+      "option4": "Encrypts data packets",
+      "correct_option": "option3"
+    },
+    {
+      "id": 28,
+      "question": "What is the main characteristic of Integrated Services (IntServ) model?",
+      "option1": "Statistical multiplexing",
+      "option2": "Best-effort delivery",
+      "option3": "Packet-level QoS marking",
+      "option4": "Per-flow resource reservation using RSVP",
+      "correct_option": "option4"
+    },
+    {
+      "id": 29,
+      "question": "In HTTP, what is the difference between GET and POST methods?",
+      "option1": "GET retrieves data with parameters in URL, POST sends data in request body",
+      "option2": "GET uses TCP, POST uses UDP",
+      "option3": "GET is for downloading, POST is for uploading",
+      "option4": "GET is secure, POST is not secure",
+      "correct_option": "option1"
+    },
+    {
+      "id": 30,
+      "question": "What is the main function of DNS (Domain Name System)?",
+      "option1": "Control network access",
+      "option2": "Translate domain names to IP addresses",
+      "option3": "Manage email delivery",
+      "option4": "Encrypt web traffic",
+      "correct_option": "option2"
+    },
+    {
+      "id": 31,
+      "question": "In FTP (File Transfer Protocol), what is the difference between active and passive modes?",
+      "option1": "Active uses TCP, passive uses UDP",
+      "option2": "Active is secure, passive is not",
+      "option3": "In active mode, server initiates data connection; in passive mode, client initiates data connection",
+      "option4": "Active uses one connection, passive uses two",
+      "correct_option": "option3"
+    },
+    {
+      "id": 32,
+      "question": "What is the main advantage of peer-to-peer networks over client-server architecture?",
+      "option1": "Distributed load and scalability",
+      "option2": "Centralized control",
+      "option3": "Better security",
+      "option4": "Faster data access",
+      "correct_option": "option1"
+    },
+    {
+      "id": 33,
+      "question": "In SNMP (Simple Network Management Protocol), what is the purpose of MIB?",
+      "option1": "Authenticate network devices",
+      "option2": "Define the structure of management information",
+      "option3": "Route management packets",
+      "option4": "Encrypt management data",
+      "correct_option": "option2"
+    },
+    {
+      "id": 34,
+      "question": "What is the main weakness of substitution ciphers?",
+      "option1": "They can only encrypt small messages",
+      "option2": "They require too much computational power",
+      "option3": "They are vulnerable to frequency analysis",
+      "option4": "They are too complex to implement",
+      "correct_option": "option3"
+    },
+    {
+      "id": 35,
+      "question": "What is the key size used in the original DES (Data Encryption Standard)?",
+      "option1": "128 bits",
+      "option2": "256 bits",
+      "option3": "64 bits",
+      "option4": "56 bits",
+      "correct_option": "option4"
+    },
+    {
+      "id": 36,
+      "question": "What is the main advantage of public key cryptography over symmetric cryptography?",
+      "option1": "Solves the key distribution problem",
+      "option2": "Uses smaller key sizes",
+      "option3": "Requires less computational power",
+      "option4": "Faster encryption/decryption",
+      "correct_option": "option1"
+    },
+    {
+      "id": 37,
+      "question": "In IPSec, what is the difference between tunnel mode and transport mode?",
+      "option1": "Tunnel mode uses symmetric keys, transport mode uses asymmetric keys",
+      "option2": "Tunnel mode encapsulates entire IP packet, transport mode only encrypts payload",
+      "option3": "Tunnel mode is faster than transport mode",
+      "option4": "Tunnel mode encrypts headers, transport mode doesn't",
+      "correct_option": "option2"
+    },
+    {
+      "id": 38,
+      "question": "What is the main purpose of TLS/SSL handshake process?",
+      "option1": "Flow control",
+      "option2": "Data compression",
+      "option3": "Establish secure connection parameters and authenticate parties",
+      "option4": "Error detection and correction",
+      "correct_option": "option3"
+    },
+    {
+      "id": 39,
+      "question": "In VRRP (Virtual Router Redundancy Protocol), what happens when the master router fails?",
+      "option1": "The backup router with the highest priority becomes the new master",
+      "option2": "A new election process begins involving all routers",
+      "option3": "The network switches to a different protocol",
+      "option4": "All traffic stops until manual intervention",
+      "correct_option": "option1"
+    },
+    {
+      "id": 40,
+      "question": "What is the main difference between hub and switch in terms of collision domains?",
+      "option1": "Neither affects collision domains",
+      "option2": "Hub creates one collision domain, switch creates multiple collision domains",
+      "option3": "Both create the same number of collision domains",
+      "option4": "Hub creates multiple collision domains, switch creates one",
+      "correct_option": "option2"
+    },
+    {
+      "id": 41,
+      "question": "In TCP flow control, what is the purpose of the sliding window mechanism?",
+      "option1": "Routing optimization",
+      "option2": "Data encryption",
+      "option3": "Control the amount of data sent without acknowledgment",
+      "option4": "Error detection",
+      "correct_option": "option3"
+    },
+    {
+      "id": 42,
+      "question": "What is the main characteristic of Class D IP addresses?",
+      "option1": "Reserved for multicast applications",
+      "option2": "Used for experimental purposes",
+      "option3": "Used for large networks",
+      "option4": "Reserved for private networks",
+      "correct_option": "option1"
+    },
+    {
+      "id": 43,
+      "question": "In wireless LANs, why is CSMA/CA preferred over CSMA/CD?",
+      "option1": "CSMA/CA provides better security",
+      "option2": "Collision detection is difficult in wireless medium",
+      "option3": "CSMA/CA uses less power",
+      "option4": "CSMA/CA is faster",
+      "correct_option": "option2"
+    },
+    {
+      "id": 44,
+      "question": "What is the main function of the Network Access Control Lists (ACLs)?",
+      "option1": "Data compression",
+      "option2": "Error correction",
+      "option3": "Packet filtering based on predefined rules",
+      "option4": "Load balancing",
+      "correct_option": "option3"
+    },
+    {
+      "id": 45,
+      "question": "In Frame Relay, what is the purpose of DLCI (Data Link Connection Identifier)?",
+      "option1": "Flow control",
+      "option2": "Identify virtual circuits on the local interface",
+      "option3": "Data encryption",
+      "option4": "Error detection",
+      "correct_option": "option2"
+    },
+    {
+      "id": 46,
+      "question": "What is the main advantage of ATM (Asynchronous Transfer Mode) over traditional packet switching?",
+      "option1": "Better error correction",
+      "option2": "Lower cost implementation",
+      "option3": "Variable packet size",
+      "option4": "Fixed-size cells provide predictable delay and bandwidth",
+      "correct_option": "option4"
+    },
+    {
+      "id": 47,
+      "question": "In MPLS (Multi-Protocol Label Switching), what is the primary benefit of label switching?",
+      "option1": "Faster packet forwarding and traffic engineering capabilities",
+      "option2": "Better error correction",
+      "option3": "Enhanced security",
+      "option4": "Reduced bandwidth usage",
+      "correct_option": "option1"
+    },
+    {
+      "id": 48,
+      "question": "What is the main purpose of DHCP (Dynamic Host Configuration Protocol)?",
+      "option1": "File transfer",
+      "option2": "Automatic assignment of IP addresses and network configuration",
+      "option3": "Email delivery",
+      "option4": "Domain name resolution",
+      "correct_option": "option2"
+    },
+    {
+      "id": 49,
+      "question": "In network security, what is the difference between symmetric and asymmetric encryption in terms of key management?",
+      "option1": "Asymmetric is faster than symmetric",
+      "option2": "Symmetric is more secure than asymmetric",
+      "option3": "Symmetric uses same key for encryption/decryption, asymmetric uses different keys",
+      "option4": "Symmetric uses public keys, asymmetric uses private keys",
+      "correct_option": "option3"
+    },
+    {
+      "id": 50,
+      "question": "What is the main characteristic of connectionless service at the network layer?",
+      "option1": "Error correction is automatically performed",
+      "option2": "Each packet is treated independently without maintaining connection state",
+      "option3": "Packets arrive in the same order they were sent",
+      "option4": "Guaranteed delivery of packets",
+      "correct_option": "option2"
+    },
+    {
+      "id": 51,
+      "question": "Which of the following is a private IPv4 address range?",
+      "option1": "172.16.0.0 to 172.31.255.255",
+      "option2": "192.168.0.0 to 192.168.255.255",
+      "option3": "10.0.0.0 to 10.255.255.255",
+      "option4": "All of the above",
+      "correct_option": "option4"
+    },
+    {
+      "id": 52,
+      "question": "What is NAT (Network Address Translation) primarily used for?",
+      "option1": "To increase network speed",
+      "option2": "To translate private IP addresses to public IP addresses",
+      "option3": "To secure network traffic",
+      "option4": "To manage DNS records",
+      "correct_option": "option2"
+    },
+    {
+      "id": 53,
+      "question": "Which protocol is used by web browsers to request and display web pages?",
+      "option1": "FTP",
+      "option2": "SMTP",
+      "option3": "HTTP",
+      "option4": "SNMP",
+      "correct_option": "option3"
+    },
+    {
+      "id": 54,
+      "question": "What is the primary role of a firewall in network security?",
+      "option1": "To increase bandwidth",
+      "option2": "To prevent unauthorized access to a network",
+      "option3": "To manage user accounts",
+      "option4": "To compress data",
+      "correct_option": "option2"
+    },
+    {
+      "id": 55,
+      "question": "Which wireless encryption standard is considered the most secure for Wi-Fi networks today?",
+      "option1": "WEP",
+      "option2": "WPA",
+      "option3": "WPA2",
+      "option4": "WPA3",
+      "correct_option": "option4"
+    },
+    {
+      "id": 56,
+      "question": "What is a subnet mask used for?",
+      "option1": "To identify the network portion and host portion of an IP address",
+      "option2": "To assign IP addresses automatically",
+      "option3": "To translate domain names",
+      "option4": "To encrypt network traffic",
+      "correct_option": "option1"
+    },
+    {
+      "id": 57,
+      "question": "In cellular networks, what is a handoff (or handover)?",
+      "option1": "Switching from 3G to 4G",
+      "option2": "Transferring a mobile call from one cell to an adjacent cell",
+      "option3": "Connecting to a Wi-Fi network",
+      "option4": "Initiating a new call",
+      "correct_option": "option2"
+    },
+    {
+      "id": 58,
+      "question": "What is the purpose of MAC address filtering in a wireless network?",
+      "option1": "To block specific websites",
+      "option2": "To restrict network access based on physical hardware addresses",
+      "option3": "To assign dynamic IP addresses",
+      "option4": "To improve signal strength",
+      "correct_option": "option2"
+    },
+    {
+      "id": 59,
+      "question": "Which of the following is a broadcast address in IPv4?",
+      "option1": "192.168.1.1",
+      "option2": "255.255.255.255",
+      "option3": "127.0.0.1",
+      "option4": "172.16.0.0",
+      "correct_option": "option2"
+    },
+    {
+      "id": 60,
+      "question": "What is the function of the Spanning Tree Protocol (STP)?",
+      "option1": "To prevent routing loops in a network",
+      "option2": "To ensure loop-free logical topology in Ethernet networks",
+      "option3": "To prioritize network traffic",
+      "option4": "To encrypt data packets",
+      "correct_option": "option2"
+    },
+    {
+      "id": 61,
+      "question": "Which layer of the OSI model is responsible for data encryption and decryption?",
+      "option1": "Application Layer",
+      "option2": "Presentation Layer",
+      "option3": "Session Layer",
+      "option4": "Transport Layer",
+      "correct_option": "option2"
+    },
+    {
+      "id": 62,
+      "question": "What is the maximum throughput of a 100BASE-TX Ethernet connection?",
+      "option1": "10 Mbps",
+      "option2": "100 Mbps",
+      "option3": "1 Gbps",
+      "option4": "10 Gbps",
+      "correct_option": "option2"
+    },
+    {
+      "id": 63,
+      "question": "Which component is used to connect different types of networks and translate protocols?",
+      "option1": "Repeater",
+      "option2": "Bridge",
+      "option3": "Gateway",
+      "option4": "Hub",
+      "correct_option": "option3"
+    },
+    {
+      "id": 64,
+      "question": "What is the concept of 'aliasing' in sampling for digital signal processing?",
+      "option1": "Signal distortion due to oversampling",
+      "option2": "Signal distortion where high-frequency components appear as low-frequency components",
+      "option3": "Loss of signal strength over distance",
+      "option4": "Interference from other signals",
+      "correct_option": "option2"
+    },
+    {
+      "id": 65,
+      "question": "In cellular communication, what is the role of a Base Transceiver Station (BTS)?",
+      "option1": "To manage billing information",
+      "option2": "To control call routing between mobile networks",
+      "option3": "To handle radio communication with mobile phones",
+      "option4": "To store subscriber information",
+      "correct_option": "option3"
+    },
+    {
+      "id": 66,
+      "question": "What is the main function of the 'Time To Live' (TTL) field in an IP packet?",
+      "option1": "To specify the packet's priority",
+      "option2": "To limit the lifespan of a packet on the network",
+      "option3": "To indicate the packet's size",
+      "option4": "To identify the source port",
+      "correct_option": "option2"
+    },
+    {
+      "id": 67,
+      "question": "Which of the following is a classless routing protocol?",
+      "option1": "RIPv1",
+      "option2": "IGRP",
+      "option3": "OSPF",
+      "option4": "EIGRP",
+      "correct_option": "option3"
+    },
+    {
+      "id": 68,
+      "question": "What is the primary goal of Network Segmentation?",
+      "option1": "To increase network latency",
+      "option2": "To isolate network traffic and improve security/performance",
+      "option3": "To reduce the number of devices on a network",
+      "option4": "To simplify network cabling",
+      "correct_option": "option2"
+    },
+    {
+      "id": 69,
+      "question": "In data link layer, what is the purpose of 'framing'?",
+      "option1": "To encrypt data",
+      "option2": "To encapsulate data into manageable blocks for transmission",
+      "option3": "To compress data",
+      "option4": "To route packets",
+      "correct_option": "option2"
+    },
+    {
+      "id": 70,
+      "question": "Which type of multiplexing assigns a dedicated frequency band to each channel?",
+      "option1": "Time Division Multiplexing (TDM)",
+      "option2": "Frequency Division Multiplexing (FDM)",
+      "option3": "Wave Division Multiplexing (WDM)",
+      "option4": "Code Division Multiplexing (CDM)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 71,
+      "question": "What is a 'man-in-the-middle' attack?",
+      "option1": "An attack that overloads a server with traffic",
+      "option2": "An attack where the attacker intercepts and relays communications between two parties",
+      "option3": "An attack that exploits software vulnerabilities",
+      "option4": "An attack that steals user credentials",
+      "correct_option": "option2"
+    },
+    {
+      "id": 72,
+      "question": "What is the purpose of a DNS 'A' record?",
+      "option1": "Maps a domain name to an IPv6 address",
+      "option2": "Maps a domain name to an IPv4 address",
+      "option3": "Specifies mail exchange servers",
+      "option4": "Defines an alias for a domain name",
+      "correct_option": "option2"
+    },
+    {
+      "id": 73,
+      "question": "Which error detection method adds a redundant bit to each data unit such that the total number of 1s in the unit is even or odd?",
+      "option1": "Cyclic Redundancy Check (CRC)",
+      "option2": "Checksum",
+      "option3": "Parity Check",
+      "option4": "Hamming Code",
+      "correct_option": "option3"
+    },
+    {
+      "id": 74,
+      "question": "In cellular networks, what does LTE stand for?",
+      "option1": "Long-Term Evolution",
+      "option2": "Local Transmission Enhancement",
+      "option3": "Line Terminal Equipment",
+      "option4": "Low-Throughput Ethernet",
+      "correct_option": "option1"
+    },
+    {
+      "id": 75,
+      "question": "What is the primary use of a content delivery network (CDN)?",
+      "option1": "To provide secure VPN connections",
+      "option2": "To distribute content geographically to improve delivery speed and reliability",
+      "option3": "To manage network infrastructure devices",
+      "option4": "To host email servers",
+      "correct_option": "option2"
+    },
+    {
+      "id": 76,
+      "question": "Which switching technique stores the entire frame before forwarding it?",
+      "option1": "Cut-through switching",
+      "option2": "Store-and-forward switching",
+      "option3": "Fragment-free switching",
+      "option4": "Adaptive switching",
+      "correct_option": "option2"
+    },
+    {
+      "id": 77,
+      "question": "What is a VLAN (Virtual Local Area Network)?",
+      "option1": "A physical separation of network devices",
+      "option2": "A logical grouping of network devices that can communicate as if they were on the same physical segment",
+      "option3": "A type of wireless network",
+      "option4": "A dedicated server for network management",
+      "correct_option": "option2"
+    },
+    {
+      "id": 78,
+      "question": "In wireless communication, what is multipath fading?",
+      "option1": "Signal loss due to rain",
+      "option2": "Signal variations caused by multiple reflected paths reaching the receiver",
+      "option3": "Interference from other wireless devices",
+      "option4": "Signal degradation due to excessive distance",
+      "correct_option": "option2"
+    },
+    {
+      "id": 79,
+      "question": "What is the purpose of 'port forwarding' on a router?",
+      "option1": "To block all incoming traffic",
+      "option2": "To allow external devices to access specific services on devices within a private network",
+      "option3": "To improve Wi-Fi signal strength",
+      "option4": "To assign dynamic IP addresses to devices",
+      "correct_option": "option2"
+    },
+    {
+      "id": 80,
+      "question": "Which protocol is responsible for sending email messages?",
+      "option1": "POP3",
+      "option2": "IMAP",
+      "option3": "SMTP",
+      "option4": "HTTP",
+      "correct_option": "option3"
+    },
+    {
+      "id": 81,
+      "question": "What is the primary function of a Content-Addressable Memory (CAM) in network devices?",
+      "option1": "To store routing tables",
+      "option2": "To rapidly search for MAC addresses for forwarding decisions",
+      "option3": "To manage DNS lookups",
+      "option4": "To perform cryptographic operations",
+      "correct_option": "option2"
+    },
+    {
+      "id": 82,
+      "question": "In fiber optics, what is the 'cladding' responsible for?",
+      "option1": "Transmitting the light signal",
+      "option2": "Reflecting light back into the core to prevent signal loss",
+      "option3": "Protecting the fiber from physical damage",
+      "option4": "Terminating the fiber optic cable",
+      "correct_option": "option2"
+    },
+    {
+      "id": 83,
+      "question": "What is the main advantage of using a dedicated server for DNS over relying on ISP's DNS servers?",
+      "option1": "Lower internet bill",
+      "option2": "Faster website loading times and more control over DNS records",
+      "option3": "Better security against malware",
+      "option4": "Increased Wi-Fi range",
+      "correct_option": "option2"
+    },
+    {
+      "id": 84,
+      "question": "Which of the following is an example of a symmetric encryption algorithm?",
+      "option1": "RSA",
+      "option2": "ECC",
+      "option3": "AES",
+      "option4": "Diffie-Hellman",
+      "correct_option": "option3"
+    },
+    {
+      "id": 85,
+      "question": "What is the primary purpose of a 'Demilitarized Zone' (DMZ) in network security?",
+      "option1": "To host internal servers only",
+      "option2": "To provide an additional layer of security for services exposed to the public internet",
+      "option3": "To store encrypted data",
+      "option4": "To isolate wireless networks",
+      "correct_option": "option2"
+    },
+    {
+      "id": 86,
+      "question": "In the context of network attacks, what is a 'Smurf attack'?",
+      "option1": "A type of password cracking attack",
+      "option2": "A denial-of-service attack that floods a target with ICMP echo requests",
+      "option3": "An attack that intercepts DNS queries",
+      "option4": "A form of phishing attack",
+      "correct_option": "option2"
+    },
+    {
+      "id": 87,
+      "question": "What is the primary difference between a VPN (Virtual Private Network) and a proxy server?",
+      "option1": "VPN encrypts all network traffic, proxy only specific application traffic",
+      "option2": "Proxy servers are faster than VPNs",
+      "option3": "VPNs are only for local networks",
+      "option4": "Proxy servers offer better security features",
+      "correct_option": "option1"
+    },
+    {
+      "id": 88,
+      "question": "Which routing protocol uses a metric called 'bandwidth' and 'delay' for path calculation?",
+      "option1": "RIP",
+      "option2": "EIGRP",
+      "option3": "OSPF",
+      "option4": "BGP",
+      "correct_option": "option2"
+    },
+    {
+      "id": 89,
+      "question": "What is the purpose of 'Digital Signatures' in network security?",
+      "option1": "To encrypt sensitive data",
+      "option2": "To ensure data confidentiality",
+      "option3": "To verify the authenticity and integrity of a message or document",
+      "option4": "To prevent denial-of-service attacks",
+      "correct_option": "option3"
+    },
+    {
+      "id": 90,
+      "question": "In data communication, what is the 'Nyquist theorem' related to?",
+      "option1": "Maximum data rate for a noisy channel",
+      "option2": "Minimum sampling rate required to accurately reconstruct an analog signal",
+      "option3": "Signal attenuation over distance",
+      "option4": "Error correction in data transmission",
+      "correct_option": "option2"
+    },
+    {
+      "id": 91,
+      "question": "What is the primary role of a 'Load Balancer' in a network?",
+      "option1": "To manage network security policies",
+      "option2": "To distribute network traffic across multiple servers to optimize resource utilization and availability",
+      "option3": "To encrypt data packets",
+      "option4": "To perform DNS resolution",
+      "correct_option": "option2"
+    },
+    {
+      "id": 92,
+      "question": "In wireless networking, what is 'MIMO' (Multiple-Input, Multiple-Output)?",
+      "option1": "A security protocol for Wi-Fi",
+      "option2": "A technology that uses multiple antennas at both the transmitter and receiver to improve communication performance",
+      "option3": "A method for extending Wi-Fi range",
+      "option4": "A type of wireless access point",
+      "correct_option": "option2"
+    },
+    {
+      "id": 93,
+      "question": "What is the 'three-way handshake' in TCP specifically designed to prevent?",
+      "option1": "Data corruption",
+      "option2": "Deadlock scenarios and ensure proper connection establishment",
+      "option3": "Network congestion",
+      "option4": "Unauthorized access",
+      "correct_option": "option2"
+    },
+    {
+      "id": 94,
+      "question": "Which of the following describes 'PoE' (Power over Ethernet)?",
+      "option1": "A method to power devices using separate power cables",
+      "option2": "A technology that allows network cables to carry electrical power",
+      "option3": "A protocol for network management",
+      "option4": "A type of fiber optic connector",
+      "correct_option": "option2"
+    },
+    {
+      "id": 95,
+      "question": "What is the main characteristic of a 'stateless firewall'?",
+      "option1": "It remembers the state of active connections",
+      "option2": "It inspects each packet individually without considering previous packets",
+      "option3": "It performs deep packet inspection",
+      "option4": "It encrypts all network traffic",
+      "correct_option": "option2"
+    },
+    {
+      "id": 96,
+      "question": "In network addressing, what is 'CIDR' (Classless Inter-Domain Routing) used for?",
+      "option1": "To divide a network into smaller subnets",
+      "option2": "To enable more efficient use of IP addresses and route aggregation",
+      "option3": "To assign unique MAC addresses",
+      "option4": "To perform DNS resolution",
+      "correct_option": "option2"
+    },
+    {
+      "id": 97,
+      "question": "What is the primary function of a 'honeypot' in network security?",
+      "option1": "To improve network performance",
+      "option2": "To attract and trap attackers to gather information about their methods",
+      "option3": "To scan for vulnerabilities in a network",
+      "option4": "To encrypt sensitive data",
+      "correct_option": "option2"
+    },
+    {
+      "id": 98,
+      "question": "Which type of network topology is most resilient to single-point failures?",
+      "option1": "Bus topology",
+      "option2": "Star topology",
+      "option3": "Mesh topology",
+      "option4": "Ring topology",
+      "correct_option": "option3"
+    },
+    {
+      "id": 99,
+      "question": "What is the main concept behind 'Software-Defined Networking' (SDN)?",
+      "option1": "Centralizing network control and abstracting the underlying infrastructure",
+      "option2": "Using only open-source networking equipment",
+      "option3": "Eliminating the need for network administrators",
+      "option4": "Focusing solely on wireless networks",
+      "correct_option": "option1"
+    },
+    {
+      "id": 100,
+      "question": "In network performance, what is 'jitter'?",
+      "option1": "The loss of data packets during transmission",
+      "option2": "The variation in the delay of received packets",
+      "option3": "The maximum data rate of a network",
+      "option4": "The time it takes for a packet to travel from source to destination",
+      "correct_option": "option2"
+    }
+  ]
+}

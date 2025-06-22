@@ -1,0 +1,906 @@
+{
+  "quiz_title": "Object-Oriented Programming (OOP)",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following is NOT one of the fundamental pillars of Object-Oriented Programming (OOP)?",
+      "option1": "Encapsulation",
+      "option2": "Inheritance",
+      "option3": "Polymorphism",
+      "option4": "Recursion",
+      "correct_option": "option4"
+    },
+    {
+      "id": 2,
+      "question": "What is the primary purpose of encapsulation in OOP?",
+      "option1": "To allow multiple inheritance.",
+      "option2": "To hide the internal state and functionality of an object and expose only what is necessary.",
+      "option3": "To enable objects of different classes to be treated as objects of a common type.",
+      "option4": "To create new classes from existing ones.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 3,
+      "question": "In OOP, what is a 'class'?",
+      "option1": "An instance of an object.",
+      "option2": "A blueprint or template for creating objects.",
+      "option3": "A function that performs an action.",
+      "option4": "A variable that holds data.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 4,
+      "question": "What is an 'object' in the context of OOP?",
+      "option1": "A keyword used for defining classes.",
+      "option2": "A specific instance of a class, with its own state and behavior.",
+      "option3": "A data type that can store multiple values.",
+      "option4": "A method that initializes a class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 5,
+      "question": "Which OOP principle allows a class to inherit properties and behaviors from another class?",
+      "option1": "Abstraction",
+      "option2": "Encapsulation",
+      "option3": "Inheritance",
+      "option4": "Polymorphism",
+      "correct_option": "option3"
+    },
+    {
+      "id": 6,
+      "question": "What is 'method overloading'?",
+      "option1": "Defining multiple methods with the same name but different return types.",
+      "option2": "Defining multiple methods with the same name but different parameters (number, type, or order).",
+      "option3": "Overriding a method in a derived class.",
+      "option4": "Calling a method recursively.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 7,
+      "question": "Which type of polymorphism is achieved through method overloading?",
+      "option1": "Compile-time polymorphism (Static polymorphism)",
+      "option2": "Run-time polymorphism (Dynamic polymorphism)",
+      "option3": "Inclusion polymorphism",
+      "option4": "Parametric polymorphism",
+      "correct_option": "option1"
+    },
+    {
+      "id": 8,
+      "question": "What is 'method overriding'?",
+      "option1": "Defining a method in a subclass with the same name and signature as a method in its superclass.",
+      "option2": "Defining multiple methods with the same name in the same class.",
+      "option3": "Calling a method from a different class.",
+      "option4": "Creating an abstract method.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 9,
+      "question": "Which keyword is used in Java to achieve method overriding?",
+      "option1": "override",
+      "option2": "super",
+      "option3": "this",
+      "option4": "No specific keyword; it's implicit.",
+      "correct_option": "option4"
+    },
+    {
+      "id": 10,
+      "question": "What is an 'abstract class'?",
+      "option1": "A class that can be instantiated directly.",
+      "option2": "A class that cannot have any methods.",
+      "option3": "A class that cannot be instantiated and may contain abstract methods.",
+      "option4": "A class that only contains static methods.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 11,
+      "question": "Can an abstract class have a constructor?",
+      "option1": "No, abstract classes cannot have constructors.",
+      "option2": "Yes, but it cannot be called directly.",
+      "option3": "Yes, it can, and it's called when a concrete subclass is instantiated.",
+      "option4": "Only if all its methods are abstract.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 12,
+      "question": "What is an 'interface' in OOP (e.g., Java)?",
+      "option1": "A class that can be instantiated directly.",
+      "option2": "A blueprint of a class, containing only abstract methods (pre-Java 8) and constants.",
+      "option3": "A concrete class with no instance variables.",
+      "option4": "A mechanism for achieving multiple inheritance of implementation.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 13,
+      "question": "What is the key difference between an abstract class and an interface (in languages like Java)?",
+      "option1": "An abstract class can have concrete methods, while an interface cannot (pre-Java 8).",
+      "option2": "An abstract class supports multiple inheritance, while an interface does not.",
+      "option3": "An interface can have instance variables, while an abstract class cannot.",
+      "option4": "Abstract classes are slower than interfaces.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 14,
+      "question": "What is 'composition' in OOP?",
+      "option1": "A mechanism for achieving inheritance.",
+      "option2": "A 'has-a' relationship where one class contains an object of another class as a member.",
+      "option3": "A way to define abstract methods.",
+      "option4": "A method for creating static variables.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 15,
+      "question": "When would you prefer composition over inheritance?",
+      "option1": "When you want to share common behavior among many classes.",
+      "option2": "When you need a 'is-a' relationship.",
+      "option3": "When you want to add new functionality without modifying existing code, or when the relationship is 'has-a'.",
+      "option4": "When dealing with abstract classes.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 16,
+      "question": "What is 'data hiding' in OOP, and which principle is it related to?",
+      "option1": "Storing data in encrypted format; Polymorphism.",
+      "option2": "Restricting access to an object's internal state; Encapsulation.",
+      "option3": "Making all data public; Inheritance.",
+      "option4": "Deleting data after use; Abstraction.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 17,
+      "question": "What is the purpose of the 'super' keyword in Java (or similar in other languages)?",
+      "option1": "To refer to the current object.",
+      "option2": "To call a method or constructor of the superclass.",
+      "option3": "To define a static method.",
+      "option4": "To declare an abstract class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 18,
+      "question": "What is the 'final' keyword used for in Java when applied to a method?",
+      "option1": "The method must be overridden by subclasses.",
+      "option2": "The method can only be called once.",
+      "option3": "The method cannot be overridden by subclasses.",
+      "option4": "The method returns a constant value.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 19,
+      "question": "What is 'runtime polymorphism' and how is it typically achieved?",
+      "option1": "Method overloading; through static binding.",
+      "option2": "Method overriding; through dynamic method dispatch.",
+      "option3": "Abstraction; through interfaces.",
+      "option4": "Encapsulation; through private members.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 20,
+      "question": "What is the 'this' keyword used for in OOP?",
+      "option1": "To refer to the parent class.",
+      "option2": "To refer to the current instance of the class.",
+      "option3": "To define a static variable.",
+      "option4": "To create a new object.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 21,
+      "question": "What is a 'constructor' in OOP?",
+      "option1": "A regular method that performs a specific task.",
+      "option2": "A special method called automatically when an object of a class is created.",
+      "option3": "A method that destroys an object.",
+      "option4": "A method used to define static variables.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 22,
+      "question": "Can a class have multiple constructors?",
+      "option1": "No, a class can only have one constructor.",
+      "option2": "Yes, through constructor overloading (different parameters).",
+      "option3": "Yes, but they must all have the same parameters.",
+      "option4": "Only if the class is abstract.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 23,
+      "question": "What is the purpose of a 'destructor' (e.g., in C++)?",
+      "option1": "To create a new object.",
+      "option2": "To initialize an object's state.",
+      "option3": "To release resources allocated by an object before it is destroyed.",
+      "option4": "To convert an object to a different type.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 24,
+      "question": "What is 'aggregation' in OOP?",
+      "option1": "A strong 'has-a' relationship where the contained object cannot exist without the container.",
+      "option2": "A weak 'has-a' relationship where the contained object can exist independently of the container.",
+      "option3": "A 'is-a' relationship between classes.",
+      "option4": "A mechanism for achieving method overloading.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 25,
+      "question": "What is 'association' in OOP?",
+      "option1": "A one-way relationship between two classes.",
+      "option2": "A relationship between two independent classes, where one uses the other.",
+      "option3": "A form of inheritance.",
+      "option4": "A concept related to memory management.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 26,
+      "question": "Which access modifier provides the highest level of restriction, making members accessible only within the same class?",
+      "option1": "public",
+      "option2": "protected",
+      "option3": "default (package-private)",
+      "option4": "private",
+      "correct_option": "option4"
+    },
+    {
+      "id": 27,
+      "question": "Which access modifier allows members to be accessed within the same package and by subclasses in any package?",
+      "option1": "public",
+      "option2": "protected",
+      "option3": "default (package-private)",
+      "option4": "private",
+      "correct_option": "option2"
+    },
+    {
+      "id": 28,
+      "question": "What is the principle of 'least knowledge' (Law of Demeter)?",
+      "option1": "A module should not know the internal details of the objects it manipulates.",
+      "option2": "Classes should have as few methods as possible.",
+      "option3": "Objects should only interact with their immediate friends.",
+      "option4": "Reduce the number of dependencies between classes.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 29,
+      "question": "What is 'downcasting' in OOP?",
+      "option1": "Converting a superclass reference to a subclass reference.",
+      "option2": "Converting a subclass reference to a superclass reference.",
+      "option3": "Converting an object to a primitive data type.",
+      "option4": "Reducing the scope of a variable.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 30,
+      "question": "When is 'upcasting' performed, and is it safe?",
+      "option1": "When converting a subclass to a superclass; it is generally safe.",
+      "option2": "When converting a superclass to a subclass; it is generally unsafe.",
+      "option3": "When converting an object to an interface; it is always safe.",
+      "option4": "When converting a primitive to an object; it is always unsafe.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 31,
+      "question": "What is an 'Inner Class' in Java?",
+      "option1": "A class defined within a method.",
+      "option2": "A class whose definition is completely enclosed within another class's definition.",
+      "option3": "A class that implements an interface.",
+      "option4": "A class that cannot be instantiated.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 32,
+      "question": "What is the main advantage of using an 'Anonymous Inner Class'?",
+      "option1": "It allows multiple inheritance.",
+      "option2": "It provides a concise way to implement an interface or extend a class for a single, immediate use.",
+      "option3": "It makes the code more reusable.",
+      "option4": "It improves performance by reducing object creation.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 33,
+      "question": "What is 'coupling' in software design?",
+      "option1": "The degree to which elements within a module belong together.",
+      "option2": "The degree of interdependence between software modules.",
+      "option3": "The process of combining multiple classes into one.",
+      "option4": "The ability of a module to function independently.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 34,
+      "question": "What is 'cohesion' in software design?",
+      "option1": "The degree of interdependence between software modules.",
+      "option2": "The degree to which elements within a module belong together and are unified.",
+      "option3": "The process of breaking down a large module into smaller ones.",
+      "option4": "The ability of a module to interact with other modules.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 35,
+      "question": "In good OOP design, should you aim for high coupling and low cohesion, or low coupling and high cohesion?",
+      "option1": "High coupling, low cohesion.",
+      "option2": "Low coupling, high cohesion.",
+      "option3": "Both high coupling and high cohesion.",
+      "option4": "Both low coupling and low cohesion.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 36,
+      "question": "What is a 'static' method in OOP?",
+      "option1": "A method that can only be called from other static methods.",
+      "option2": "A method that belongs to the class itself, rather than to any specific object of the class.",
+      "option3": "A method whose value cannot be changed after initialization.",
+      "option4": "A method that is automatically called when an object is destroyed.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 37,
+      "question": "Can a static method access non-static (instance) variables directly?",
+      "option1": "Yes, always.",
+      "option2": "No, a static method cannot directly access non-static instance variables.",
+      "option3": "Only if the variables are public.",
+      "option4": "Only if the static method is in the same class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 38,
+      "question": "What is the concept of 'Information Hiding' in OOP?",
+      "option1": "Making all class members private.",
+      "option2": "Concealing the implementation details of an object from the outside world.",
+      "option3": "Encrypting sensitive data within an object.",
+      "option4": "Preventing objects from communicating with each other.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 39,
+      "question": "What is the 'Liskov Substitution Principle' (LSP)?",
+      "option1": "Derived classes must be able to substitute their base classes without altering the correctness of the program.",
+      "option2": "Every class should have only one reason to change.",
+      "option3": "Clients should not be forced to depend on interfaces they do not use.",
+      "option4": "Software entities should be open for extension, but closed for modification.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 40,
+      "question": "Which design pattern is commonly used to ensure that a class has only one instance and provides a global point of access to it?",
+      "option1": "Factory Method",
+      "option2": "Observer",
+      "option3": "Singleton",
+      "option4": "Strategy",
+      "correct_option": "option3"
+    },
+    {
+      "id": 41,
+      "question": "What is the 'Open/Closed Principle' (OCP)?",
+      "option1": "Classes should be open for modification and closed for extension.",
+      "option2": "Classes should be open for extension but closed for modification.",
+      "option3": "Classes should be open for both extension and modification.",
+      "option4": "Classes should be neither open nor closed.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 42,
+      "question": "What is a 'Pure Virtual Function' in C++?",
+      "option1": "A virtual function that cannot be overridden.",
+      "option2": "A virtual function that has a definition in the base class.",
+      "option3": "A virtual function with no implementation, making the class abstract.",
+      "option4": "A static virtual function.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 43,
+      "question": "What is the 'diamond problem' in inheritance, and how do some languages (e.g., Java) solve it?",
+      "option1": "It's a problem with too many methods; solved by abstract classes.",
+      "option2": "It's an ambiguity arising from multiple inheritance; Java solves it by not supporting multiple inheritance of classes (but supports interfaces).",
+      "option3": "It's a problem with method overriding; solved by the 'super' keyword.",
+      "option4": "It's a memory leak issue; solved by garbage collection.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 44,
+      "question": "What is 'covariant return type' in OOP?",
+      "option1": "When an overridden method returns a superclass type of the original method's return type.",
+      "option2": "When an overridden method returns a subclass type of the original method's return type.",
+      "option3": "When a method returns multiple values.",
+      "option4": "When the return type of a method depends on its parameters.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 45,
+      "question": "What is the purpose of 'Dependency Injection'?",
+      "option1": "To make classes highly coupled.",
+      "option2": "To remove hard-coded dependencies between objects, making code more modular and testable.",
+      "option3": "To inject malicious code into an application.",
+      "option4": "To manage database connections.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 46,
+      "question": "What is the 'Factory Method' design pattern?",
+      "option1": "A creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.",
+      "option2": "A structural pattern for composing objects into tree structures.",
+      "option3": "A behavioral pattern that defines a family of algorithms and encapsulates each one.",
+      "option4": "A pattern for ensuring a class has only one instance.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 47,
+      "question": "Which design principle suggests that you should 'Program to an interface, not an implementation'?",
+      "option1": "DRY (Don't Repeat Yourself)",
+      "option2": "KISS (Keep It Simple, Stupid)",
+      "option3": "Dependency Inversion Principle",
+      "option4": "Single Responsibility Principle",
+      "correct_option": "option3"
+    },
+    {
+      "id": 48,
+      "question": "What is a 'Memento' design pattern primarily used for?",
+      "option1": "To encapsulate how a set of objects interact.",
+      "option2": "To save and restore the internal state of an object without violating its encapsulation.",
+      "option3": "To separate an algorithm from the object on which it operates.",
+      "option4": "To provide a unified interface to a set of interfaces in a subsystem.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 49,
+      "question": "In the context of design patterns, what problem does the 'Observer' pattern solve?",
+      "option1": "How to create objects without specifying their concrete classes.",
+      "option2": "How to define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.",
+      "option3": "How to attach new functionalities to an existing object without altering its structure.",
+      "option4": "How to represent operations to be performed on elements of an object structure.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 50,
+      "question": "What is 'Reflection' in OOP (e.g., Java Reflection API)?",
+      "option1": "The ability of a program to examine or modify its own structure and behavior at runtime.",
+      "option2": "A technique for creating mirror images of objects.",
+      "option3": "A debugging tool for tracking method calls.",
+      "option4": "A way to automatically generate code.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 51,
+      "question": "What is 'Delegation' in OOP?",
+      "option1": "A technique to share code between unrelated classes.",
+      "option2": "A design pattern where an object, instead of performing a requested operation itself, passes the operation to an associated object.",
+      "option3": "A method for abstracting common functionality.",
+      "option4": "A way to achieve multiple inheritance in Java.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 52,
+      "question": "What is the main benefit of 'Polymorphism' in OOP?",
+      "option1": "It allows a single interface to represent different underlying forms (data types/classes).",
+      "option2": "It hides the implementation details of a class.",
+      "option3": "It reduces the memory footprint of objects.",
+      "option4": "It ensures that all methods are public.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 53,
+      "question": "What is the concept of a 'mixin' in some OOP languages (e.g., Ruby, Python, some JavaScript patterns)?",
+      "option1": "A class that can be instantiated directly and fully.",
+      "option2": "A class that provides a set of methods to be 'mixed in' or inherited by other classes, typically to add specific functionality without implying an 'is-a' relationship.",
+      "option3": "A class that has only private members.",
+      "option4": "A technique for creating anonymous objects.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 54,
+      "question": "What is the purpose of 'assertions' in OOP?",
+      "option1": "To handle runtime errors gracefully.",
+      "option2": "To formally state assumptions about a program state that should be true at a certain point during execution.",
+      "option3": "To declare a new class or interface.",
+      "option4": "To define the access level of class members.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 55,
+      "question": "What is the 'Immutable Object' concept in OOP?",
+      "option1": "An object whose state can be changed after it is created.",
+      "option2": "An object whose state cannot be changed after it is created.",
+      "option3": "An object that is only created once.",
+      "option4": "An object that has no methods.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 56,
+      "question": "What is the primary advantage of using immutable objects?",
+      "option1": "They are faster to create.",
+      "option2": "They simplify concurrent programming and are inherently thread-safe.",
+      "option3": "They use less memory.",
+      "option4": "They allow for easier debugging.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 57,
+      "question": "What is 'Covariance' in the context of generic types (e.g., in Java's Generics with wildcards)?",
+      "option1": "When a generic type parameter can be replaced by a supertype.",
+      "option2": "When a generic type parameter can be replaced by a subtype.",
+      "option3": "When a generic type parameter must be exactly the same type.",
+      "option4": "When a generic type parameter can be replaced by any unrelated type.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 58,
+      "question": "What is 'Contravariance' in the context of generic types?",
+      "option1": "When a generic type parameter can be replaced by a supertype.",
+      "option2": "When a generic type parameter can be replaced by a subtype.",
+      "option3": "When a generic type parameter must be exactly the same type.",
+      "option4": "When a generic type parameter can be replaced by any unrelated type.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 59,
+      "question": "What is the 'Single Responsibility Principle' (SRP)?",
+      "option1": "Every class should have only one public method.",
+      "option2": "Every class should have only one reason to change.",
+      "option3": "Every class should be responsible for its own memory management.",
+      "option4": "Every class should extend only one parent class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 60,
+      "question": "What is the 'Interface Segregation Principle' (ISP)?",
+      "option1": "Clients should not be forced to depend on interfaces they do not use.",
+      "option2": "Interfaces should have as many methods as possible.",
+      "option3": "Classes should implement only one interface.",
+      "option4": "Interfaces should contain only abstract methods.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 61,
+      "question": "What is the 'Dependency Inversion Principle' (DIP)?",
+      "option1": "High-level modules should depend on low-level modules.",
+      "option2": "Low-level modules should depend on high-level modules.",
+      "option3": "Both high-level and low-level modules should depend on abstractions.",
+      "option4": "Modules should not depend on each other.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 62,
+      "question": "Which design pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable?",
+      "option1": "Observer",
+      "option2": "Decorator",
+      "option3": "Strategy",
+      "option4": "Factory Method",
+      "correct_option": "option3"
+    },
+    {
+      "id": 63,
+      "question": "What is the 'Adapter' design pattern used for?",
+      "option1": "To create new instances of a class.",
+      "option2": "To allow objects with incompatible interfaces to collaborate.",
+      "option3": "To ensure only one instance of a class exists.",
+      "option4": "To separate an object's state from its behavior.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 64,
+      "question": "What is the 'Decorator' design pattern used for?",
+      "option1": "To add new responsibilities to an object dynamically, without changing its original class.",
+      "option2": "To provide a simplified interface to a complex system.",
+      "option3": "To define a one-to-many dependency between objects.",
+      "option4": "To separate the construction of a complex object from its representation.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 65,
+      "question": "What is the 'Facade' design pattern used for?",
+      "option1": "To wrap an existing class to provide a new interface.",
+      "option2": "To provide a simplified, unified interface to a set of interfaces in a subsystem.",
+      "option3": "To attach new responsibilities to an object.",
+      "option4": "To convert the interface of a class into another interface clients expect.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 66,
+      "question": "What is 'Loose Coupling' in OOP?",
+      "option1": "When modules are highly dependent on each other.",
+      "option2": "When modules are relatively independent, and changes in one module have minimal impact on others.",
+      "option3": "When a class has too many responsibilities.",
+      "option4": "When methods in a class are unrelated to each other.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 67,
+      "question": "What is a 'Pure Function' in the context of functional programming aspects sometimes seen in OOP?",
+      "option1": "A function that has side effects.",
+      "option2": "A function that always returns the same output for the same input and has no side effects.",
+      "option3": "A function that takes no arguments.",
+      "option4": "A function that can modify global state.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 68,
+      "question": "What is the benefit of 'Design by Contract' (DbC)?",
+      "option1": "It simplifies exception handling.",
+      "option2": "It formalizes the obligations (preconditions, postconditions, invariants) between a client and a supplier in software components.",
+      "option3": "It reduces memory consumption.",
+      "option4": "It automates code generation.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 69,
+      "question": "What is an 'Inner Interface' in Java?",
+      "option1": "An interface that can only contain static methods.",
+      "option2": "An interface defined inside a class or another interface.",
+      "option3": "An interface that cannot be implemented by any class.",
+      "option4": "An interface that is automatically implemented by all classes.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 70,
+      "question": "What is 'Type Erasure' in Java Generics?",
+      "option1": "The process of removing type information at runtime to improve performance.",
+      "option2": "The process where generic type information is present only at compile time and removed by the compiler after compilation.",
+      "option3": "The mechanism that allows for covariant return types.",
+      "option4": "The way in which inner classes are compiled.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 71,
+      "question": "What is a 'Marker Interface' in Java?",
+      "option1": "An interface with many methods that must be implemented.",
+      "option2": "An interface with no methods or fields, used to 'mark' a class, indicating a special property or behavior for the JVM.",
+      "option3": "An interface used for creating annotations.",
+      "option4": "An interface that can only be implemented by abstract classes.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 72,
+      "question": "What is the purpose of the 'transient' keyword in Java?",
+      "option1": "To make a variable constant.",
+      "option2": "To prevent a field from being serialized when an object is written to a persistent storage.",
+      "option3": "To make a method abstract.",
+      "option4": "To define a variable that changes frequently.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 73,
+      "question": "What is the 'volatile' keyword used for in Java?",
+      "option1": "To indicate that a variable's value should not be cached thread-locally, but always read from main memory.",
+      "option2": "To make a variable mutable.",
+      "option3": "To define a variable that can be null.",
+      "option4": "To mark a variable for garbage collection.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 74,
+      "question": "Which design pattern is used to define a skeletal algorithm in an operation, deferring some steps to subclasses?",
+      "option1": "Strategy",
+      "option2": "Template Method",
+      "option3": "Command",
+      "option4": "Iterator",
+      "correct_option": "option2"
+    },
+    {
+      "id": 75,
+      "question": "What is the 'Command' design pattern?",
+      "option1": "Encapsulating a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.",
+      "option2": "Providing a unified interface to a set of interfaces in a subsystem.",
+      "option3": "Defining a family of algorithms and encapsulating each one.",
+      "option4": "Allowing objects with incompatible interfaces to collaborate.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 76,
+      "question": "What is 'Loose Coupling and High Cohesion' often referred to as in software design?",
+      "option1": "The Golden Rule of OOP.",
+      "option2": "The SOLID principles.",
+      "option3": "Good design principles for maintainability and scalability.",
+      "option4": "A contradiction in terms.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 77,
+      "question": "What is a 'Checked Exception' in Java?",
+      "option1": "An exception that must be caught or declared to be thrown by the method.",
+      "option2": "An exception that does not need to be handled explicitly.",
+      "option3": "An error that indicates a serious problem.",
+      "option4": "An exception that occurs due to incorrect programming logic.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 78,
+      "question": "What is an 'Unchecked Exception' in Java?",
+      "option1": "An exception that must be caught or declared to be thrown.",
+      "option2": "An exception that does not need to be handled explicitly (runtime exceptions and errors).",
+      "option3": "An exception that always leads to program termination.",
+      "option4": "An exception that occurs only during compilation.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 79,
+      "question": "What is the role of the 'finally' block in Java exception handling?",
+      "option1": "It executes only if an exception is thrown.",
+      "option2": "It executes only if no exception is thrown.",
+      "option3": "It always executes, whether an exception is thrown or not, typically for cleanup code.",
+      "option4": "It is used to define a new exception type.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 80,
+      "question": "What is 'Serialization' in OOP (e.g., Java)?",
+      "option1": "The process of converting an object into a sequence of bits for storage or transmission.",
+      "option2": "The process of creating multiple instances of an object.",
+      "option3": "The process of compiling source code into bytecode.",
+      "option4": "The process of allocating memory for an object.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 81,
+      "question": "What is 'Deserialization'?",
+      "option1": "The process of converting an object into a sequence of bits.",
+      "option2": "The process of reconstructing an object from a sequence of bits.",
+      "option3": "The process of breaking down a large object into smaller ones.",
+      "option4": "The process of encrypting an object's data.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 82,
+      "question": "What is the primary motivation behind the use of 'Generics' in OOP?",
+      "option1": "To reduce the number of classes in a project.",
+      "option2": "To provide type safety at compile time and eliminate the need for casting, reducing runtime errors.",
+      "option3": "To enable multiple inheritance.",
+      "option4": "To optimize garbage collection.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 83,
+      "question": "What is a 'Wildcard' in Java Generics (e.g., `? extends T`, `? super T`)?",
+      "option1": "A placeholder for any data type.",
+      "option2": "A way to specify unknown types in generic code, allowing for flexible subtype relationships.",
+      "option3": "A special type of array for generics.",
+      "option4": "A syntax for creating anonymous classes.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 84,
+      "question": "What does `? extends T` mean in Java Generics?",
+      "option1": "The type can be `T` or any supertype of `T`.",
+      "option2": "The type must be exactly `T`.",
+      "option3": "The type can be `T` or any subtype of `T`.",
+      "option4": "The type is unrelated to `T`.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 85,
+      "question": "What does `? super T` mean in Java Generics?",
+      "option1": "The type can be `T` or any supertype of `T`.",
+      "option2": "The type must be exactly `T`.",
+      "option3": "The type can be `T` or any subtype of `T`.",
+      "option4": "The type is unrelated to `T`.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 86,
+      "question": "What is the 'Immutable Collection' concept?",
+      "option1": "A collection whose elements can be modified after creation.",
+      "option2": "A collection whose size can be changed after creation.",
+      "option3": "A collection that cannot be modified after it is created (elements cannot be added, removed, or changed).",
+      "option4": "A collection that is thread-unsafe.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 87,
+      "question": "Which design pattern is used to separate the construction of a complex object from its representation, allowing the same construction process to create different representations?",
+      "option1": "Factory Method",
+      "option2": "Abstract Factory",
+      "option3": "Builder",
+      "option4": "Prototype",
+      "correct_option": "option3"
+    },
+    {
+      "id": 88,
+      "question": "What is the 'Iterator' design pattern?",
+      "option1": "To provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.",
+      "option2": "To encapsulate a request as an object.",
+      "option3": "To convert the interface of a class into another interface clients expect.",
+      "option4": "To ensure a class has only one instance.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 89,
+      "question": "What is the 'Proxy' design pattern?",
+      "option1": "To provide a surrogate or placeholder for another object to control access to it.",
+      "option2": "To attach new responsibilities to an object dynamically.",
+      "option3": "To simplify the interface of a subsystem.",
+      "option4": "To define a family of algorithms.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 90,
+      "question": "What is 'Inversion of Control' (IoC)?",
+      "option1": "A programming paradigm where the flow of control is determined by external factors rather than the program itself.",
+      "option2": "A pattern for managing database connections.",
+      "option3": "A technique to reduce the number of objects created.",
+      "option4": "A method to enforce strict encapsulation.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 91,
+      "question": "How does 'Inversion of Control' relate to 'Dependency Injection'?",
+      "option1": "They are unrelated concepts.",
+      "option2": "Dependency Injection is a specific technique for achieving Inversion of Control.",
+      "option3": "Inversion of Control is a specific technique for achieving Dependency Injection.",
+      "option4": "They are synonymous terms.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 92,
+      "question": "What is a 'Pure Abstract Class' (in C++ sometimes, or effectively an interface in Java terms)?",
+      "option1": "A class with all concrete methods.",
+      "option2": "A class that has at least one concrete method but cannot be instantiated.",
+      "option3": "A class containing only pure virtual functions (in C++) or only abstract methods (pre-Java 8 interface).",
+      "option4": "A class that is never inherited.",
+      "correct_option": "option3"
+    },
+    {
+      "id": 93,
+      "question": "What is the primary difference between a 'Deep Copy' and a 'Shallow Copy' of an object?",
+      "option1": "Deep copy duplicates only primitive fields, shallow copy duplicates all fields.",
+      "option2": "Deep copy duplicates the object and all objects it references, shallow copy duplicates only the top-level object and references to the same underlying objects.",
+      "option3": "Shallow copy is always faster than deep copy.",
+      "option4": "Deep copy is used for immutable objects, shallow copy for mutable.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 94,
+      "question": "What is the 'Visitor' design pattern?",
+      "option1": "To define a new operation to an existing class without modifying the class itself.",
+      "option2": "To represent operations to be performed on elements of an object structure, separating the algorithm from the objects on which it operates.",
+      "option3": "To provide a simplified interface to a complex system.",
+      "option4": "To allow objects with incompatible interfaces to collaborate.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 95,
+      "question": "What is 'Early Binding' (or Static Binding) in OOP?",
+      "option1": "Resolution of method calls at runtime.",
+      "option2": "Resolution of method calls at compile time.",
+      "option3": "Binding of an object to a variable.",
+      "option4": "Binding of an object to its parent class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 96,
+      "question": "What is 'Late Binding' (or Dynamic Binding) in OOP?",
+      "option1": "Resolution of method calls at compile time.",
+      "option2": "Resolution of method calls at runtime, typically used for polymorphic behavior.",
+      "option3": "Binding of an object to a variable.",
+      "option4": "Binding of an object to its child class.",
+      "correct_option": "option2"
+    },
+    {
+      "id": 97,
+      "question": "What is the concept of a 'Value Object' in OOP?",
+      "option1": "An object whose identity is unique and defined by its state (e.g., Money, Date). They are typically immutable.",
+      "option2": "An object that holds a unique ID and whose identity is important.",
+      "option3": "An object that changes its state frequently.",
+      "option4": "An object that only contains static methods.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 98,
+      "question": "What is the 'Chain of Responsibility' design pattern?",
+      "option1": "To send a request to a series of handlers, each deciding whether to process the request or pass it along the chain.",
+      "option2": "To ensure that an object can only be accessed by one client at a time.",
+      "option3": "To define a one-to-many dependency between objects.",
+      "option4": "To separate an object's state from its behavior.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 99,
+      "question": "What is the 'Bridge' design pattern?",
+      "option1": "To separate an abstraction from its implementation so that the two can vary independently.",
+      "option2": "To compose objects into tree structures to represent part-whole hierarchies.",
+      "option3": "To convert the interface of a class into another interface clients expect.",
+      "option4": "To ensure a class has only one instance and provides a global point of access to it.",
+      "correct_option": "option1"
+    },
+    {
+      "id": 100,
+      "question": "What is a 'Callback' in OOP?",
+      "option1": "A method that is called automatically when an object is created.",
+      "option2": "A function or method that is passed as an argument to another function, and is executed later within that function.",
+      "option3": "A method that always returns a boolean value.",
+      "option4": "A method that can only be invoked by static methods.",
+      "correct_option": "option2"
+    }
+  ]
+}
