@@ -11,6 +11,7 @@ import DynamicQuiz from './components/DynamicQuiz';
 import AllQuizzes from './components/quiz/AllQuizzes';
 import TopicList from './components/subjects/TopicList';
 import AuthDialog from './components/AuthDialog';
+import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
 
 const Layout = ({ children, showHeader = false }) => {
   const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
@@ -64,9 +65,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <RouterProvider router={router} />
-    </div>
+    </AuthProvider>
   )
 }
 

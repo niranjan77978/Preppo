@@ -1,42 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Home, BookOpen, Brain, User, LogOut, Settings } from 'lucide-react';
-import { useLocation, Link } from 'react-router-dom'; 
+import { useLocation, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Navbar = ({ onOpenAuthDialog }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const [user, setUser] = useState(null);
   const location = useLocation();
 
-  // Check authentication status on component mount
-  useEffect(() => {
-    const checkAuth = () => {
-      // Check our in-memory auth data
-      const authData = window.authData;
-      
-      if (authData && authData.isAuthenticated) {
-        setIsAuthenticated(true);
-        setUser(authData.user);
-      } else {
-        setIsAuthenticated(false);
-        setUser(null);
-      }
-    };
-
-    checkAuth();
-
-    // Listen for auth changes
-    const handleAuthChange = () => {
-      checkAuth();
-    };
-
-    window.addEventListener('authStateChanged', handleAuthChange);
-    return () => {
-      window.removeEventListener('authStateChanged', handleAuthChange);
-    };
-  }, []);
+  const { currentUser, userData, logout } = useAuth();
 
   const navItems = [
     { name: 'Home', path: '/', icon: <Home className="h-6 w-6" /> },
@@ -44,22 +17,19 @@ const Navbar = ({ onOpenAuthDialog }) => {
     { name: 'Courses', path: '/courses', icon: <BookOpen className="h-6 w-6" /> }
   ];
 
-  const handleLogout = () => {
-    // Clear authentication data from memory
-    window.authData = null;
-    setIsAuthenticated(false);
-    setUser(null);
-    setShowProfileMenu(false);
-    
-    // Dispatch auth state change event
-    window.dispatchEvent(new Event('authStateChanged'));
-    
-    // Redirect to home page
-    window.location.href = '/';
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setShowProfileMenu(false);
+      // Redirect to home page
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
   };
 
   const handleProfileClick = () => {
-    if (!isAuthenticated) {
+    if (!currentUser) {
       // Open auth dialog
       if (onOpenAuthDialog) {
         onOpenAuthDialog();
@@ -143,7 +113,7 @@ const Navbar = ({ onOpenAuthDialog }) => {
           <div className="flex-1 px-2 py-6 space-y-2">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
-                return (
+              return (
                 <Link
                   key={item.name}
                   to={item.path}
@@ -160,21 +130,21 @@ const Navbar = ({ onOpenAuthDialog }) => {
                   ${isCollapsed ? 'md:mr-0' : 'mr-3'}
                   ${isActive ? 'text-yellow-300 scale-110' : 'group-hover:scale-110'}
                   `}>
-                  {item.icon}
+                    {item.icon}
                   </span>
                   <span className={`font-medium transition-all duration-300
                   ${isCollapsed ? 'md:opacity-0 md:w-0 md:overflow-hidden opacity-100' : 'opacity-100'}
                   ${isActive ? 'text-yellow-300' : ''}
                   `}>
-                  {item.name}
+                    {item.name}
                   </span>
                   {isCollapsed && (
-                  <div className="hidden md:block absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                    {item.name}
-                  </div>
+                    <div className="hidden md:block absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                      {item.name}
+                    </div>
                   )}
                 </Link>
-                );
+              );
             })}
           </div>
           
@@ -187,9 +157,9 @@ const Navbar = ({ onOpenAuthDialog }) => {
               onClick={handleProfileClick}
             >
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                {isAuthenticated && user ? (
+                {currentUser && userData ? (
                   <span className="text-white text-sm font-semibold">
-                    {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                    {userData.name ? userData.name.charAt(0).toUpperCase() : 'U'}
                   </span>
                 ) : (
                   <User className="h-4 w-4 text-white" />
@@ -198,10 +168,10 @@ const Navbar = ({ onOpenAuthDialog }) => {
               <div className={`text-white ml-3 transition-all duration-300 ${
                 isCollapsed ? 'md:opacity-0 md:w-0 md:overflow-hidden opacity-100' : 'opacity-100'
               }`}>
-                {isAuthenticated && user ? (
+                {currentUser && userData ? (
                   <>
-                    <p className="text-sm font-medium">{user.name || 'User'}</p>
-                    <p className="text-xs text-gray-300">{user.email || 'Student'}</p>
+                    <p className="text-sm font-medium">{userData.name || 'User'}</p>
+                    <p className="text-xs text-gray-300">{userData.email || 'Student'}</p>
                   </>
                 ) : (
                   <>
@@ -213,7 +183,7 @@ const Navbar = ({ onOpenAuthDialog }) => {
             </div>
 
             {/* Profile Dropdown Menu */}
-            {showProfileMenu && isAuthenticated && !isCollapsed && (
+            {showProfileMenu && currentUser && !isCollapsed && (
               <div className="absolute bottom-full left-2 right-2 mb-2 bg-gray-800 border border-gray-600 rounded-lg shadow-lg py-2">
                 <button
                   className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors duration-200"
@@ -250,7 +220,7 @@ const Navbar = ({ onOpenAuthDialog }) => {
             {/* Tooltip for collapsed state */}
             {isCollapsed && (
               <div className="hidden md:block absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                {isAuthenticated ? 'Profile' : 'Sign In'}
+                {currentUser ? 'Profile' : 'Sign In'}
               </div>
             )}
           </div>

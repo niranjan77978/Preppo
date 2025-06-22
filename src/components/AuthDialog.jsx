@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, User, ArrowRight, X } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, ArrowRight, X, AlertCircle } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 const AuthDialog = ({ isOpen, onClose }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,51 +12,101 @@ const AuthDialog = ({ isOpen, onClose }) => {
     confirmPassword: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const { signup, login } = useAuth();
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear error when user starts typing
+    if (error) setError('');
   };
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    if (!formData.email || !formData.password) {
+      setError('Please fill in all required fields');
+      return false;
+    }
+
+    if (!isLogin) {
+      if (!formData.name) {
+        setError('Please enter your full name');
+        return false;
+      }
+      if (formData.password !== formData.confirmPassword) {
+        setError('Passwords do not match');
+        return false;
+      }
+      if (formData.password.length < 6) {
+        setError('Password should be at least 6 characters long');
+        return false;
+      }
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Please enter a valid email address');
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log(isLogin ? 'Login submitted:' : 'Signup submitted:', formData);
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+    setError('');
+
+    try {
+      if (isLogin) {
+        await login(formData.email, formData.password);
+      } else {
+        await signup(formData.email, formData.password, formData.name);
+      }
       
-      // Simulate successful authentication
-      const userData = {
-        name: isLogin ? 'John Doe' : formData.name,
-        email: formData.email,
-        id: Date.now()
-      };
-      
-      // Store authentication data in memory instead of localStorage
-      // In a real app, you would use your state management solution
-      window.authData = {
-        token: 'fake-jwt-token',
-        user: userData,
-        isAuthenticated: true
-      };
-      
-      // Dispatch auth state change event
-      window.dispatchEvent(new Event('authStateChanged'));
-      
-      setIsLoading(false);
+      // Close dialog and reset form on success
       onClose();
-      
-      // Reset form
       setFormData({
         email: '',
         password: '',
         name: '',
         confirmPassword: ''
       });
-    }, 2000);
+    } catch (error) {
+      console.error('Authentication error:', error);
+      
+      // Handle specific Firebase error codes
+      switch (error.code) {
+        case 'auth/user-not-found':
+          setError('No account found with this email address');
+          break;
+        case 'auth/wrong-password':
+          setError('Incorrect password');
+          break;
+        case 'auth/email-already-in-use':
+          setError('An account with this email already exists');
+          break;
+        case 'auth/weak-password':
+          setError('Password should be at least 6 characters');
+          break;
+        case 'auth/invalid-email':
+          setError('Invalid email address');
+          break;
+        case 'auth/too-many-requests':
+          setError('Too many failed attempts. Please try again later');
+          break;
+        default:
+          setError('An error occurred. Please try again');
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const toggleMode = () => {
@@ -66,6 +117,7 @@ const AuthDialog = ({ isOpen, onClose }) => {
       name: '',
       confirmPassword: ''
     });
+    setError('');
   };
 
   const handleOverlayClick = (e) => {
@@ -108,7 +160,15 @@ const AuthDialog = ({ isOpen, onClose }) => {
             </p>
           </div>
 
-          {/* Login Form */}
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-3 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-2 relative z-10">
+              <AlertCircle className="h-4 w-4 text-red-400 flex-shrink-0" />
+              <p className="text-sm text-red-400">{error}</p>
+            </div>
+          )}
+
+          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             {/* Name field (only for signup) */}
             {!isLogin && (
