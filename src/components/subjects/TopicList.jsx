@@ -287,7 +287,7 @@ Format the response with proper headings, bullet points, and structured content 
     if (selectedTopic) {
       fetchDetail(selectedTopic);
     }
-  }, [selectedTopic, currentSubject]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedTopic, currentSubject]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -396,9 +396,8 @@ Format the response with proper headings, bullet points, and structured content 
               >
                 <BookOpen className={`w-4 h-4 ${getIconColor(idx)} flex-shrink-0`} />
                 <span className="flex-1 min-w-0">{topic}</span>
-                <button
-                  type="button"
-                  className={`w-6 h-6 flex items-center justify-center border-2 rounded-md transition-colors duration-200 flex-shrink-0
+                <div
+                  className={`w-6 h-6 flex items-center justify-center border-2 rounded-md transition-colors duration-200 flex-shrink-0 cursor-pointer
                     ${completedTopics[topic]
                       ? "border-green-400 bg-green-100/10"
                       : "border-gray-500 bg-gray-800 hover:border-green-400"
@@ -413,7 +412,7 @@ Format the response with proper headings, bullet points, and structured content 
                   {completedTopics[topic] ? (
                     <BookOpenCheck className="w-4 h-4 text-green-400" />
                   ) : null}
-                </button>
+                </div>
               </button>
             </li>
           ))}

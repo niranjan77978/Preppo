@@ -8,6 +8,10 @@ import dbmsData from '../quizData/dbmsquiz.json';
 import oopsData from '../quizData/oopsquiz.json';
 import webDevData from '../quizData/webdevquiz.json';
 
+// Fix the import to match the actual export in firebase.js
+import * as firebaseUtils from '../firebase';
+import { getAuth } from "firebase/auth";
+
 const quizDataMap = {
     'cnquiz': cnquizData,
     'os': osData,
@@ -62,6 +66,31 @@ const DynamicQuiz = () => {
             setCurrentQuiz(null);
         }
     }, [subject, quizNumber]); // Re-run effect when subject or quizNumber changes
+
+    // Save progress to Firestore after quiz completion
+    useEffect(() => {
+        if (quizCompleted && currentQuiz) {
+            let user = null;
+            try {
+                const auth = getAuth();
+                user = auth.currentUser;
+            } catch (e) {
+                user = null;
+            }
+            if (user && typeof firebaseUtils.saveQuizProgress === "function") {
+                const quizId = `${subject}-quiz${quizNumber}`;
+                const progressData = {
+                    score,
+                    total: currentQuiz.questions.length,
+                    completedAt: new Date().toISOString()
+                };
+                firebaseUtils.saveQuizProgress(user.uid, quizId, progressData)
+                  .catch((err) => {
+                    console.error("Failed to save quiz progress:", err);
+                  });
+            }
+        }
+    }, [quizCompleted, currentQuiz, score, subject, quizNumber]);
 
     if (!currentQuiz) {
         return (

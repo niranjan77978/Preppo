@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, createBrowserRouter } from 'react-router-dom';
 import './App.css'
-  import Courses from './pages/Subjects';
+import Courses from './pages/Subjects';
 import Quiz from './pages/Quiz';
 import Navbar from './components/common/Navbar';
 import Home from './pages/Home';
@@ -10,57 +10,64 @@ import Header from './components/common/Header';
 import DynamicQuiz from './components/DynamicQuiz';
 import AllQuizzes from './components/quiz/AllQuizzes';
 import TopicList from './components/subjects/TopicList';
+import AuthDialog from './components/AuthDialog';
 
-const Layout = ({ children, showHeader = false }) => (
-  <div className="flex min-h-screen bg-gray-50">
-    <Navbar />
-    <main className="flex-1 ">
-      <div className="">
-        {<Header/>}
-        {children}
-      </div>
-    </main>
-  </div>
-);
+const Layout = ({ children, showHeader = false }) => {
+  const [isAuthDialogOpen, setIsAuthDialogOpen] = useState(false);
+
+  const openAuthDialog = () => setIsAuthDialogOpen(true);
+  const closeAuthDialog = () => setIsAuthDialogOpen(false);
+
+  return (
+    <div className="flex min-h-screen bg-gray-50">
+      <Navbar onOpenAuthDialog={openAuthDialog} />
+      <main className="flex-1">
+        <div className="">
+          <Header onOpenAuthDialog={openAuthDialog} />
+          {children}
+        </div>
+      </main>
+      <AuthDialog 
+        isOpen={isAuthDialogOpen} 
+        onClose={closeAuthDialog} 
+      />
+    </div>
+  );
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout ><Home /></Layout>
+    element: <Layout><Home /></Layout>
   },
   {
     path: "/quiz",
-    element: <Layout ><Quiz /></Layout>
+    element: <Layout><Quiz /></Layout>
   },
   {
     path: "/courses", 
     element: <Layout><Courses /></Layout>
   },
   {
-    path:"quiz/:subject",
+    path: "quiz/:subject",
     element: <Layout><AllQuizzes/></Layout>
   },
   {
-    path:"quiz/:subject/:quizNumber",
+    path: "quiz/:subject/:quizNumber",
     element: <Layout><DynamicQuiz/></Layout>  
   },
-  
   {
     path: "/learn/:subject",
     element: <Layout showHeader={true}><TopicList /></Layout>
-  }
+  },
 ]);
+
 function App() {
-
-
   return (
-    <>
-      <div>
-        <RouterProvider router={router} />
-      </div>
-    </>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   )
 }
-
 
 export default App
