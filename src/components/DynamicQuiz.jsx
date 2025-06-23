@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Import useAuth hook
 import QuizCard from './quiz/cards/QuizCard'; 
@@ -9,8 +9,10 @@ import dbmsData from '../quizData/dbmsquiz.json';
 import oopsData from '../quizData/oopsquiz.json';
 import webDevData from '../quizData/webdevquiz.json';
 
+// Fix: support both 'cnquiz' and 'networks' as keys for CN quiz
 const quizDataMap = {
-    'networks': cnquizData, // Changed to match your routing
+    'cnquiz': cnquizData,
+    // 'networks': cnquizData,
     'os': osData,
     'ds': dsData,
     'dbms': dbmsData,
@@ -30,13 +32,21 @@ const DynamicQuiz = () => {
     const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
     const [showLoginPrompt, setShowLoginPrompt] = useState(false);
+    
+    // Add a ref to track if quiz has been initialized to prevent resets
+    const quizInitialized = useRef(false);
+    const quizCompletedPersistent = useRef(false);
 
     // Generate quiz ID for Firebase storage
     const quizId = `${subject}-quiz${quizNumber}`;
 
+    // FIXED: Separate quiz loading from quiz state management
     useEffect(() => {
-        // Load the quiz data based on the subject parameter
-        const data = quizDataMap[subject];
+        // Only load quiz data, don't reset state if already initialized
+        let data = quizDataMap[subject];
+        if (!data && subject === 'networks') data = quizDataMap['cnquiz'];
+        if (!data && subject === 'cnquiz') data = quizDataMap['networks'];
+        
         if (data && quizNumber) {
             const quizNum = parseInt(quizNumber);
             
@@ -58,27 +68,40 @@ const DynamicQuiz = () => {
             
             setCurrentQuiz(currentQuizData);
             
-            // Check if user has previous progress on this quiz
-            if (currentUser) {
-                const previousProgress = getQuizProgress(quizId);
-                if (previousProgress) {
-                    console.log(`Previous attempt found for ${quizId}:`, previousProgress);
+            // Only reset quiz state on initial load, not on subsequent re-renders
+            if (!quizInitialized.current && !quizCompletedPersistent.current) {
+                setCurrentQuestionIndex(0);
+                setSelectedOption(null);
+                setScore(0);
+                setQuizCompleted(false);
+                setIsAnswerSubmitted(false);
+                setIsAnswerCorrect(false);
+                quizInitialized.current = true;
+                
+                // Check if user has previous progress on this quiz
+                if (currentUser) {
+                    const previousProgress = getQuizProgress(quizId);
+                    if (previousProgress) {
+                        console.log(`Previous attempt found for ${quizId}:`, previousProgress);
+                    }
                 }
             }
-            
-            // Reset quiz state
-            setCurrentQuestionIndex(0);
-            setSelectedOption(null);
-            setScore(0);
-            setQuizCompleted(false);
-            setIsAnswerSubmitted(false);
-            setIsAnswerCorrect(false);
         } else {
             // Handle case where subject data is not found
             console.error(`Quiz data for subject "${subject}" or quiz number "${quizNumber}" not found.`);
             setCurrentQuiz(null);
         }
-    }, [subject, quizNumber, currentUser, getQuizProgress, quizId]);
+    }, [subject, quizNumber]); // FIXED: Removed currentUser and other auth-related dependencies
+
+    // FIXED: Separate effect for auth-related operations that don't reset quiz state
+    useEffect(() => {
+        if (currentUser && currentQuiz && quizInitialized.current && !quizCompletedPersistent.current) {
+            const previousProgress = getQuizProgress(quizId);
+            if (previousProgress) {
+                console.log(`Previous attempt found for ${quizId}:`, previousProgress);
+            }
+        }
+    }, [currentUser, getQuizProgress, quizId, currentQuiz]);
 
     // Save progress to Firebase after quiz completion
     const saveQuizToFirebase = async (finalScore) => {
@@ -107,9 +130,10 @@ const DynamicQuiz = () => {
         }
     };
 
-    // Handle quiz completion
+    // Handle quiz completion - FIXED: Prevent multiple saves and resets
     useEffect(() => {
-        if (quizCompleted && currentQuiz) {
+        if (quizCompleted && currentQuiz && !quizCompletedPersistent.current) {
+            quizCompletedPersistent.current = true; // Mark as persistently completed
             saveQuizToFirebase(score);
         }
     }, [quizCompleted, score, currentQuiz]);
@@ -164,6 +188,7 @@ const DynamicQuiz = () => {
         }
     };
 
+    // FIXED: Reset all refs when restarting quiz
     const handleRestartQuiz = () => {
         setCurrentQuestionIndex(0);
         setSelectedOption(null);
@@ -171,6 +196,10 @@ const DynamicQuiz = () => {
         setQuizCompleted(false);
         setIsAnswerSubmitted(false);
         setIsAnswerCorrect(false);
+        
+        // Reset refs to allow proper restart
+        quizInitialized.current = false;
+        quizCompletedPersistent.current = false;
     };
 
     // Get performance message and color

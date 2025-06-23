@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/common/Footer';
 
 const Home = () => {
@@ -77,21 +78,23 @@ const Home = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <div 
-          onClick={() => window.location.href = '/courses'}
-          className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:rotate-1">
+          <Link 
+            to="/courses"
+            className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:rotate-1 block"
+          >
             <div className="text-4xl mb-4 group-hover:animate-bounce">📚</div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Interactive Learning</h3>
             <p className="text-gray-300 text-sm md:text-base">Dive into hands-on coding exercises with real-time feedback</p>
-          </div>
+          </Link>
           
-          <div 
-          onClick={() => window.location.href = '/quiz'}
-          className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-rotate-1">
+          <Link 
+            to="/quiz"
+            className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:-rotate-1 block"
+          >
             <div className="text-4xl mb-4 group-hover:animate-bounce">🧠</div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Smart Quizzes</h3>
             <p className="text-gray-300 text-sm md:text-base">Test your knowledge with adaptive quizzes that level up</p>
-          </div>
+          </Link>
         </div>
 
         {/* Enhanced action buttons
@@ -100,23 +103,23 @@ const Home = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}
         >
-          <button 
-            onClick={() => window.location.href = '/courses'}
-            className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25"
+          <Link 
+            to="/courses"
+            className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 block text-center"
           >
             <span className="relative z-10">Explore Courses</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
-          </button>
+          </Link>
           
-          <button 
-            onClick={() => window.location.href = '/quiz'}
-            className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-full font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/25"
+          <Link 
+            to="/quiz"
+            className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-full font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/25 block text-center"
           >
             <span className="relative z-10">Take a Quiz</span>
             <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-cyan-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-400 rounded-full animate-ping"></div>
-          </button>
+          </Link>
         </div> */}
 
         {/* Scroll indicator */}

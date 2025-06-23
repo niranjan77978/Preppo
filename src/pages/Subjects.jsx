@@ -1,5 +1,6 @@
 import React from 'react'
 import SubjectCard from '../components/subjects/SubjectCard'
+import Footer from '../components/common/Footer'
 
 const Subjects = () => {
   return (
@@ -44,6 +45,7 @@ const Subjects = () => {
           />
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

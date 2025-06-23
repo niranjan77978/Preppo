@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../components/common/Footer';
 
 const Quiz = () => {
   const navigate = useNavigate();
@@ -56,6 +57,7 @@ const Quiz = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

@@ -131,7 +131,7 @@ const AllQuizzes = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        {/* <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 sm:p-6 border border-gray-700 text-center">
             <div className="text-2xl sm:text-3xl mb-2">📊</div>
             <h3 className="text-base sm:text-lg font-semibold mb-1">Track Progress</h3>
@@ -147,7 +147,7 @@ const AllQuizzes = () => {
             <h3 className="text-base sm:text-lg font-semibold mb-1">Earn Achievements</h3>
             <p className="text-gray-400 text-xs sm:text-sm">Unlock badges as you complete quizzes</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Back Button */}
         <div className="mt-6 sm:mt-8 text-center">
