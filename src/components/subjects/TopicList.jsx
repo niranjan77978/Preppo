@@ -147,7 +147,7 @@ const ICON_COLORS = [
 
 const getIconColor = (idx) => ICON_COLORS[idx % ICON_COLORS.length];
 
-const GEMINI_API_KEY = "AIzaSyCHNGYBztxjhLiMYHdgz5Giu5R2xxSU5PA";
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 // Utility to clean Gemini response: remove # and **
 function cleanGeminiResponse(text) {
