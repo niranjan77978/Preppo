@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Search, BookOpen, Lightbulb, NotebookText, List, BookOpenCheck, AlertCircle } from "lucide-react";
+import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 
 const SUBJECT_TOPICS = {
   networks: [
@@ -166,6 +167,9 @@ const getCurrentSubjectFromURL = () => {
 };
 
 const TopicList = ({ subject }) => {
+  // Get auth context for user progress
+  const { currentUser, isTopicCompleted, updateTopicProgress } = useAuth();
+  
   // Determine the current subject
   const currentSubject = subject || getCurrentSubjectFromURL();
   
@@ -174,7 +178,6 @@ const TopicList = ({ subject }) => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [searchError, setSearchError] = useState('');
-  const [completedTopics, setCompletedTopics] = useState({});
 
   // Use the determined subject
   const topics = SUBJECT_TOPICS[currentSubject] || [];
@@ -184,7 +187,8 @@ const TopicList = ({ subject }) => {
     console.log('Current subject:', currentSubject);
     console.log('Available topics:', topics.length);
     console.log('Current URL:', typeof window !== 'undefined' ? window.location.pathname : 'N/A');
-  }, [currentSubject, topics]);
+    console.log('Current user:', currentUser?.uid || 'Not logged in');
+  }, [currentSubject, topics, currentUser]);
 
   const filteredTopics = search
     ? topics.filter((topic) =>
@@ -303,11 +307,23 @@ Format the response with proper headings, bullet points, and structured content 
     setSelectedTopic(search.trim());
   };
 
-  const toggleCompleted = (topic) => {
-    setCompletedTopics((prev) => ({
-      ...prev,
-      [topic]: !prev[topic],
-    }));
+  // Updated toggle function with optimistic updates for instant UI response
+  const toggleCompleted = async (topic) => {
+    if (!currentUser) {
+      alert('Please log in to track your progress.');
+      return;
+    }
+
+    const isCurrentlyCompleted = isTopicCompleted(currentSubject, topic);
+    const newCompletionState = !isCurrentlyCompleted;
+    
+    try {
+      // This will update the UI immediately thanks to optimistic updates in AuthContext
+      await updateTopicProgress(currentSubject, topic, newCompletionState);
+    } catch (error) {
+      console.error('Error updating topic progress:', error);
+      alert('Failed to update topic progress. Please try again.');
+    }
   };
 
   // Show error message if no topics found for the subject
@@ -350,6 +366,9 @@ Format the response with proper headings, bullet points, and structured content 
         <p className="text-center text-cyan-200 mb-6 flex items-center justify-center gap-2 text-sm md:text-base">
           <Lightbulb className="inline w-5 h-5 text-yellow-300" />
           Click a topic or search your own for instant revision notes.
+          {!currentUser && (
+            <span className="text-yellow-300 ml-2">(Login to track progress)</span>
+          )}
         </p>
 
         {/* Search Bar */}
@@ -383,39 +402,53 @@ Format the response with proper headings, bullet points, and structured content 
         )}
         
         <ul className="mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {filteredTopics.map((topic, idx) => (
-            <li key={topic}>
-              <button
-                className={`w-full text-left px-4 py-3 rounded-xl border-2 font-semibold transition-all duration-200 shadow-sm flex items-center gap-2 text-sm
-                  ${selectedTopic === topic
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white scale-105 shadow-lg"
-                    : "bg-gray-800 border-gray-700 text-cyan-100 hover:bg-cyan-900 hover:border-cyan-400 hover:text-cyan-300"
-                  }
-                `}
-                onClick={() => setSelectedTopic(topic)}
-              >
-                <BookOpen className={`w-4 h-4 ${getIconColor(idx)} flex-shrink-0`} />
-                <span className="flex-1 min-w-0">{topic}</span>
-                <div
-                  className={`w-6 h-6 flex items-center justify-center border-2 rounded-md transition-colors duration-200 flex-shrink-0 cursor-pointer
-                    ${completedTopics[topic]
-                      ? "border-green-400 bg-green-100/10"
-                      : "border-gray-500 bg-gray-800 hover:border-green-400"
+          {filteredTopics.map((topic, idx) => {
+            const isCompleted = currentUser ? isTopicCompleted(currentSubject, topic) : false;
+            
+            return (
+              <li key={topic}>
+                <button
+                  className={`w-full text-left px-4 py-3 rounded-xl border-2 font-semibold transition-all duration-200 shadow-sm flex items-center gap-2 text-sm
+                    ${selectedTopic === topic
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white scale-105 shadow-lg"
+                      : "bg-gray-800 border-gray-700 text-cyan-100 hover:bg-cyan-900 hover:border-cyan-400 hover:text-cyan-300"
                     }
                   `}
-                  title={completedTopics[topic] ? "Mark as incomplete" : "Mark as completed"}
-                  onClick={e => {
-                    e.stopPropagation();
-                    toggleCompleted(topic);
-                  }}
+                  onClick={() => setSelectedTopic(topic)}
                 >
-                  {completedTopics[topic] ? (
-                    <BookOpenCheck className="w-4 h-4 text-green-400" />
-                  ) : null}
-                </div>
-              </button>
-            </li>
-          ))}
+                  <BookOpen className={`w-4 h-4 ${getIconColor(idx)} flex-shrink-0`} />
+                  <span className="flex-1 min-w-0">{topic}</span>
+                  <div
+                    className={`w-6 h-6 flex items-center justify-center border-2 rounded-md transition-colors duration-200 flex-shrink-0 cursor-pointer
+                      ${isCompleted
+                        ? "border-green-400 bg-green-100/10"
+                        : "border-gray-500 bg-gray-800 hover:border-green-400"
+                      }
+                    `}
+                    title={
+                      !currentUser 
+                        ? "Login to track progress"
+                        : isCompleted 
+                          ? "Mark as incomplete" 
+                          : "Mark as completed"
+                    }
+                    onClick={e => {
+                      e.stopPropagation();
+                      if (currentUser) {
+                        toggleCompleted(topic);
+                      } else {
+                        alert('Please log in to track your progress.');
+                      }
+                    }}
+                  >
+                    {isCompleted ? (
+                      <BookOpenCheck className="w-4 h-4 text-green-400" />
+                    ) : null}
+                  </div>
+                </button>
+              </li>
+            );
+          })}
         </ul>
         
         {selectedTopic && (

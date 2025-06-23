@@ -1,43 +1,17 @@
 import React, { useState } from 'react';
-import { Home, BookOpen, Brain, User, LogOut, Settings } from 'lucide-react';
+import { Home, BookOpen, Brain } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
 
-const Navbar = ({ onOpenAuthDialog }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const location = useLocation();
-
-  const { currentUser, userData, logout } = useAuth();
 
   const navItems = [
     { name: 'Home', path: '/', icon: <Home className="h-6 w-6" /> },
     { name: 'Quiz', path: '/quiz', icon: <Brain className="h-6 w-6" /> },
     { name: 'Courses', path: '/courses', icon: <BookOpen className="h-6 w-6" /> }
   ];
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-      setShowProfileMenu(false);
-      // Redirect to home page
-      window.location.href = '/';
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  };
-
-  const handleProfileClick = () => {
-    if (!currentUser) {
-      // Open auth dialog
-      if (onOpenAuthDialog) {
-        onOpenAuthDialog();
-      }
-    } else {
-      setShowProfileMenu(!showProfileMenu);
-    }
-  };
 
   return (
     <>
@@ -147,83 +121,7 @@ const Navbar = ({ onOpenAuthDialog }) => {
               );
             })}
           </div>
-          
-          {/* Profile Section */}
-          <div className="px-2 py-4 border-t border-gray-700 relative">
-            <div 
-              className={`flex items-center cursor-pointer hover:bg-gray-700 rounded-lg transition-all duration-300 ${
-                isCollapsed ? 'md:justify-center md:p-2 px-4 py-2' : 'px-4 py-2'
-              }`}
-              onClick={handleProfileClick}
-            >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                {currentUser && userData ? (
-                  <span className="text-white text-sm font-semibold">
-                    {userData.name ? userData.name.charAt(0).toUpperCase() : 'U'}
-                  </span>
-                ) : (
-                  <User className="h-4 w-4 text-white" />
-                )}
-              </div>
-              <div className={`text-white ml-3 transition-all duration-300 ${
-                isCollapsed ? 'md:opacity-0 md:w-0 md:overflow-hidden opacity-100' : 'opacity-100'
-              }`}>
-                {currentUser && userData ? (
-                  <>
-                    <p className="text-sm font-medium">{userData.name || 'User'}</p>
-                    <p className="text-xs text-gray-300">{userData.email || 'Student'}</p>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-sm font-medium">Sign In</p>
-                    <p className="text-xs text-gray-300">Get started</p>
-                  </>
-                )}
-              </div>
-            </div>
-
-            {/* Profile Dropdown Menu */}
-            {showProfileMenu && currentUser && !isCollapsed && (
-              <div className="absolute bottom-full left-2 right-2 mb-2 bg-gray-800 border border-gray-600 rounded-lg shadow-lg py-2">
-                <button
-                  className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors duration-200"
-                  onClick={() => {
-                    setShowProfileMenu(false);
-                    setIsOpen(false);
-                    // Navigate to profile page or open profile dialog
-                  }}
-                >
-                  <User className="h-4 w-4 mr-3" />
-                  View Profile
-                </button>
-                <button
-                  className="flex items-center w-full px-4 py-2 text-sm text-white hover:bg-gray-700 transition-colors duration-200"
-                  onClick={() => {
-                    setShowProfileMenu(false);
-                    setIsOpen(false);
-                    // Navigate to settings page
-                  }}
-                >
-                  <Settings className="h-4 w-4 mr-3" />
-                  Settings
-                </button>
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center w-full px-4 py-2 text-sm text-red-400 hover:bg-gray-700 transition-colors duration-200"
-                >
-                  <LogOut className="h-4 w-4 mr-3" />
-                  Sign Out
-                </button>
-              </div>
-            )}
-
-            {/* Tooltip for collapsed state */}
-            {isCollapsed && (
-              <div className="hidden md:block absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-                {currentUser ? 'Profile' : 'Sign In'}
-              </div>
-            )}
-          </div>
+          {/* No profile/user/login section here */}
         </div>
       </nav>
 

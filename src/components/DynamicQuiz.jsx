@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // Import useAuth hook
 import QuizCard from './quiz/cards/QuizCard'; 
 import cnquizData from '../quizData/cnquiz.json'; 
 import osData from '../quizData/osquiz.json';
@@ -8,12 +9,8 @@ import dbmsData from '../quizData/dbmsquiz.json';
 import oopsData from '../quizData/oopsquiz.json';
 import webDevData from '../quizData/webdevquiz.json';
 
-// Fix the import to match the actual export in firebase.js
-import * as firebaseUtils from '../firebase';
-import { getAuth } from "firebase/auth";
-
 const quizDataMap = {
-    'cnquiz': cnquizData,
+    'networks': cnquizData, // Changed to match your routing
     'os': osData,
     'ds': dsData,
     'dbms': dbmsData,
@@ -22,7 +19,9 @@ const quizDataMap = {
 };
 
 const DynamicQuiz = () => {
-    const { subject, quizNumber } = useParams(); // Get both subject and quizNumber
+    const { subject, quizNumber } = useParams();
+    const { currentUser, updateQuizProgress, getQuizProgress, isQuizCompleted } = useAuth(); // Use AuthContext
+    
     const [currentQuiz, setCurrentQuiz] = useState(null);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -30,6 +29,10 @@ const DynamicQuiz = () => {
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+    const [showLoginPrompt, setShowLoginPrompt] = useState(false);
+
+    // Generate quiz ID for Firebase storage
+    const quizId = `${subject}-quiz${quizNumber}`;
 
     useEffect(() => {
         // Load the quiz data based on the subject parameter
@@ -54,7 +57,17 @@ const DynamicQuiz = () => {
             };
             
             setCurrentQuiz(currentQuizData);
-            setCurrentQuestionIndex(0); // Reset for new quiz
+            
+            // Check if user has previous progress on this quiz
+            if (currentUser) {
+                const previousProgress = getQuizProgress(quizId);
+                if (previousProgress) {
+                    console.log(`Previous attempt found for ${quizId}:`, previousProgress);
+                }
+            }
+            
+            // Reset quiz state
+            setCurrentQuestionIndex(0);
             setSelectedOption(null);
             setScore(0);
             setQuizCompleted(false);
@@ -65,32 +78,41 @@ const DynamicQuiz = () => {
             console.error(`Quiz data for subject "${subject}" or quiz number "${quizNumber}" not found.`);
             setCurrentQuiz(null);
         }
-    }, [subject, quizNumber]); // Re-run effect when subject or quizNumber changes
+    }, [subject, quizNumber, currentUser, getQuizProgress, quizId]);
 
-    // Save progress to Firestore after quiz completion
+    // Save progress to Firebase after quiz completion
+    const saveQuizToFirebase = async (finalScore) => {
+        if (!currentUser) {
+            setShowLoginPrompt(true);
+            return;
+        }
+
+        if (!currentQuiz) return;
+
+        try {
+            const progressData = {
+                score: finalScore,
+                total: currentQuiz.questions.length,
+                percentage: Math.round((finalScore / currentQuiz.questions.length) * 100),
+                subject: subject,
+                quizNumber: parseInt(quizNumber),
+                quizTitle: currentQuiz.quiz_title
+            };
+
+            await updateQuizProgress(quizId, progressData);
+            console.log('Quiz progress saved successfully to Firebase');
+        } catch (error) {
+            console.error('Failed to save quiz progress to Firebase:', error);
+            // You might want to show an error message to the user here
+        }
+    };
+
+    // Handle quiz completion
     useEffect(() => {
         if (quizCompleted && currentQuiz) {
-            let user = null;
-            try {
-                const auth = getAuth();
-                user = auth.currentUser;
-            } catch (e) {
-                user = null;
-            }
-            if (user && typeof firebaseUtils.saveQuizProgress === "function") {
-                const quizId = `${subject}-quiz${quizNumber}`;
-                const progressData = {
-                    score,
-                    total: currentQuiz.questions.length,
-                    completedAt: new Date().toISOString()
-                };
-                firebaseUtils.saveQuizProgress(user.uid, quizId, progressData)
-                  .catch((err) => {
-                    console.error("Failed to save quiz progress:", err);
-                  });
-            }
+            saveQuizToFirebase(score);
         }
-    }, [quizCompleted, currentQuiz, score, subject, quizNumber]);
+    }, [quizCompleted, score, currentQuiz]);
 
     if (!currentQuiz) {
         return (
@@ -151,8 +173,52 @@ const DynamicQuiz = () => {
         setIsAnswerCorrect(false);
     };
 
+    // Get performance message and color
+    const getPerformanceMessage = (percentage) => {
+        if (percentage >= 80) return { message: 'Excellent work! 🎉', color: 'text-green-400' };
+        if (percentage >= 70) return { message: 'Great job! 👍', color: 'text-green-400' };
+        if (percentage >= 60) return { message: 'Good effort! 👍', color: 'text-yellow-400' };
+        if (percentage >= 50) return { message: 'Keep practicing! 📚', color: 'text-yellow-400' };
+        return { message: 'More practice needed! 💪', color: 'text-red-400' };
+    };
+
+    const percentage = Math.round((score / questions.length) * 100);
+    const performance = getPerformanceMessage(percentage);
+    const isAlreadyCompleted = currentUser ? isQuizCompleted(quizId) : false;
+    const previousProgress = currentUser ? getQuizProgress(quizId) : null;
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+            {/* Login Prompt Modal */}
+            {showLoginPrompt && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-gray-800 rounded-2xl p-8 max-w-md mx-4 border border-gray-700">
+                        <h3 className="text-2xl font-bold text-white mb-4">Save Your Progress</h3>
+                        <p className="text-gray-300 mb-6">
+                            Login to save your quiz scores and track your progress across all subjects!
+                        </p>
+                        <div className="flex gap-3">
+                            <button
+                                onClick={() => setShowLoginPrompt(false)}
+                                className="flex-1 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                            >
+                                Continue Without Saving
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setShowLoginPrompt(false);
+                                    // You can trigger the auth dialog here
+                                    // This depends on your auth implementation
+                                }}
+                                className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                            >
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {quizCompleted ? (
                 <div className="flex items-center justify-center min-h-screen p-4">
                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8 w-full max-w-2xl border border-gray-700">
@@ -173,7 +239,7 @@ const DynamicQuiz = () => {
                                 <div className="text-2xl font-bold text-white mb-4">
                                     Your Score: {score} out of {questions.length}
                                 </div>
-                                <div className="relative w-12 h-12 mx-auto mb-4">
+                                <div className="relative w-16 h-16 mx-auto mb-4">
                                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                                         <path
                                             className="text-gray-600"
@@ -187,29 +253,41 @@ const DynamicQuiz = () => {
                                             stroke="currentColor"
                                             strokeWidth="3"
                                             fill="none"
-                                            strokeDasharray={`${(score / questions.length) * 100}, 100`}
+                                            strokeDasharray={`${percentage}, 100`}
                                             d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                                         />
                                     </svg>
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <span className="text-xs font-bold text-white">
-                                            {Math.round((score / questions.length) * 100)}%
+                                        <span className="text-sm font-bold text-white">
+                                            {percentage}%
                                         </span>
                                     </div>
                                 </div>
-                                <p className={`text-lg font-semibold ${
-                                    (score / questions.length) >= 0.7 
-                                        ? 'text-green-400' 
-                                        : (score / questions.length) >= 0.5 
-                                            ? 'text-yellow-400' 
-                                            : 'text-red-400'
-                                }`}>
-                                    {(score / questions.length) >= 0.7 
-                                        ? 'Excellent work! 🎉' 
-                                        : (score / questions.length) >= 0.5 
-                                            ? 'Good effort! 👍' 
-                                            : 'Keep practicing! 💪'}
+                                <p className={`text-lg font-semibold ${performance.color}`}>
+                                    {performance.message}
                                 </p>
+
+                                {/* Previous attempt info */}
+                                {currentUser && previousProgress && (
+                                    <div className="mt-4 p-3 bg-gray-700 rounded-lg">
+                                        <p className="text-sm text-gray-300">
+                                            Previous best: {previousProgress.bestScore || previousProgress.score}/{previousProgress.total} 
+                                            ({Math.round(((previousProgress.bestScore || previousProgress.score) / previousProgress.total) * 100)}%)
+                                        </p>
+                                        <p className="text-xs text-gray-400">
+                                            Attempts: {previousProgress.attempts || 1}
+                                        </p>
+                                    </div>
+                                )}
+
+                                {/* Progress saved confirmation */}
+                                {currentUser && (
+                                    <div className="mt-4 p-3 bg-green-900/30 border border-green-700 rounded-lg">
+                                        <p className="text-sm text-green-300">
+                                            ✅ Progress saved to your account
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                             
                             <div className="space-y-3">
@@ -232,7 +310,7 @@ const DynamicQuiz = () => {
             ) : (
                 <div className="p-4">
                     {/* Compact Progress Info */}
-                    <div className="flex justify-between items-center mb-4 bg-gray-800 rounded-lg p-2 mx-auto max-w-4xl border border-gray-700">
+                    <div className="flex justify-between items-center mb-4 bg-gray-800 rounded-lg p-3 mx-auto max-w-4xl border border-gray-700">
                         <div className="text-white font-medium text-sm">
                             Question {currentQuestionIndex + 1} of {questions.length}
                         </div>
@@ -242,7 +320,25 @@ const DynamicQuiz = () => {
                         <div className="text-gray-300 text-xs">
                             {currentQuiz.quiz_title}
                         </div>
+                        {/* Show completion status */}
+                        {currentUser && isAlreadyCompleted && (
+                            <div className="text-green-400 text-xs">
+                                ✓ Completed
+                            </div>
+                        )}
                     </div>
+
+                    {/* Previous attempt indicator */}
+                    {currentUser && previousProgress && (
+                        <div className="mb-4 mx-auto max-w-4xl">
+                            <div className="bg-blue-900/30 border border-blue-700 rounded-lg p-2 text-center">
+                                <p className="text-blue-300 text-sm">
+                                    📊 Previous best: {previousProgress.bestScore || previousProgress.score}/{previousProgress.total} 
+                                    ({Math.round(((previousProgress.bestScore || previousProgress.score) / previousProgress.total) * 100)}%)
+                                </p>
+                            </div>
+                        </div>
+                    )}
                     
                     <QuizCard
                         question={currentQuestion.question}
