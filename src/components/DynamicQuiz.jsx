@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Import useAuth hook
 import QuizCard from './quiz/cards/QuizCard'; 
-import cnquizData from '../quizData/cnquiz.json'; 
+import cnquizData from '../quizData/cnQuiz.json'; 
 import osData from '../quizData/osquiz.json';
 import dsData from '../quizData/dsquiz.json';
 import dbmsData from '../quizData/dbmsquiz.json';
