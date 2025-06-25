@@ -408,7 +408,7 @@ Format the response with proper headings, bullet points, and structured content 
             return (
               <li key={topic}>
                 <button
-                  className={`w-full text-left px-4 py-3 rounded-xl border-2 font-semibold transition-all duration-200 shadow-sm flex items-center gap-2 text-sm
+                  className={`w-full text-left px-4 py-3 rounded-xl hover:cursor-pointer  border-2 font-semibold transition-all duration-200 shadow-sm flex items-center gap-2 text-sm
                     ${selectedTopic === topic
                       ? "bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-400 text-white scale-105 shadow-lg"
                       : "bg-gray-800 border-gray-700 text-cyan-100 hover:bg-cyan-900 hover:border-cyan-400 hover:text-cyan-300"

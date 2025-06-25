@@ -68,7 +68,7 @@ const QuizCard = ({
         {/* Options Section */}
         <div className='flex flex-col gap-2 sm:gap-3 items-center justify-center w-full flex-1 px-6 py-3 overflow-y-auto'>
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
+            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
               getButtonStyle('option1', 1)
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option1')}
@@ -78,7 +78,7 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
+            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
               getButtonStyle('option2', 2)
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option2')}
@@ -88,7 +88,7 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
+            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
               getButtonStyle('option3', 3)
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option3')}
@@ -98,7 +98,7 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
+            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
               getButtonStyle('option4', 4)
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option4')}
@@ -112,7 +112,7 @@ const QuizCard = ({
         <div className='flex items-center justify-center w-full px-6 py-3 border-t border-gray-600'>
           {/* Submit/Next button */}
           <button 
-            className='bg-transparent text-cyan-400 text-xs sm:text-sm md:text-base lg:text-lg font-bold px-4 py-2 rounded-full border-2 border-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 ease-in-out active:scale-95 shadow-lg shadow-cyan-400/20 hover:shadow-cyan-400/40 disabled:opacity-50 disabled:cursor-not-allowed'
+            className='bg-transparent text-cyan-400 text-xs sm:text-sm md:text-base hover:cursor-pointer  lg:text-lg font-bold px-4 py-2 rounded-full border-2 border-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 ease-in-out active:scale-95 shadow-lg shadow-cyan-400/20 hover:shadow-cyan-400/40 disabled:opacity-50 disabled:cursor-not-allowed'
             onClick={!isAnswerSubmitted ? handleSubmitAnswer : handleNextQuestion}
             disabled={!isAnswerSubmitted && !selectedOption}
           >

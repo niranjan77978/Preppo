@@ -19,37 +19,37 @@ const Quiz = () => {
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-6 w-full p-6 md:p-10'>
             <button 
-              className='bg-purple-800 p-4 w-full h-16 text-lg md:text-xl hover:bg-purple-600 transition-all duration-300 ease-in-out rounded-2xl'
+              className='bg-purple-800 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-purple-600 transition-all duration-300 ease-in-out rounded-2xl'
               onClick={() => navigateToQuiz('cnquiz')}
             >
               Computer Networks
             </button>
             <button 
-              className='bg-red-600 p-4 w-full h-16 text-lg md:text-xl hover:bg-red-500 transition-all duration-300 ease-in-out rounded-2xl' 
+              className='bg-red-600 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-red-500 transition-all duration-300 ease-in-out rounded-2xl' 
               onClick={() => navigateToQuiz('os')}
             >
               Operating System
             </button>
             <button 
-              className='bg-indigo-700 p-4 w-full h-16 text-lg md:text-xl hover:bg-indigo-500 transition-all duration-300 ease-in-out rounded-2xl' 
+              className='bg-indigo-700 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-indigo-500 transition-all duration-300 ease-in-out rounded-2xl' 
               onClick={() => navigateToQuiz('ds')}
             >
               Data Structures
             </button>
             <button 
-              className='bg-green-800 p-4 w-full h-16 text-lg md:text-xl hover:bg-green-600 transition-all duration-300 ease-in-out rounded-2xl' 
+              className='bg-green-800 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-green-600 transition-all duration-300 ease-in-out rounded-2xl' 
               onClick={() => navigateToQuiz('dbms')}
             >
               DBMS
             </button>
             <button 
-              className='bg-yellow-400 p-4 w-full h-16 text-lg md:text-xl hover:bg-yellow-300 transition-all duration-300 ease-in-out rounded-2xl text-black'
+              className='bg-yellow-400 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-yellow-300 transition-all duration-300 ease-in-out rounded-2xl text-black'
               onClick={() => navigateToQuiz('oops')}
             >
               OOPS
             </button>
             <button 
-              className='bg-amber-700 p-4 w-full h-16 text-lg md:text-xl hover:bg-amber-500 transition-all duration-300 ease-in-out rounded-2xl' 
+              className='bg-amber-700 p-4 w-full h-16 text-lg md:text-xl hover:cursor-pointer  hover:bg-amber-500 transition-all duration-300 ease-in-out rounded-2xl' 
               onClick={() => navigateToQuiz('web-dev')}
             >
               Web Development
