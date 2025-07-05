@@ -16,39 +16,24 @@ const QuizCard = ({
 }) => {
   
   // Function to get button styling based on state
-  const getButtonStyle = (optionKey, optionIndex) => {
-    // Define base colors for each option using static classes
-    const baseColors = {
-      1: 'bg-yellow-500 hover:bg-yellow-400',
-      2: 'bg-blue-500 hover:bg-blue-400', 
-      3: 'bg-purple-500 hover:bg-purple-400',
-      4: 'bg-teal-500 hover:bg-teal-400'
-    };
-    
-    const selectedColors = {
-      1: 'bg-yellow-400 ring-4 ring-yellow-200',
-      2: 'bg-blue-400 ring-4 ring-blue-200',
-      3: 'bg-purple-400 ring-4 ring-purple-200', 
-      4: 'bg-teal-400 ring-4 ring-teal-200'
-    };
-    
+  const getButtonStyle = (optionKey) => {
     // If answer hasn't been submitted yet, show normal selection state
     if (!isAnswerSubmitted) {
       return selectedOption === optionKey 
-        ? `${selectedColors[optionIndex]} shadow-lg` 
-        : `${baseColors[optionIndex]} hover:shadow-md`;
+        ? 'text-gray-900 bg-cyan-400 border-cyan-400 shadow-cyan-400/60 shadow-lg transform scale-105' 
+        : 'bg-transparent text-cyan-400 border-cyan-400 shadow-cyan-400/20 hover:bg-cyan-400 hover:shadow-cyan-400/40 hover:text-gray-900';
     }
     
     // After submission, show correct/incorrect feedback
     if (optionKey === correctOption) {
       // Correct answer - always green
-      return 'bg-green-500 ring-4 ring-green-200 shadow-lg';
+      return 'text-gray-900 bg-green-400 border-green-400 shadow-green-400/60 shadow-lg transform scale-105';
     } else if (optionKey === selectedOption && selectedOption !== correctOption) {
       // Wrong selected answer - red
-      return 'bg-red-500 ring-4 ring-red-200 shadow-lg';
+      return 'text-gray-900 bg-red-400 border-red-400 shadow-red-400/60 shadow-lg transform scale-105';
     } else {
       // Other unselected options - dimmed
-      return 'bg-gray-500 opacity-60';
+      return 'text-gray-500 border-gray-500 bg-transparent opacity-50';
     }
   };
 
@@ -66,10 +51,10 @@ const QuizCard = ({
         </div>
         
         {/* Options Section */}
-        <div className='flex flex-col gap-2 sm:gap-3 items-center justify-center w-full flex-1 px-6 py-3 overflow-y-auto'>
+        <div className='flex flex-col gap-3 sm:gap-4 items-center justify-center w-full flex-1 px-6 py-4 overflow-y-auto'>
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
-              getButtonStyle('option1', 1)
+            className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold px-6 py-3 sm:py-4 w-full hover:cursor-pointer max-w-2xl rounded-full border-2 transition-all duration-300 ease-in-out active:scale-95 shadow-sm ${
+              getButtonStyle('option1')
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option1')}
             disabled={isAnswerSubmitted}
@@ -78,8 +63,8 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
-              getButtonStyle('option2', 2)
+            className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold px-6 py-3 sm:py-4 w-full hover:cursor-pointer max-w-2xl rounded-full border-2 transition-all duration-300 ease-in-out active:scale-95 shadow-sm ${
+              getButtonStyle('option2')
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option2')}
             disabled={isAnswerSubmitted}
@@ -88,8 +73,8 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
-              getButtonStyle('option3', 3)
+            className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold px-6 py-3 sm:py-4 w-full hover:cursor-pointer max-w-2xl rounded-full border-2 transition-all duration-300 ease-in-out active:scale-95 shadow-sm ${
+              getButtonStyle('option3')
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option3')}
             disabled={isAnswerSubmitted}
@@ -98,8 +83,8 @@ const QuizCard = ({
           </button>
 
           <button 
-            className={`text-sm sm:text-base md:text-lg lg:text-xl p-3 sm:p-4 w-full hover:cursor-pointer  max-w-2xl rounded-full transition-all duration-300 ease-in-out active:scale-95 font-medium ${
-              getButtonStyle('option4', 4)
+            className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold px-6 py-3 sm:py-4 w-full hover:cursor-pointer max-w-2xl rounded-full border-2 transition-all duration-300 ease-in-out active:scale-95 shadow-sm ${
+              getButtonStyle('option4')
             }`}
             onClick={() => !isAnswerSubmitted && handleOptionSelect('option4')}
             disabled={isAnswerSubmitted}
@@ -112,7 +97,7 @@ const QuizCard = ({
         <div className='flex items-center justify-center w-full px-6 py-3 border-t border-gray-600'>
           {/* Submit/Next button */}
           <button 
-            className='bg-transparent text-cyan-400 text-xs sm:text-sm md:text-base hover:cursor-pointer  lg:text-lg font-bold px-4 py-2 rounded-full border-2 border-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 ease-in-out active:scale-95 shadow-lg shadow-cyan-400/20 hover:shadow-cyan-400/40 disabled:opacity-50 disabled:cursor-not-allowed'
+            className='bg-transparent text-cyan-400 text-xs sm:text-sm md:text-base hover:cursor-pointer lg:text-lg font-bold px-6 py-3 rounded-full border-2 border-cyan-400 hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 ease-in-out active:scale-95 shadow-lg shadow-cyan-400/20 hover:shadow-cyan-400/40 disabled:opacity-50 disabled:cursor-not-allowed'
             onClick={!isAnswerSubmitted ? handleSubmitAnswer : handleNextQuestion}
             disabled={!isAnswerSubmitted && !selectedOption}
           >

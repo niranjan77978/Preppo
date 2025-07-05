@@ -135,17 +135,17 @@ const SUBJECT_TO_ROUTE = {
   'web-dev': '/learn/web-dev',
 };
 
-const ICON_COLORS = [
-  "text-red-400",
-  "text-blue-400",
-  "text-pink-400",
-  "text-yellow-300",
-  "text-cyan-300",
-  "text-indigo-400",
-  "text-purple-400",
-];
+// const ICON_COLORS = [
+//   "text-red-400",
+//   "text-blue-400",
+//   "text-pink-400",
+//   "text-yellow-300",
+//   "text-cyan-300",
+//   "text-indigo-400",
+//   "text-purple-400",
+// ];
 
-const getIconColor = (idx) => ICON_COLORS[idx % ICON_COLORS.length];
+// const getIconColor = (idx) => ICON_COLORS[idx % ICON_COLORS.length];
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
@@ -416,7 +416,7 @@ Format the response with proper headings, bullet points, and structured content 
                   `}
                   onClick={() => setSelectedTopic(topic)}
                 >
-                  <BookOpen className={`w-4 h-4 ${getIconColor(idx)} flex-shrink-0`} />
+                  <BookOpen className={`w-4 h-4 text-cyan-400 flex-shrink-0`} />
                   <span className="flex-1 min-w-0">{topic}</span>
                   <div
                     className={`w-6 h-6 flex items-center justify-center border-2 rounded-md transition-colors duration-200 flex-shrink-0 cursor-pointer
