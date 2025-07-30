@@ -1,906 +1,906 @@
 {
-  "quiz_title": "Database Management System ",
+  "quiz_title": "Database Management System",
   "total_questions": 100,
   "questions": [
     {
       "id": 1,
-      "question": "In a three-level database architecture, what happens when the internal schema changes but the conceptual schema remains the same?",
-      "option1": "Physical data independence is achieved",
-      "option2": "Logical data independence is achieved",
-      "option3": "Both physical and logical independence are lost",
-      "option4": "The external schema must be modified",
-      "correct_option": "option1"
-    },
-    {
-      "id": 2,
-      "question": "Which of the following statements about Codd's rules is most accurate?",
-      "option1": "All 12 rules must be satisfied for a system to be called relational",
-      "option2": "The rules define the minimum requirements for ACID properties",
-      "option3": "Rule 0 states that the system must be relational, complete, and well-defined",
-      "option4": "The rules primarily focus on SQL compliance",
-      "correct_option": "option3"
-    },
-    {
-      "id": 3,
-      "question": "In relational algebra, what is the result of π(A,B)(σ(C>10)(R × S)) where R has attributes (A,C) and S has attributes (B,D)?",
-      "option1": "Projects A and B from cartesian product where C>10",
-      "option2": "Natural join of R and S with selection C>10",
-      "option3": "Error due to ambiguous attribute names",
-      "option4": "Theta join with condition C>10",
-      "correct_option": "option1"
-    },
-    {
-      "id": 4,
-      "question": "What is the fundamental difference between tuple relational calculus and domain relational calculus?",
-      "option1": "TRC uses tuple variables while DRC uses domain variables",
-      "option2": "TRC is procedural while DRC is non-procedural",
-      "option3": "TRC supports aggregation while DRC does not",
-      "option4": "TRC is more expressive than DRC",
-      "correct_option": "option1"
-    },
-    {
-      "id": 5,
-      "question": "In an ER diagram, what does a double diamond represent?",
-      "option1": "Weak relationship",
-      "option2": "Identifying relationship for weak entity",
-      "option3": "Ternary relationship",
-      "option4": "Recursive relationship",
+      "question": "The ability to change the internal schema without affecting the conceptual schema is called what?",
+      "option1": "Logical Independence",
+      "option2": "Physical Independence",
+      "option3": "Schema Independence",
+      "option4": "View Independence",
       "correct_option": "option2"
     },
     {
+      "id": 2,
+      "question": "Which of Codd's rules states that a system must manage the database entirely through its relational capabilities?",
+      "option1": "Information Rule",
+      "option2": "View Updating Rule",
+      "option3": "Subversion Rule",
+      "option4": "Foundation Rule",
+      "correct_option": "option4"
+    },
+    {
+      "id": 3,
+      "question": "Which relational algebra operation is used to select a subset of columns from a relation?",
+      "option1": "σ (Select)",
+      "option2": "π (Project)",
+      "option3": "⨝ (Join)",
+      "option4": "× (Product)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 4,
+      "question": "Which type of relational calculus specifies queries by describing the domain of the result attributes?",
+      "option1": "Tuple Calculus",
+      "option2": "Domain Calculus",
+      "option3": "Safe Calculus",
+      "option4": "Procedural Calculus",
+      "correct_option": "option2"
+    },
+    {
+      "id": 5,
+      "question": "In an ER diagram, what does a double-lined rectangle represent?",
+      "option1": "Relationship Set",
+      "option2": "Strong Entity",
+      "option3": "Weak Entity",
+      "option4": "Derived Attribute",
+      "correct_option": "option3"
+    },
+    {
       "id": 6,
-      "question": "Which normal form eliminates partial functional dependencies?",
+      "question": "A relation is in 2NF if it is in 1NF and has no what?",
+      "option1": "Transitive dependencies",
+      "option2": "Multi-valued dependencies",
+      "option3": "Partial dependencies",
+      "option4": "Join dependencies",
+      "correct_option": "option3"
+    },
+    {
+      "id": 7,
+      "question": "For a relation R(A,B,C) with FDs {A→B, B→C}, what is the highest normal form?",
       "option1": "1NF",
       "option2": "2NF",
       "option3": "3NF",
       "option4": "BCNF",
-      "correct_option": "option2"
-    },
-    {
-      "id": 7,
-      "question": "A relation R(A,B,C,D) has functional dependencies: A→B, B→C, C→D, D→A. What is the highest normal form of this relation?",
-      "option1": "2NF",
-      "option2": "3NF",
-      "option3": "BCNF",
-      "option4": "4NF",
       "correct_option": "option3"
     },
     {
       "id": 8,
-      "question": "What is the main issue with the decomposition R(A,B,C) into R1(A,B) and R2(B,C) if the original FDs are A→B and B→C?",
-      "option1": "Loss of functional dependencies",
-      "option2": "Loss of data",
-      "option3": "Not a lossless decomposition",
-      "option4": "No issues, it's a valid decomposition",
-      "correct_option": "option4"
+      "question": "A decomposition is considered lossless if the natural join of the decomposed relations results in the what?",
+      "option1": "Original relation",
+      "option2": "Empty relation",
+      "option3": "Candidate keys",
+      "option4": "Superkey",
+      "correct_option": "option1"
     },
     {
       "id": 9,
-      "question": "In SQL, what is the difference between HAVING and WHERE clauses?",
-      "option1": "HAVING is used with GROUP BY for aggregate conditions, WHERE is for row filtering",
-      "option2": "HAVING is faster than WHERE",
-      "option3": "WHERE can be used with aggregate functions, HAVING cannot",
-      "option4": "They are functionally identical",
-      "correct_option": "option1"
+      "question": "Which SQL clause is used to filter results based on an aggregate function?",
+      "option1": "WHERE",
+      "option2": "HAVING",
+      "option3": "GROUP BY",
+      "option4": "FILTER",
+      "correct_option": "option2"
     },
     {
       "id": 10,
-      "question": "What will be the result of the following SQL query if table T has columns (A, B, C) with values [(1,2,3), (4,NULL,6), (7,8,NULL)]?\nSELECT COUNT(*), COUNT(B), COUNT(C) FROM T;",
-      "option1": "3, 3, 3",
-      "option2": "3, 2, 2",
-      "option3": "2, 2, 2",
-      "option4": "3, 3, 2",
-      "correct_option": "option2"
-    },
-    {
-      "id": 11,
-      "question": "In a correlated subquery, when is the subquery executed?",
-      "option1": "Once before the outer query",
-      "option2": "Once for each row processed by the outer query",
-      "option3": "Only when the outer query condition is true",
-      "option4": "After the outer query completes",
-      "correct_option": "option2"
-    },
-    {
-      "id": 12,
-      "question": "What is the primary advantage of using a view that joins multiple tables?",
-      "option1": "Improved query performance",
-      "option2": "Data security and simplified access",
-      "option3": "Reduced storage requirements",
-      "option4": "Automatic data validation",
-      "correct_option": "option2"
-    },
-    {
-      "id": 13,
-      "question": "In PL/SQL, what happens when an exception is raised in a nested block but not handled?",
-      "option1": "The program terminates immediately",
-      "option2": "The exception propagates to the enclosing block",
-      "option3": "The exception is ignored",
-      "option4": "A default handler is automatically invoked",
-      "correct_option": "option2"
-    },
-    {
-      "id": 14,
-      "question": "What is the main difference between an explicit cursor and an implicit cursor in PL/SQL?",
-      "option1": "Explicit cursors are faster",
-      "option2": "Implicit cursors are automatically created for DML statements",
-      "option3": "Explicit cursors provide more control over query processing",
-      "option4": "Implicit cursors can handle multiple rows",
-      "correct_option": "option3"
-    },
-    {
-      "id": 15,
-      "question": "In RAID 5, how is data redundancy achieved?",
-      "option1": "Complete disk mirroring",
-      "option2": "Distributed parity across all disks",
-      "option3": "Dedicated parity disk",
-      "option4": "Triple redundancy",
-      "correct_option": "option2"
-    },
-    {
-      "id": 16,
-      "question": "What is the time complexity of searching in a B+ tree with height h?",
-      "option1": "O(h)",
-      "option2": "O(log h)",
-      "option3": "O(h log h)",
-      "option4": "O(h²)",
-      "correct_option": "option1"
-    },
-    {
-      "id": 17,
-      "question": "In extendible hashing, what happens when a bucket overflows and the local depth equals the global depth?",
-      "option1": "Directory size is doubled",
-      "option2": "Bucket is split without directory expansion",
-      "option3": "Hash function is changed",
-      "option4": "Linear probing is used",
-      "correct_option": "option1"
-    },
-    {
-      "id": 18,
-      "question": "What is the primary factor considered in cost-based query optimization?",
-      "option1": "Number of joins in the query",
-      "option2": "I/O cost and CPU cost of different execution plans",
-      "option3": "Size of intermediate results",
-      "option4": "Number of tables accessed",
-      "correct_option": "option2"
-    },
-    {
-      "id": 19,
-      "question": "Which join algorithm is most efficient for joining two large relations when neither has an index?",
-      "option1": "Nested loop join",
-      "option2": "Block nested loop join",
-      "option3": "Sort-merge join",
-      "option4": "Hash join",
-      "correct_option": "option4"
-    },
-    {
-      "id": 20,
-      "question": "In heuristic query optimization, which operation is typically pushed down first?",
-      "option1": "Projection",
-      "option2": "Selection",
-      "option3": "Join",
-      "option4": "Union",
-      "correct_option": "option2"
-    },
-    {
-      "id": 21,
-      "question": "What does the Isolation property of ACID ensure?",
-      "option1": "Transactions are executed sequentially",
-      "option2": "Concurrent transactions do not interfere with each other",
-      "option3": "All transactions are committed successfully",
-      "option4": "Database remains consistent after transaction completion",
-      "correct_option": "option2"
-    },
-    {
-      "id": 22,
-      "question": "In the context of serializability, what is a conflict equivalent schedule?",
-      "option1": "Schedules that produce the same final database state",
-      "option2": "Schedules that can be transformed into each other by swapping non-conflicting operations",
-      "option3": "Schedules that have the same set of transactions",
-      "option4": "Schedules that execute in the same time duration",
-      "correct_option": "option2"
-    },
-    {
-      "id": 23,
-      "question": "What is the main problem with the basic timestamp ordering protocol?",
-      "option1": "It cannot handle concurrent transactions",
-      "option2": "It may cause transactions to restart frequently",
-      "option3": "It requires too much memory",
-      "option4": "It cannot detect deadlocks",
-      "correct_option": "option2"
-    },
-    {
-      "id": 24,
-      "question": "In two-phase locking, what happens during the shrinking phase?",
-      "option1": "Transaction can acquire more locks",
-      "option2": "Transaction can only release locks",
-      "option3": "Transaction can both acquire and release locks",
-      "option4": "Transaction is committed",
-      "correct_option": "option2"
-    },
-    {
-      "id": 25,
-      "question": "What is the phantom read problem in transaction isolation?",
-      "option1": "Reading uncommitted data",
-      "option2": "Reading the same data twice and getting different values",
-      "option3": "New rows appearing in a range query within the same transaction",
-      "option4": "Reading data that has been deleted",
-      "correct_option": "option3"
-    },
-    {
-      "id": 26,
-      "question": "In multiple granularity locking, what does an intention lock indicate?",
-      "option1": "A transaction intends to read data",
-      "option2": "A transaction has locked some descendant nodes",
-      "option3": "A transaction intends to acquire locks on descendant nodes",
-      "option4": "A transaction is about to commit",
-      "correct_option": "option3"
-    },
-    {
-      "id": 27,
-      "question": "What is the wait-die deadlock prevention scheme based on?",
-      "option1": "Resource allocation graph",
-      "option2": "Transaction timestamps",
-      "option3": "Lock compatibility matrix",
-      "option4": "Priority levels",
-      "correct_option": "option2"
-    },
-    {
-      "id": 28,
-      "question": "In the two-phase commit protocol, what happens if a participant votes to abort?",
-      "option1": "Only that participant aborts",
-      "option2": "The coordinator decides based on majority vote",
-      "option3": "The entire transaction is aborted",
-      "option4": "The coordinator asks for a revote",
-      "correct_option": "option3"
-    },
-    {
-      "id": 29,
-      "question": "What is the purpose of the undo log in database recovery?",
-      "option1": "To redo committed transactions",
-      "option2": "To rollback uncommitted transactions",
-      "option3": "To detect system failures",
-      "option4": "To optimize query performance",
-      "correct_option": "option2"
-    },
-    {
-      "id": 30,
-      "question": "In the ARIES recovery algorithm, what does LSN stand for and what is its purpose?",
-      "option1": "Log Sequence Number, used to order log records",
-      "option2": "Lock Status Number, used to track lock states",
-      "option3": "Last Saved Number, used for checkpoint",
-      "option4": "Level Sequence Number, used for B+ tree levels",
-      "correct_option": "option1"
-    },
-    {
-      "id": 31,
-      "question": "What is the main advantage of clustered indexing over non-clustered indexing?",
-      "option1": "Faster insert operations",
-      "option2": "Less storage space required",
-      "option3": "Sequential access to data is faster",
-      "option4": "Multiple indexes can be created",
-      "correct_option": "option3"
-    },
-    {
-      "id": 32,
-      "question": "In a multivalued dependency A →→ B, what does this notation mean?",
-      "option1": "A functionally determines B",
-      "option2": "For each value of A, there is a set of associated B values independent of other attributes",
-      "option3": "A and B are mutually dependent",
-      "option4": "A determines multiple values of B simultaneously",
-      "correct_option": "option2"
-    },
-    {
-      "id": 33,
-      "question": "What is the primary goal of Fourth Normal Form (4NF)?",
-      "option1": "Eliminate partial dependencies",
-      "option2": "Eliminate transitive dependencies",
-      "option3": "Eliminate multivalued dependencies",
-      "option4": "Eliminate join dependencies",
-      "correct_option": "option3"
-    },
-    {
-      "id": 34,
-      "question": "In SQL, what is the difference between UNION and UNION ALL?",
-      "option1": "UNION ALL is faster than UNION",
-      "option2": "UNION removes duplicates while UNION ALL includes them",
-      "option3": "UNION ALL can handle different data types",
-      "option4": "Both A and B are correct",
-      "correct_option": "option4"
-    },
-    {
-      "id": 35,
-      "question": "What happens when a trigger raises an exception in SQL?",
-      "option1": "Only the trigger is rolled back",
-      "option2": "The triggering statement is rolled back",
-      "option3": "The entire transaction is rolled back",
-      "option4": "The exception is logged and processing continues",
-      "correct_option": "option3"
-    },
-    {
-      "id": 36,
-      "question": "In database design, what is the main purpose of denormalization?",
-      "option1": "To reduce storage space",
-      "option2": "To improve query performance at the cost of redundancy",
-      "option3": "To simplify database structure",
-      "option4": "To eliminate all dependencies",
-      "correct_option": "option2"
-    },
-    {
-      "id": 37,
-      "question": "What is the key characteristic of a covering index?",
-      "option1": "It covers all tables in the database",
-      "option2": "It includes all columns needed for a query",
-      "option3": "It spans multiple tables",
-      "option4": "It covers all possible query conditions",
-      "correct_option": "option2"
-    },
-    {
-      "id": 38,
-      "question": "In query processing, what is the purpose of the selectivity factor?",
-      "option1": "To determine which columns to select",
-      "option2": "To estimate the fraction of tuples that satisfy a selection condition",
-      "option3": "To choose the best selection algorithm",
-      "option4": "To optimize the SELECT statement syntax",
-      "correct_option": "option2"
-    },
-    {
-      "id": 39,
-      "question": "What is the main difference between optimistic and pessimistic concurrency control?",
-      "option1": "Optimistic assumes conflicts are rare, pessimistic assumes they are common",
-      "option2": "Optimistic uses locks, pessimistic uses timestamps",
-      "option3": "Optimistic is faster, pessimistic is more secure",
-      "option4": "Optimistic works with read operations, pessimistic with write operations",
-      "correct_option": "option1"
-    },
-    {
-      "id": 40,
-      "question": "In the context of distributed databases, what is the main challenge of the two-phase commit protocol?",
-      "option1": "High communication overhead",
-      "option2": "Blocking behavior when coordinator fails",
-      "option3": "Inability to handle network partitions",
+      "question": "In SQL, which aggregate function ignores NULL values by default?",
+      "option1": "COUNT(*)",
+      "option2": "COUNT(column)",
+      "option3": "MAX()",
       "option4": "All of the above",
       "correct_option": "option4"
     },
     {
-      "id": 41,
-      "question": "What is the purpose of the dirty page table in ARIES recovery?",
-      "option1": "To track uncommitted transactions",
-      "option2": "To identify pages that have been modified but not written to disk",
-      "option3": "To maintain page access statistics",
-      "option4": "To handle page allocation",
+      "id": 11,
+      "question": "A subquery that depends on the data from the outer query for its execution is called what?",
+      "option1": "Nested",
+      "option2": "Scalar",
+      "option3": "Correlated",
+      "option4": "Inline",
+      "correct_option": "option3"
+    },
+    {
+      "id": 12,
+      "question": "What is a stored SQL query that can be used as a virtual table?",
+      "option1": "Trigger",
+      "option2": "Function",
+      "option3": "Procedure",
+      "option4": "View",
+      "correct_option": "option4"
+    },
+    {
+      "id": 13,
+      "question": "In PL/SQL, which section of a block is used to handle errors that occur during execution?",
+      "option1": "DECLARE",
+      "option2": "BEGIN",
+      "option3": "END",
+      "option4": "EXCEPTION",
+      "correct_option": "option4"
+    },
+    {
+      "id": 14,
+      "question": "Which type of PL/SQL cursor is automatically managed by the database for all SQL DML statements?",
+      "option1": "Explicit",
+      "option2": "Implicit",
+      "option3": "REF",
+      "option4": "Static",
       "correct_option": "option2"
+    },
+    {
+      "id": 15,
+      "question": "Which RAID level provides block-level striping with distributed parity, allowing it to withstand a single disk failure?",
+      "option1": "RAID 0",
+      "option2": "RAID 1",
+      "option3": "RAID 5",
+      "option4": "RAID 10",
+      "correct_option": "option3"
+    },
+    {
+      "id": 16,
+      "question": "In a B+ Tree, where are all the actual data pointers or records stored?",
+      "option1": "Root node",
+      "option2": "Internal nodes",
+      "option3": "Leaf nodes",
+      "option4": "Any node",
+      "correct_option": "option3"
+    },
+    {
+      "id": 17,
+      "question": "Which dynamic hashing method uses a directory that doubles in size when a bucket overflows?",
+      "option1": "Static Hashing",
+      "option2": "Linear Hashing",
+      "option3": "Extendible Hashing",
+      "option4": "Coalesced Hashing",
+      "correct_option": "option3"
+    },
+    {
+      "id": 18,
+      "question": "What is the primary goal of a query optimizer?",
+      "option1": "Parse the query",
+      "option2": "Check syntax",
+      "option3": "Find cheapest plan",
+      "option4": "Execute the query",
+      "correct_option": "option3"
+    },
+    {
+      "id": 19,
+      "question": "Which join algorithm is generally most efficient when joining two very large, unsorted relations?",
+      "option1": "Nested Loop",
+      "option2": "Index Nested Loop",
+      "option3": "Sort-Merge",
+      "option4": "Hash Join",
+      "correct_option": "option4"
+    },
+    {
+      "id": 20,
+      "question": "In query optimization, the process of performing selections and projections as early as possible is called what?",
+      "option1": "Join ordering",
+      "option2": "Operator pushing",
+      "option3": "Cost estimation",
+      "option4": "Plan generation",
+      "correct_option": "option2"
+    },
+    {
+      "id": 21,
+      "question": "Which ACID property ensures that a transaction is either fully completed or not at all?",
+      "option1": "Atomicity",
+      "option2": "Consistency",
+      "option3": "Isolation",
+      "option4": "Durability",
+      "correct_option": "option1"
+    },
+    {
+      "id": 22,
+      "question": "A schedule is considered serializable if its outcome is equivalent to what?",
+      "option1": "A parallel schedule",
+      "option2": "A committed schedule",
+      "option3": "Some serial schedule",
+      "option4": "An aborted schedule",
+      "correct_option": "option3"
+    },
+    {
+      "id": 23,
+      "question": "Which concurrency control method uses timestamps to determine the serializability order of transactions?",
+      "option1": "Locking",
+      "option2": "Validation",
+      "option3": "Timestamp Ordering",
+      "option4": "Multiversion",
+      "correct_option": "option3"
+    },
+    {
+      "id": 24,
+      "question": "In the Two-Phase Locking protocol, a transaction can only acquire locks during which phase?",
+      "option1": "Growing Phase",
+      "option2": "Shrinking Phase",
+      "option3": "Lock Point",
+      "option4": "Commit Phase",
+      "correct_option": "option1"
+    },
+    {
+      "id": 25,
+      "question": "Which anomaly occurs when a transaction retrieves a set of rows twice and new rows have been added in between?",
+      "option1": "Dirty Read",
+      "option2": "Lost Update",
+      "option3": "Phantom Read",
+      "option4": "Unrepeatable Read",
+      "correct_option": "option3"
+    },
+    {
+      "id": 26,
+      "question": "In multiple granularity locking, what type of lock must be held on an ancestor node before placing an S or X lock on a descendant?",
+      "option1": "Shared Lock",
+      "option2": "Exclusive Lock",
+      "option3": "Intention Lock",
+      "option4": "Update Lock",
+      "correct_option": "option3"
+    },
+    {
+      "id": 27,
+      "question": "Which deadlock prevention scheme aborts a transaction if it requests a resource held by a younger transaction?",
+      "option1": "Wait-Die",
+      "option2": "Wound-Wait",
+      "option3": "Timeout",
+      "option4": "No-Wait",
+      "correct_option": "option2"
+    },
+    {
+      "id": 28,
+      "question": "What is the primary role of the coordinator in a two-phase commit protocol?",
+      "option1": "Execute transaction",
+      "option2": "Log changes",
+      "option3": "Make final decision",
+      "option4": "Vote on outcome",
+      "correct_option": "option3"
+    },
+    {
+      "id": 29,
+      "question": "Which type of log record is used to reverse the changes of an aborted transaction?",
+      "option1": "Undo",
+      "option2": "Redo",
+      "option3": "Commit",
+      "option4": "Checkpoint",
+      "correct_option": "option1"
+    },
+    {
+      "id": 30,
+      "question": "What principle in ARIES recovery states that log records must be written to disk before the data page is?",
+      "option1": "Redo Protocol",
+      "option2": "Write-Ahead Logging",
+      "option3": "Undo Protocol",
+      "option4": "Checkpointing",
+      "correct_option": "option2"
+    },
+    {
+      "id": 31,
+      "question": "What type of index determines the physical order of data in a table?",
+      "option1": "Non-Clustered",
+      "option2": "Secondary",
+      "option3": "Clustered",
+      "option4": "Covering",
+      "correct_option": "option3"
+    },
+    {
+      "id": 32,
+      "question": "The dependency A →→ B in a relation implies that the values of B are independent of all other attributes for a given A. What is this called?",
+      "option1": "Functional",
+      "option2": "Transitive",
+      "option3": "Join",
+      "option4": "Multivalued",
+      "correct_option": "option4"
+    },
+    {
+      "id": 33,
+      "question": "A relation is in 4NF if it is in BCNF and has no what?",
+      "option1": "Partial dependencies",
+      "option2": "Transitive dependencies",
+      "option3": "Multivalued dependencies",
+      "option4": "Join dependencies",
+      "correct_option": "option3"
+    },
+    {
+      "id": 34,
+      "question": "Which SQL set operator combines the results of two queries and includes duplicate rows?",
+      "option1": "UNION",
+      "option2": "UNION ALL",
+      "option3": "INTERSECT",
+      "option4": "MINUS",
+      "correct_option": "option2"
+    },
+    {
+      "id": 35,
+      "question": "What is a stored program that is automatically executed in response to a DML event on a table?",
+      "option1": "View",
+      "option2": "Function",
+      "option3": "Trigger",
+      "option4": "Procedure",
+      "correct_option": "option3"
+    },
+    {
+      "id": 36,
+      "question": "What is the process of intentionally violating normalization rules to improve query performance?",
+      "option1": "Normalization",
+      "option2": "Denormalization",
+      "option3": "Optimization",
+      "option4": "Aggregation",
+      "correct_option": "option2"
+    },
+    {
+      "id": 37,
+      "question": "An index that contains all the columns required to answer a query without accessing the table is called what?",
+      "option1": "Clustered",
+      "option2": "Primary",
+      "option3": "Covering",
+      "option4": "Composite",
+      "correct_option": "option3"
+    },
+    {
+      "id": 38,
+      "question": "What term refers to the estimated fraction of tuples that will satisfy a given selection condition?",
+      "option1": "Cardinality",
+      "option2": "Selectivity",
+      "option3": "Density",
+      "option4": "Cost",
+      "correct_option": "option2"
+    },
+    {
+      "id": 39,
+      "question": "Which type of concurrency control checks for conflicts only at the time of transaction commit?",
+      "option1": "Pessimistic",
+      "option2": "Optimistic",
+      "option3": "Locking",
+      "option4": "Timestamp",
+      "correct_option": "option2"
+    },
+    {
+      "id": 40,
+      "question": "According to the CAP theorem, a distributed system must sacrifice one guarantee in the presence of what?",
+      "option1": "High Latency",
+      "option2": "System Crash",
+      "option3": "Network Partition",
+      "option4": "Low Bandwidth",
+      "correct_option": "option3"
+    },
+    {
+      "id": 41,
+      "question": "In ARIES, which table keeps track of all data pages in the buffer pool that have been modified but not yet written to disk?",
+      "option1": "Transaction Table",
+      "option2": "Lock Table",
+      "option3": "Log Table",
+      "option4": "Dirty Page Table",
+      "correct_option": "option4"
     },
     {
       "id": 42,
-      "question": "In relational algebra, what is the result of the division operation R ÷ S?",
-      "option1": "All tuples in R that are not in S",
-      "option2": "Tuples in R that are related to all tuples in S",
-      "option3": "Cartesian product of R and S",
-      "option4": "Common tuples between R and S",
-      "correct_option": "option2"
+      "question": "Which relational algebra operation is used to find tuples in one relation that are associated with all tuples in another?",
+      "option1": "Intersection",
+      "option2": "Difference",
+      "option3": "Division",
+      "option4": "Join",
+      "correct_option": "option3"
     },
     {
       "id": 43,
-      "question": "What is the main advantage of using materialized views?",
-      "option1": "They take less storage space",
-      "option2": "They provide faster query response for complex queries",
-      "option3": "They are automatically updated",
-      "option4": "They provide better security",
-      "correct_option": "option2"
+      "question": "What is a view whose contents are pre-computed and physically stored in the database?",
+      "option1": "Virtual View",
+      "option2": "Dynamic View",
+      "option3": "Simple View",
+      "option4": "Materialized View",
+      "correct_option": "option4"
     },
     {
       "id": 44,
-      "question": "In PL/SQL, what is the difference between %TYPE and %ROWTYPE?",
-      "option1": "%TYPE copies a column's datatype, %ROWTYPE copies an entire row structure",
-      "option2": "%TYPE is for variables, %ROWTYPE is for constants",
-      "option3": "%TYPE is faster than %ROWTYPE",
-      "option4": "They are functionally identical",
+      "question": "Which PL/SQL attribute is used to declare a variable with the same data type as a specific table column?",
+      "option1": "%TYPE",
+      "option2": "%ROWTYPE",
+      "option3": "%DATATYPE",
+      "option4": "%COLUMNTYPE",
       "correct_option": "option1"
     },
     {
       "id": 45,
-      "question": "What is the purpose of the buffer manager in a database system?",
-      "option1": "To manage user sessions",
-      "option2": "To control data flow between main memory and secondary storage",
-      "option3": "To handle network communications",
-      "option4": "To manage transaction logs",
+      "question": "What DBMS component is responsible for managing the space in main memory where data pages are cached?",
+      "option1": "Query Processor",
+      "option2": "Buffer Manager",
+      "option3": "Storage Manager",
+      "option4": "Lock Manager",
       "correct_option": "option2"
     },
     {
       "id": 46,
-      "question": "In the context of database security, what is the principle of least privilege?",
-      "option1": "Users should have minimal system resources",
-      "option2": "Users should have only the minimum privileges necessary to perform their tasks",
-      "option3": "Database should use minimal storage",
-      "option4": "Queries should access minimal data",
-      "correct_option": "option2"
+      "question": "Which security principle states that users should only be granted the permissions necessary to perform their jobs?",
+      "option1": "Least Privilege",
+      "option2": "Separation of Duties",
+      "option3": "Defense in Depth",
+      "option4": "Fail-Safe Defaults",
+      "correct_option": "option1"
     },
     {
       "id": 47,
-      "question": "What is the main difference between a dense index and a sparse index?",
-      "option1": "Dense index has more entries than sparse index",
-      "option2": "Dense index has an entry for every record, sparse index has entries only for some records",
-      "option3": "Dense index is faster than sparse index",
-      "option4": "Sparse index uses less memory than dense index",
+      "question": "An index that has an entry for every record in the data file is known as what?",
+      "option1": "Sparse",
+      "option2": "Dense",
+      "option3": "Primary",
+      "option4": "Secondary",
       "correct_option": "option2"
     },
     {
       "id": 48,
-      "question": "In transaction processing, what does the term 'cascading rollback' refer to?",
-      "option1": "Rolling back multiple transactions due to dependencies",
-      "option2": "Rolling back transactions in reverse chronological order",
-      "option3": "Automatic rollback of failed transactions",
-      "option4": "Rolling back transactions across multiple databases",
-      "correct_option": "option1"
+      "question": "What is it called when the failure of one transaction causes several other dependent transactions to roll back?",
+      "option1": "Deadlock",
+      "option2": "Starvation",
+      "option3": "Cascading Rollback",
+      "option4": "Lost Update",
+      "correct_option": "option3"
     },
     {
       "id": 49,
-      "question": "What is the primary purpose of database partitioning?",
-      "option1": "To improve security",
-      "option2": "To improve performance and manageability of large databases",
-      "option3": "To reduce storage requirements",
-      "option4": "To simplify query writing",
+      "question": "What technique is used to divide a very large table into smaller, more manageable pieces?",
+      "option1": "Replication",
+      "option2": "Partitioning",
+      "option3": "Indexing",
+      "option4": "Normalization",
       "correct_option": "option2"
     },
     {
       "id": 50,
-      "question": "In the context of concurrency control, what is the phantom problem and how does it differ from unrepeatable read?",
-      "option1": "Phantom involves new rows appearing, unrepeatable read involves existing rows changing",
-      "option2": "Phantom occurs during writes, unrepeatable read during reads",
-      "option3": "Phantom is solved by row-level locking, unrepeatable read by table-level locking",
-      "option4": "They are the same problem with different names",
-      "correct_option": "option1"
-    },
-    {
-      "id": 51,
-      "question": "Which of the following is NOT a type of integrity constraint?",
-      "option1": "Domain Constraint",
-      "option2": "Referential Integrity Constraint",
-      "option3": "Primary Key Constraint",
-      "option4": "Procedural Constraint",
+      "question": "Which concurrency problem occurs when a transaction reads a value that is then modified and committed by another transaction before the first transaction finishes?",
+      "option1": "Dirty Read",
+      "option2": "Phantom Read",
+      "option3": "Lost Update",
+      "option4": "Unrepeatable Read",
       "correct_option": "option4"
     },
     {
+      "id": 51,
+      "question": "A rule that ensures all values in a column are taken from a predefined set of values is a what?",
+      "option1": "Key Constraint",
+      "option2": "Entity Constraint",
+      "option3": "Domain Constraint",
+      "option4": "Referential Constraint",
+      "correct_option": "option3"
+    },
+    {
       "id": 52,
-      "question": "What is a superkey in a relational database?",
-      "option1": "A minimal set of attributes that uniquely identifies a tuple",
-      "option2": "Any set of attributes that uniquely identifies a tuple",
-      "option3": "A foreign key that references itself",
-      "option4": "An attribute that is part of a primary key",
-      "correct_option": "option2"
+      "question": "A minimal set of attributes that can uniquely identify a tuple is known as a what?",
+      "option1": "Superkey",
+      "option2": "Foreign Key",
+      "option3": "Alternate Key",
+      "option4": "Candidate Key",
+      "correct_option": "option4"
     },
     {
       "id": 53,
-      "question": "What is the purpose of the 'WITH CHECK OPTION' clause in SQL views?",
-      "option1": "To ensure that updates to the view satisfy the view's WHERE clause",
-      "option2": "To prevent unauthorized access to the view",
-      "option3": "To improve the performance of view queries",
-      "option4": "To create a materialized view",
-      "correct_option": "option1"
+      "question": "Which clause in a CREATE VIEW statement ensures that rows remain visible through the view after they are modified?",
+      "option1": "WITH VIEW",
+      "option2": "WITH CHECK OPTION",
+      "option3": "WITH GRANT OPTION",
+      "option4": "WITH READ ONLY",
+      "correct_option": "option2"
     },
     {
       "id": 54,
-      "question": "In distributed databases, what is 'data fragmentation'?",
-      "option1": "Duplicating data across multiple sites",
-      "option2": "Dividing a relation into smaller, disjoint fragments and distributing them across sites",
-      "option3": "Storing data in an unnormalized form",
-      "option4": "Combining data from multiple sources into a single relation",
+      "question": "In distributed databases, splitting a table's rows across different sites is known as what?",
+      "option1": "Vertical Fragmentation",
+      "option2": "Horizontal Fragmentation",
+      "option3": "Replication",
+      "option4": "Sharding",
       "correct_option": "option2"
     },
     {
       "id": 55,
-      "question": "What is the main challenge associated with using 'dirty reads' (isolation level Read Uncommitted)?",
-      "option1": "Increased deadlock potential",
-      "option2": "Reading data that has not yet been committed and may be rolled back",
-      "option3": "Higher communication overhead",
-      "option4": "Reduced query performance",
-      "correct_option": "option2"
+      "question": "Which isolation level is most prone to concurrency problems like dirty reads?",
+      "option1": "Serializable",
+      "option2": "Repeatable Read",
+      "option3": "Read Committed",
+      "option4": "Read Uncommitted",
+      "correct_option": "option4"
     },
     {
       "id": 56,
-      "question": "Which of the following is a characteristic of column-oriented databases?",
-      "option1": "Optimized for transactional workloads",
-      "option2": "Store data row by row",
-      "option3": "Efficient for analytical queries that access a subset of columns",
-      "option4": "Primarily used for OLTP systems",
+      "question": "Which database type is optimized for analytical queries by storing data in blocks of columns rather than rows?",
+      "option1": "Key-Value",
+      "option2": "Document",
+      "option3": "Columnar",
+      "option4": "Graph",
       "correct_option": "option3"
     },
     {
       "id": 57,
-      "question": "In OLAP, what is the 'drill-down' operation?",
-      "option1": "Summarizing data to a higher level of abstraction",
-      "option2": "Navigating from summarized data to more detailed data",
-      "option3": "Rotating the view of data",
-      "option4": "Filtering data based on specific criteria",
-      "correct_option": "option2"
+      "question": "In OLAP, navigating from more detailed data to a higher-level summary is known as what operation?",
+      "option1": "Slice",
+      "option2": "Dice",
+      "option3": "Drill-Down",
+      "option4": "Roll-Up",
+      "correct_option": "option4"
     },
     {
       "id": 58,
-      "question": "What is the purpose of the 'CHECK' constraint in SQL?",
-      "option1": "To ensure uniqueness of values in a column",
-      "option2": "To enforce a condition that must be true for each row in a table",
-      "option3": "To link two tables together",
-      "option4": "To define a primary key",
-      "correct_option": "option2"
+      "question": "Which constraint is used to limit the value range that can be placed in a column?",
+      "option1": "UNIQUE",
+      "option2": "PRIMARY KEY",
+      "option3": "CHECK",
+      "option4": "FOREIGN KEY",
+      "correct_option": "option3"
     },
     {
       "id": 59,
-      "question": "In database systems, what is a 'data warehouse' primarily used for?",
-      "option1": "Day-to-day transactional processing",
-      "option2": "Storing historical data for analytical and reporting purposes",
-      "option3": "Real-time data processing",
-      "option4": "Managing user authentication",
+      "question": "What is a large, centralized repository of historical data used for reporting and analysis?",
+      "option1": "Data Mart",
+      "option2": "Data Warehouse",
+      "option3": "Database",
+      "option4": "Data Lake",
       "correct_option": "option2"
     },
     {
       "id": 60,
-      "question": "What is the 'star schema' commonly used in data warehousing?",
-      "option1": "A highly normalized schema",
-      "option2": "A schema with a central fact table and multiple dimension tables",
-      "option3": "A schema optimized for transactional processing",
-      "option4": "A schema with many-to-many relationships",
-      "correct_option": "option2"
+      "question": "In data warehousing, a schema with a central fact table connected to multiple dimension tables is called what?",
+      "option1": "Star Schema",
+      "option2": "Snowflake Schema",
+      "option3": "Galaxy Schema",
+      "option4": "Flat Schema",
+      "correct_option": "option1"
     },
     {
       "id": 61,
-      "question": "Which of the following is a characteristic of NoSQL databases?",
-      "option1": "Strict adherence to ACID properties",
-      "option2": "Fixed schema design",
-      "option3": "High scalability and flexibility for handling unstructured data",
-      "option4": "Primarily use SQL for querying",
-      "correct_option": "option3"
+      "question": "What is a key characteristic of most NoSQL databases compared to relational databases?",
+      "option1": "Fixed Schema",
+      "option2": "Flexible Schema",
+      "option3": "ACID compliance",
+      "option4": "Join-heavy",
+      "correct_option": "option2"
     },
     {
       "id": 62,
-      "question": "In the context of database concurrency, what is a 'lost update' problem?",
-      "option1": "A transaction reads a value that has been deleted",
-      "option2": "An update made by one transaction is overwritten by another transaction",
-      "option3": "A transaction attempts to read a non-existent record",
-      "option4": "A transaction rolls back before committing",
+      "question": "Which concurrency problem occurs when one transaction's update is overwritten by another transaction's update?",
+      "option1": "Dirty Read",
+      "option2": "Lost Update",
+      "option3": "Phantom Read",
+      "option4": "Deadlock",
       "correct_option": "option2"
     },
     {
       "id": 63,
-      "question": "What is the purpose of a 'redo log' in database recovery?",
-      "option1": "To undo uncommitted transactions",
-      "option2": "To record changes necessary to reapply committed transactions after a crash",
-      "option3": "To store old versions of data",
-      "option4": "To optimize read operations",
+      "question": "Which recovery log is used to re-apply the changes of committed transactions after a system failure?",
+      "option1": "Undo Log",
+      "option2": "Redo Log",
+      "option3": "System Log",
+      "option4": "Archive Log",
       "correct_option": "option2"
     },
     {
       "id": 64,
-      "question": "Which type of indexing is best suited for columns with a low cardinality (few distinct values)?",
-      "option1": "B-tree index",
-      "option2": "Hash index",
-      "option3": "Bitmap index",
-      "option4": "Clustered index",
+      "question": "Which index is most efficient for columns that have a very small number of distinct values?",
+      "option1": "B-Tree",
+      "option2": "Hash",
+      "option3": "Bitmap",
+      "option4": "Spatial",
       "correct_option": "option3"
     },
     {
       "id": 65,
-      "question": "What is the main advantage of using prepared statements in SQL?",
-      "option1": "Improved security against SQL injection and better performance for repeated execution",
-      "option2": "Automatic transaction management",
-      "option3": "Support for complex data types",
-      "option4": "Reduced network traffic",
-      "correct_option": "option1"
+      "question": "Using parameterized queries or prepared statements is a primary defense against what type of attack?",
+      "option1": "Cross-Site Scripting",
+      "option2": "Denial of Service",
+      "option3": "SQL Injection",
+      "option4": "Brute Force",
+      "correct_option": "option3"
     },
     {
       "id": 66,
-      "question": "In distributed database systems, what is the 'CAP Theorem' related to?",
-      "option1": "Concurrency, Atomicity, Performance",
-      "option2": "Consistency, Availability, Partition Tolerance",
-      "option3": "Commitment, Atomicity, Performance",
-      "option4": "Consistency, Availability, Portability",
-      "correct_option": "option2"
+      "question": "According to the CAP theorem, which two properties are often chosen in systems that require high availability?",
+      "option1": "Consistency & Availability",
+      "option2": "Consistency & Partition Tolerance",
+      "option3": "Availability & Partition Tolerance",
+      "option4": "Consistency & Performance",
+      "correct_option": "option3"
     },
     {
       "id": 67,
-      "question": "What is the main difference between OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing)?",
-      "option1": "OLTP is for complex analysis, OLAP is for daily operations",
-      "option2": "OLTP focuses on data modification, OLAP on data retrieval and analysis",
-      "option3": "OLTP uses denormalized data, OLAP uses normalized data",
-      "option4": "OLTP is typically used with NoSQL databases, OLAP with relational databases",
+      "question": "A system designed for frequent, short transactions like order entry is categorized as what?",
+      "option1": "OLAP",
+      "option2": "OLTP",
+      "option3": "Data Warehouse",
+      "option4": "Data Mart",
       "correct_option": "option2"
     },
     {
       "id": 68,
-      "question": "Which type of join returns all rows from the left table, and the matching rows from the right table, with NULLs in right columns if no match?",
-      "option1": "INNER JOIN",
+      "question": "Which SQL join returns only the rows where the join condition is met in both tables?",
+      "option1": "LEFT JOIN",
       "option2": "RIGHT JOIN",
-      "option3": "LEFT JOIN",
-      "option4": "FULL OUTER JOIN",
-      "correct_option": "option3"
+      "option3": "FULL OUTER JOIN",
+      "option4": "INNER JOIN",
+      "correct_option": "option4"
     },
     {
       "id": 69,
-      "question": "What is the main purpose of an E-R model (Entity-Relationship Model)?",
-      "option1": "To implement database security",
-      "option2": "To represent the logical structure of a database graphically",
-      "option3": "To optimize database queries",
-      "option4": "To manage database transactions",
-      "correct_option": "option2"
+      "question": "In an E-R model, what is used to represent the attributes of an entity?",
+      "option1": "Rectangles",
+      "option2": "Diamonds",
+      "option3": "Lines",
+      "option4": "Ovals",
+      "correct_option": "option4"
     },
     {
       "id": 70,
-      "question": "In functional dependencies, what does 'transitive dependency' mean?",
-      "option1": "A non-key attribute depends on the primary key",
-      "option2": "A non-key attribute depends on another non-key attribute that depends on the primary key",
-      "option3": "A primary key depends on a non-key attribute",
-      "option4": "An attribute depends on multiple primary keys",
-      "correct_option": "option2"
-    },
-    {
-      "id": 71,
-      "question": "What is the 'closure' of a set of functional dependencies?",
-      "option1": "The set of all candidate keys for a relation",
-      "option2": "The set of all attributes that can be derived from a given set of attributes",
-      "option3": "The set of all functional dependencies that can be logically inferred from a given set of functional dependencies",
-      "option4": "The minimal set of functional dependencies for a relation",
+      "question": "The dependency A→B and B→C leads to A→C. What is this type of dependency called?",
+      "option1": "Partial",
+      "option2": "Multivalued",
+      "option3": "Transitive",
+      "option4": "Trivial",
       "correct_option": "option3"
     },
     {
+      "id": 71,
+      "question": "The set of all functional dependencies that can be logically inferred from a given set F is called what?",
+      "option1": "Closure of F",
+      "option2": "Cover of F",
+      "option3": "Basis of F",
+      "option4": "Domain of F",
+      "correct_option": "option1"
+    },
+    {
       "id": 72,
-      "question": "Which type of backup copies all data that has changed since the last full backup?",
-      "option1": "Full backup",
-      "option2": "Differential backup",
-      "option3": "Incremental backup",
-      "option4": "Snapshot backup",
-      "correct_option": "option2"
+      "question": "Which backup type copies only the data that has changed since the last backup of any kind?",
+      "option1": "Full",
+      "option2": "Differential",
+      "option3": "Incremental",
+      "option4": "Snapshot",
+      "correct_option": "option3"
     },
     {
       "id": 73,
-      "question": "What is a 'foreign key' constraint used for?",
-      "option1": "To ensure unique values in a column",
-      "option2": "To enforce referential integrity between two tables",
-      "option3": "To define the primary key of a table",
-      "option4": "To restrict data types in a column",
-      "correct_option": "option2"
+      "question": "A key in one table that uniquely identifies a row in another table is called a what?",
+      "option1": "Primary Key",
+      "option2": "Superkey",
+      "option3": "Foreign Key",
+      "option4": "Candidate Key",
+      "correct_option": "option3"
     },
     {
       "id": 74,
-      "question": "In the context of database design, what is 'attribute closure' used for?",
-      "option1": "To find all functional dependencies in a relation",
-      "option2": "To determine the candidate keys of a relation",
-      "option3": "To normalize a database schema",
-      "option4": "To generate an ER diagram",
+      "question": "The set of all attributes that can be functionally determined from a given set of attributes X is called what?",
+      "option1": "FD Closure",
+      "option2": "Attribute Closure",
+      "option3": "Minimal Cover",
+      "option4": "Candidate Key",
       "correct_option": "option2"
     },
     {
       "id": 75,
-      "question": "What is the primary characteristic of a 'view serializable' schedule?",
-      "option1": "It produces the same final state as some serial schedule, considering read/write operations and final writes",
-      "option2": "All transactions commit successfully",
-      "option3": "No deadlocks occur",
-      "option4": "It is always a conflict serializable schedule",
-      "correct_option": "option1"
+      "question": "A schedule is serializable if it is equivalent to some serial schedule. Which type of equivalence is stricter and easier to test?",
+      "option1": "View",
+      "option2": "Final State",
+      "option3": "Conflict",
+      "option4": "Order",
+      "correct_option": "option3"
     },
     {
       "id": 76,
-      "question": "In distributed query processing, what is 'semi-join'?",
-      "option1": "A join operation where only a subset of attributes is returned",
-      "option2": "An operation where a reduced version of one relation is sent to the site of another relation for a join",
-      "option3": "A join performed in two phases",
-      "option4": "A join that considers only common attributes",
-      "correct_option": "option2"
+      "question": "What distributed query optimization technique sends the unique join column values from one site to another to filter data?",
+      "option1": "Full Join",
+      "option2": "Data Transfer",
+      "option3": "Semi-Join",
+      "option4": "Bloom Join",
+      "correct_option": "option3"
     },
     {
       "id": 77,
-      "question": "What is the main reason for using 'stored procedures' in databases?",
-      "option1": "Improved data compression",
-      "option2": "Enhanced security, reduced network traffic, and improved performance",
-      "option3": "Automatic data recovery",
-      "option4": "Easier database administration",
-      "correct_option": "option2"
+      "question": "What is a pre-compiled collection of SQL statements stored in the database, which can reduce network traffic?",
+      "option1": "Trigger",
+      "option2": "View",
+      "option3": "Stored Procedure",
+      "option4": "Index",
+      "correct_option": "option3"
     },
     {
       "id": 78,
-      "question": "In the ARIES recovery algorithm, what is the 'WAL (Write-Ahead Logging)' rule?",
-      "option1": "All data must be written to disk before logging",
-      "option2": "Log records must be written to stable storage before the corresponding data page is written to disk",
-      "option3": "Writes must always precede reads",
-      "option4": "All transactions must be logged before execution",
-      "correct_option": "option2"
+      "question": "What does the 'A' in the ARIES recovery algorithm stand for?",
+      "option1": "Algorithm",
+      "option2": "Asynchronous",
+      "option3": "Atomic",
+      "option4": "Ascending",
+      "correct_option": "option1"
     },
     {
       "id": 79,
-      "question": "What is the difference between 'strong entity' and 'weak entity' in ER modeling?",
-      "option1": "Strong entity has multiple primary keys, weak entity has one",
-      "option2": "Strong entity can exist independently, weak entity depends on a strong entity for its existence",
-      "option3": "Strong entity has no attributes, weak entity has attributes",
-      "option4": "Strong entity has no relationships, weak entity has many",
+      "question": "An entity that cannot be uniquely identified by its own attributes alone is known as a what?",
+      "option1": "Strong Entity",
+      "option2": "Weak Entity",
+      "option3": "Parent Entity",
+      "option4": "Child Entity",
       "correct_option": "option2"
     },
     {
       "id": 80,
-      "question": "Which SQL command is used to add new rows to a table?",
+      "question": "Which DML command is used to add new rows of data into a table?",
       "option1": "UPDATE",
-      "option2": "INSERT INTO",
-      "option3": "ADD ROW",
-      "option4": "CREATE ROW",
-      "correct_option": "option2"
-    },
-    {
-      "id": 81,
-      "question": "In query processing, what is the purpose of 'index nested loop join'?",
-      "option1": "To perform a join efficiently when one of the relations has an index on the join attribute",
-      "option2": "To join two relations without using any indexes",
-      "option3": "To sort and then merge two relations",
-      "option4": "To perform a hash-based join",
-      "correct_option": "option1"
-    },
-    {
-      "id": 82,
-      "question": "What is the purpose of a 'checkpoint' in database recovery?",
-      "option1": "To mark the beginning of a new transaction",
-      "option2": "To periodically write all dirty pages from buffer to disk and record recovery information",
-      "option3": "To revert the database to a previous consistent state",
-      "option4": "To optimize log file size",
-      "correct_option": "option2"
-    },
-    {
-      "id": 83,
-      "question": "In object-relational databases, what is a 'nested table'?",
-      "option1": "A table within another table",
-      "option2": "A column that can hold multiple rows of another table type",
-      "option3": "A table that is stored in a hierarchical structure",
-      "option4": "A table used for temporary data storage",
-      "correct_option": "option2"
-    },
-    {
-      "id": 84,
-      "question": "What is the main benefit of 'database sharding'?",
-      "option1": "To improve data integrity",
-      "option2": "To distribute data across multiple database servers to improve scalability and performance",
-      "option3": "To reduce the complexity of database queries",
-      "option4": "To enable cross-database transactions",
-      "correct_option": "option2"
-    },
-    {
-      "id": 85,
-      "question": "Which normal form requires that a relation be in 3NF and every determinant is a candidate key?",
-      "option1": "1NF",
-      "option2": "2NF",
-      "option3": "3NF",
-      "option4": "BCNF",
+      "option2": "ADD",
+      "option3": "CREATE",
+      "option4": "INSERT",
       "correct_option": "option4"
     },
     {
-      "id": 86,
-      "question": "What is the 'dirty write' problem in concurrency control?",
-      "option1": "A transaction writes a value that has already been committed by another transaction",
-      "option2": "A transaction overwrites an uncommitted value written by another transaction",
-      "option3": "A transaction reads an uncommitted value",
-      "option4": "A transaction writes to a non-existent record",
+      "id": 81,
+      "question": "A join algorithm that repeatedly probes an index on the inner table for each tuple of the outer table is called what?",
+      "option1": "Hash Join",
+      "option2": "Merge Join",
+      "option3": "Index Nested-Loop Join",
+      "option4": "Block Nested-Loop Join",
+      "correct_option": "option3"
+    },
+    {
+      "id": 82,
+      "question": "What is a point in the database log where all modified buffer pages have been written to disk?",
+      "option1": "Commit Point",
+      "option2": "Savepoint",
+      "option3": "Checkpoint",
+      "option4": "Log Point",
+      "correct_option": "option3"
+    },
+    {
+      "id": 83,
+      "question": "A database model that supports both relational and object-oriented features is called what?",
+      "option1": "Hierarchical",
+      "option2": "Network",
+      "option3": "Object-Relational",
+      "option4": "NoSQL",
+      "correct_option": "option3"
+    },
+    {
+      "id": 84,
+      "question": "Horizontally partitioning a database across multiple servers is a technique known as what?",
+      "option1": "Mirroring",
+      "option2": "Clustering",
+      "option3": "Replication",
+      "option4": "Sharding",
+      "correct_option": "option4"
+    },
+    {
+      "id": 85,
+      "question": "A relation is in BCNF if for every non-trivial functional dependency X → Y, X is a what?",
+      "option1": "Primary Key",
+      "option2": "Superkey",
+      "option3": "Foreign Key",
+      "option4": "Non-key attribute",
       "correct_option": "option2"
+    },
+    {
+      "id": 86,
+      "question": "The problem where a transaction overwrites the uncommitted data of another transaction is known as what?",
+      "option1": "Lost Update",
+      "option2": "Dirty Read",
+      "option3": "Dirty Write",
+      "option4": "Unrepeatable Read",
+      "correct_option": "option3"
     },
     {
       "id": 87,
-      "question": "In SQL, what is the effect of the 'SET TRANSACTION ISOLATION LEVEL SERIALIZABLE' statement?",
-      "option1": "It guarantees that no phantom reads will occur",
-      "option2": "It ensures that the current transaction is fully isolated from other concurrent transactions",
-      "option3": "It allows dirty reads to occur for faster performance",
-      "option4": "It only prevents non-repeatable reads",
-      "correct_option": "option2"
+      "question": "Which is the highest and most strict transaction isolation level?",
+      "option1": "Read Uncommitted",
+      "option2": "Read Committed",
+      "option3": "Repeatable Read",
+      "option4": "Serializable",
+      "correct_option": "option4"
     },
     {
       "id": 88,
-      "question": "What is the 'data dictionary' in a DBMS?",
-      "option1": "A physical file that stores the actual data",
-      "option2": "A centralized repository of information about the data, schema, and database objects",
-      "option3": "A tool for generating reports from the database",
-      "option4": "A log file of all database operations",
+      "question": "A database's schema, constraints, and other structural information are stored in the what?",
+      "option1": "Log file",
+      "option2": "Data dictionary",
+      "option3": "Index file",
+      "option4": "Data file",
       "correct_option": "option2"
     },
     {
       "id": 89,
-      "question": "In B+ trees, why are leaf nodes linked together?",
-      "option1": "To allow for faster range queries and sequential access",
-      "option2": "To improve insertion performance",
-      "option3": "To reduce the height of the tree",
-      "option4": "To support concurrent access",
-      "correct_option": "option1"
+      "question": "In a B+ Tree, what feature of the leaf nodes makes range queries efficient?",
+      "option1": "They are sorted",
+      "option2": "They form a linked list",
+      "option3": "They store data pointers",
+      "option4": "They have high fanout",
+      "correct_option": "option2"
     },
     {
       "id": 90,
-      "question": "What is the concept of 'referential action' (e.g., ON DELETE CASCADE) in SQL?",
-      "option1": "It defines how updates to a primary key affect foreign keys",
-      "option2": "It specifies actions to be taken on related rows when a row in the parent table is deleted or updated",
-      "option3": "It enforces data type constraints",
-      "option4": "It triggers a stored procedure automatically",
-      "correct_option": "option2"
+      "question": "What does the 'ON DELETE CASCADE' clause in a foreign key constraint do?",
+      "option1": "Prevents deletion",
+      "option2": "Sets FK to NULL",
+      "option3": "Deletes child rows",
+      "option4": "Deletes parent row",
+      "correct_option": "option3"
     },
     {
       "id": 91,
-      "question": "In the context of database performance, what is 'disk thrashing'?",
-      "option1": "Excessive disk I/O due to insufficient buffer space, leading to performance degradation",
-      "option2": "A type of disk error",
-      "option3": "Rapid rotation of the disk platters",
-      "option4": "A method of data recovery",
-      "correct_option": "option1"
+      "question": "What condition occurs when the database system spends excessive time swapping pages between disk and memory?",
+      "option1": "Deadlock",
+      "option2": "Thrashing",
+      "option3": "Starvation",
+      "option4": "Contention",
+      "correct_option": "option2"
     },
     {
       "id": 92,
-      "question": "What is a 'deadlock' in a database system?",
-      "option1": "A situation where two or more transactions are waiting indefinitely for resources held by each other",
-      "option2": "A state where a transaction cannot commit due to an error",
-      "option3": "A system crash that results in data loss",
-      "option4": "A condition where a query takes an extremely long time to execute",
-      "correct_option": "option1"
+      "question": "What is it called when two or more transactions are in a circular wait for locks held by each other?",
+      "option1": "Livelock",
+      "option2": "Deadlock",
+      "option3": "Stall",
+      "option4": "Conflict",
+      "correct_option": "option2"
     },
     {
       "id": 93,
-      "question": "In query optimization, what is the difference between 'physical' and 'logical' query plans?",
-      "option1": "Physical plans specify execution details (e.g., join algorithms), logical plans describe relational algebra operations",
-      "option2": "Logical plans are for distributed databases, physical plans are for centralized databases",
-      "option3": "Physical plans are generated by the user, logical plans by the DBMS",
-      "option4": "Logical plans are faster to execute",
-      "correct_option": "option1"
+      "question": "A query plan that consists of relational algebra operations before specific algorithms are chosen is called what?",
+      "option1": "Physical Plan",
+      "option2": "Execution Plan",
+      "option3": "Logical Plan",
+      "option4": "Optimized Plan",
+      "correct_option": "option3"
     },
     {
       "id": 94,
-      "question": "What is 'data warehousing' in the context of business intelligence?",
-      "option1": "Storing operational data for daily transactions",
-      "option2": "A system that extracts, cleans, transforms, and stores historical data from various sources for analytical purposes",
-      "option3": "A method for real-time data streaming",
-      "option4": "A type of NoSQL database",
-      "correct_option": "option2"
-    },
-    {
-      "id": 95,
-      "question": "What is the primary characteristic of 'document-oriented databases' (a type of NoSQL)?",
-      "option1": "Store data in rows and columns with fixed schemas",
-      "option2": "Store data as semi-structured documents, often JSON or XML",
-      "option3": "Primarily used for graph data",
-      "option4": "Enforce strict referential integrity",
-      "correct_option": "option2"
-    },
-    {
-      "id": 96,
-      "question": "In the ACID properties, what does 'Durability' ensure?",
-      "option1": "Transactions are isolated from each other",
-      "option2": "All changes made by a committed transaction are permanent and survive system failures",
-      "option3": "Transactions are atomic",
-      "option4": "The database remains consistent before and after transactions",
-      "correct_option": "option2"
-    },
-    {
-      "id": 97,
-      "question": "What is the main challenge of 'distributed concurrency control'?",
-      "option1": "Ensuring local serializability at each site",
-      "option2": "Maintaining global serializability across multiple sites in the presence of failures and network delays",
-      "option3": "Reducing communication overhead",
-      "option4": "Managing fragmented data",
-      "correct_option": "option2"
-    },
-    {
-      "id": 98,
-      "question": "Which SQL keyword is used to sort the result-set of a query?",
-      "option1": "SORT BY",
-      "option2": "ORDER BY",
-      "option3": "ARRANGE BY",
-      "option4": "GROUP BY",
-      "correct_option": "option2"
-    },
-    {
-      "id": 99,
-      "question": "What is the purpose of 'database mirroring'?",
-      "option1": "To create exact duplicates of a database for high availability and disaster recovery",
-      "option2": "To improve query performance by indexing",
-      "option3": "To secure data through encryption",
-      "option4": "To normalize the database schema",
+      "question": "What is the process of extracting, cleaning, and consolidating data into one repository for analysis?",
+      "option1": "ETL",
+      "option2": "OLAP",
+      "option3": "OLTP",
+      "option4": "BI",
       "correct_option": "option1"
     },
     {
+      "id": 95,
+      "question": "MongoDB and CouchDB are examples of which type of NoSQL database?",
+      "option1": "Key-Value",
+      "option2": "Columnar",
+      "option3": "Graph",
+      "option4": "Document",
+      "correct_option": "option4"
+    },
+    {
+      "id": 96,
+      "question": "Which ACID property ensures that once a transaction is committed, its effects are permanent?",
+      "option1": "Atomicity",
+      "option2": "Consistency",
+      "option3": "Isolation",
+      "option4": "Durability",
+      "correct_option": "option4"
+    },
+    {
+      "id": 97,
+      "question": "What is the primary challenge in ensuring atomicity in a distributed database system?",
+      "option1": "High latency",
+      "option2": "Network partitions",
+      "option3": "Site failures",
+      "option4": "All of the above",
+      "correct_option": "option4"
+    },
+    {
+      "id": 98,
+      "question": "Which SQL clause is used to sort the result set of a query?",
+      "option1": "SORT BY",
+      "option2": "ARRANGE BY",
+      "option3": "ORDER BY",
+      "option4": "GROUP BY",
+      "correct_option": "option3"
+    },
+    {
+      "id": 99,
+      "question": "Maintaining a complete and synchronized copy of a database on a separate server for high availability is called what?",
+      "option1": "Replication",
+      "option2": "Partitioning",
+      "option_3": "Clustering",
+      "option4": "Mirroring",
+      "correct_option": "option4"
+    },
+    {
       "id": 100,
-      "question": "In the context of database access control, what is 'role-based access control' (RBAC)?",
-      "option1": "Granting permissions directly to individual users",
-      "option2": "Assigning permissions to roles, and then assigning roles to users",
-      "option3": "Controlling access based on the data content",
-      "option4": "Granting temporary access permissions",
-      "correct_option": "option2"
+      "question": "Granting permissions to roles instead of directly to users is the basis of what security model?",
+      "option1": "DAC",
+      "option2": "MAC",
+      "option3": "RBAC",
+      "option4": "ABAC",
+      "correct_option": "option3"
     }
   ]
 }

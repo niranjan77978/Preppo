@@ -1,505 +1,64 @@
 {
-  "quiz_title": "Data Structures",
+  "quiz_title": "Data Structures and Algorithms",
   "total_questions": 100,
   "questions": [
     {
       "id": 1,
-      "question": "What is the time complexity of searching an element in a sorted array using binary search?",
-      "option1": "O(n)",
-      "option2": "O(log n)",
-      "option3": "O(n log n)",
-      "option4": "O(1)",
-      "correct_option": "option2"
+      "question": "What is the worst-case time complexity for search, insert, and delete operations in a general Binary Search Tree?",
+      "option1": "O(n log n)",
+      "option2": "O(1)",
+      "option3": "O(log n)",
+      "option4": "O(n)",
+      "correct_option": "option4"
     },
     {
       "id": 2,
-      "question": "Which data structure is best suited for implementing a 'Last-In, First-Out' (LIFO) behavior?",
-      "option1": "Queue",
-      "option2": "Stack",
-      "option3": "Linked List",
-      "option4": "Array",
-      "correct_option": "option2"
+      "question": "Which data structure is most appropriate for evaluating postfix expressions?",
+      "option1": "Stack",
+      "option2": "Queue",
+      "option3": "Deque",
+      "option4": "Max-Heap",
+      "correct_option": "option1"
     },
     {
       "id": 3,
-      "question": "What is the primary disadvantage of using an array for data storage when frequent insertions/deletions are required at arbitrary positions?",
-      "option1": "Fixed size",
-      "option2": "Slow random access",
-      "option3": "Cache inefficiency",
-      "option4": "High memory consumption",
-      "correct_option": "option1"
+      "question": "What is the time complexity of the enqueue operation in a queue implemented using a linked list?",
+      "option1": "O(n)",
+      "option2": "O(n^2)",
+      "option3": "O(1)",
+      "option4": "O(log n)",
+      "correct_option": "option3"
     },
     {
       "id": 4,
-      "question": "Which of the following is NOT a characteristic of a Singly Linked List?",
-      "option1": "Dynamic size",
-      "option2": "Efficient insertions/deletions at ends",
-      "option3": "Direct access to any element by index",
-      "option4": "Requires more memory than arrays for storing elements",
-      "correct_option": "option3"
+      "question": "What is the minimum number of nodes in an AVL tree of height 3? (Root at height 0)",
+      "option1": "6",
+      "option2": "8",
+      "option3": "4",
+      "option4": "7",
+      "correct_option": "option4"
     },
     {
       "id": 5,
-      "question": "What is the worst-case time complexity of inserting an element at the beginning of an unsorted singly linked list?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n^2)",
-      "correct_option": "option1"
+      "question": "In a Red-Black Tree, what color must a newly inserted node always be?",
+      "option1": "Depends on sibling",
+      "option2": "Red",
+      "option3": "Parent's color",
+      "option4": "Black",
+      "correct_option": "option2"
     },
     {
       "id": 6,
-      "question": "In a Circular Linked List, how do you determine if the list is empty (assuming a single pointer 'last' points to the last node)?",
-      "option1": "last points to NULL",
-      "option2": "last->next == last",
-      "option3": "last->next == NULL",
-      "option4": "Both last and last->next are NULL",
-      "correct_option": "option1"
+      "question": "What is the minimum number of keys a non-root node can have in a B-Tree of order 'm'?",
+      "option1": "m/2",
+      "option2": "ceil(m/2) - 1",
+      "option3": "m",
+      "option4": "m - 1",
+      "correct_option": "option2"
     },
     {
       "id": 7,
-      "question": "Which operation in a Doubly Linked List has a time complexity of O(1) if you have a pointer to the node to be deleted?",
-      "option1": "Searching for an element",
-      "option2": "Deleting a node by value",
-      "option3": "Inserting a node at a specific position by index",
-      "option4": "Deleting a given node",
-      "correct_option": "option4"
-    },
-    {
-      "id": 8,
-      "question": "What is the amortized time complexity of pushing an element onto a stack implemented using a dynamic array that resizes by doubling?",
-      "option1": "O(n)",
-      "option2": "O(log n)",
-      "option3": "O(1)",
-      "option4": "O(n log n)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 9,
-      "question": "If a queue is implemented using a circular array with `front` and `rear` pointers (and one empty slot rule), what indicates a full queue?",
-      "option1": "front == rear",
-      "option2": "(rear + 1) % capacity == front",
-      "option3": "rear == capacity - 1",
-      "option4": "front == 0 and rear == capacity - 1",
-      "correct_option": "option2"
-    },
-    {
-      "id": 10,
-      "question": "Which of the following scenarios is a Queue data structure commonly used for?",
-      "option1": "Function call stack management",
-      "option2": "Undo/Redo functionality",
-      "option3": "Breadth-First Search (BFS) graph traversal",
-      "option4": "Maintaining a history of visited web pages",
-      "correct_option": "option3"
-    },
-    {
-      "id": 11,
-      "question": "What is the maximum number of nodes at level 'k' (root is level 0) in a perfect binary tree?",
-      "option1": "$2^k - 1$",
-      "option2": "$2^k$",
-      "option3": "$2^{(k-1)}$",
-      "option4": "$2^{(k+1)}$",
-      "correct_option": "option2"
-    },
-    {
-      "id": 12,
-      "question": "Which tree traversal algorithm visits the root node first, then the left subtree, and finally the right subtree?",
-      "option1": "In-order",
-      "option2": "Pre-order",
-      "option3": "Post-order",
-      "option4": "Level-order",
-      "correct_option": "option2"
-    },
-    {
-      "id": 13,
-      "question": "What is the time complexity of searching for an element in a Binary Search Tree (BST) in the worst case (e.g., a skewed tree)?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n log n)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 14,
-      "question": "What is the primary advantage of an AVL tree over a standard BST?",
-      "option1": "Faster insertion in all cases",
-      "option2": "Guaranteed O(log n) search, insertion, and deletion time complexity",
-      "option3": "Simpler implementation",
-      "option4": "Less memory usage",
-      "correct_option": "option2"
-    },
-    {
-      "id": 15,
-      "question": "In a Red-Black Tree, which property states that all simple paths from a node to descendant null leaves contain the same number of black nodes?",
-      "option1": "Every node is either red or black.",
-      "option2": "The root is black.",
-      "option3": "Every red node must have two black child nodes.",
-      "option4": "Black-height property",
-      "correct_option": "option4"
-    },
-    {
-      "id": 16,
-      "question": "What is the minimum number of nodes in a complete binary tree of height 'h' (root at height 0)?",
-      "option1": "$2^h - 1$",
-      "option2": "$2^{(h-1)}$",
-      "option3": "$2^h$",
-      "option4": "$2^{h+1} - 1$",
-      "correct_option": "option3"
-    },
-    {
-      "id": 17,
-      "question": "Which data structure is typically used to implement a priority queue efficiently?",
-      "option1": "Stack",
-      "option2": "Queue",
-      "option3": "Heap",
-      "option4": "Hash Table",
-      "correct_option": "option3"
-    },
-    {
-      "id": 18,
-      "question": "What is the time complexity of building a heap from an unsorted array of 'n' elements using the bottom-up approach?",
-      "option1": "O(n log n)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n^2)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 19,
-      "question": "Which of the following is a characteristic of a B-tree of order 'm'?",
-      "option1": "All leaf nodes must be at different levels.",
-      "option2": "Each node can have at most 'm' keys.",
-      "option3": "Each internal node (except root) has at least $ lceil m/2 \rceil$ children.",
-      "option4": "It is primarily used for in-memory data storage.",
-      "correct_option": "option3"
-    },
-    {
-      "id": 20,
-      "question": "What is the primary use case for a Trie (Prefix Tree)?",
-      "option1": "Sorting a list of numbers",
-      "option2": "Implementing a hash map",
-      "option3": "Efficient string searching and prefix matching",
-      "option4": "Managing graph traversals",
-      "correct_option": "option3"
-    },
-    {
-      "id": 21,
-      "question": "What is a collision in a hash table?",
-      "option1": "When two different keys map to the same index.",
-      "option2": "When the hash table runs out of memory.",
-      "option3": "When a key cannot be found.",
-      "option4": "When the hash function is too slow.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 22,
-      "question": "Which collision resolution technique involves calculating a new hash value using a secondary hash function if a collision occurs?",
-      "option1": "Separate Chaining",
-      "option2": "Quadratic Probing",
-      "option3": "Linear Probing",
-      "option4": "Double Hashing",
-      "correct_option": "option4"
-    },
-    {
-      "id": 23,
-      "question": "What is the average-case time complexity of searching for an element in a hash table with a good hash function and reasonable load factor?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n log n)",
-      "correct_option": "option1"
-    },
-    {
-      "id": 24,
-      "question": "What is the load factor of a hash table?",
-      "option1": "The total number of elements stored.",
-      "option2": "The ratio of the number of elements to the table size.",
-      "option3": "The number of collisions encountered.",
-      "option4": "The average length of a chain in separate chaining.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 25,
-      "question": "When is rehashing typically performed in a hash table?",
-      "option1": "After every insertion.",
-      "option2": "When the load factor exceeds a certain threshold.",
-      "option3": "Only when the hash table is completely full.",
-      "option4": "When a collision occurs.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 26,
-      "question": "What is the maximum number of edges in a simple undirected graph with 'V' vertices?",
-      "option1": "V",
-      "option2": "V * (V - 1) / 2",
-      "option3": "V^2",
-      "option4": "$2^V$",
-      "correct_option": "option2"
-    },
-    {
-      "id": 27,
-      "question": "Which graph traversal algorithm typically uses a queue to visit nodes?",
-      "option1": "Breadth-First Search (BFS)",
-      "option2": "Depth-First Search (DFS)",
-      "option3": "Dijkstra's Algorithm",
-      "option4": "Kruskal's Algorithm",
-      "correct_option": "option1"
-    },
-    {
-      "id": 28,
-      "question": "What is the time complexity of Depth-First Search (DFS) on a graph represented using an adjacency list?",
-      "option1": "O(V + E)",
-      "option2": "O(V*E)",
-      "option3": "O(V^2)",
-      "option4": "O(log V)",
-      "correct_option": "option1"
-    },
-    {
-      "id": 29,
-      "question": "Dijkstra's algorithm is used to find:",
-      "option1": "All-pairs shortest path",
-      "option2": "Single-source shortest path in graphs with non-negative edge weights",
-      "option3": "Maximum flow in a network",
-      "option4": "Minimum spanning tree",
-      "correct_option": "option2"
-    },
-    {
-      "id": 30,
-      "question": "Which algorithm is commonly used to detect cycles in an undirected graph?",
-      "option1": "Bellman-Ford",
-      "option2": "Floyd-Warshall",
-      "option3": "DFS with a visited array and checking for back edges",
-      "option4": "Prim's Algorithm",
-      "correct_option": "option3"
-    },
-    {
-      "id": 31,
-      "question": "What is a strongly connected component in a directed graph?",
-      "option1": "A subgraph where every pair of vertices is connected by an edge.",
-      "option2": "A component where all vertices have the same degree.",
-      "option3": "A maximal subgraph where for every pair of vertices (u, v), there is a path from u to v and a path from v to u.",
-      "option4": "A component that is connected to all other components.",
-      "correct_option": "option3"
-    },
-    {
-      "id": 32,
-      "question": "Which algorithm finds the Minimum Spanning Tree (MST) by iteratively adding the cheapest edge that connects two distinct components?",
-      "option1": "Kruskal's Algorithm",
-      "option2": "Prim's Algorithm",
-      "option3": "Dijkstra's Algorithm",
-      "option4": "Bellman-Ford Algorithm",
-      "correct_option": "option1"
-    },
-    {
-      "id": 33,
-      "question": "What data structure is typically used to implement Kruskal's algorithm efficiently?",
-      "option1": "Queue",
-      "option2": "Stack",
-      "option3": "Min-Heap (for edges) and Disjoint Set Union (for cycle detection)",
-      "option4": "Adjacency Matrix",
-      "correct_option": "option3"
-    },
-    {
-      "id": 34,
-      "question": "What is the time complexity of the Floyd-Warshall algorithm for all-pairs shortest path?",
-      "option1": "$O(V^2)$",
-      "option2": "$O(E log V)$",
-      "option3": "$O(V^3)$",
-      "option4": "$O(V + E)$",
-      "correct_option": "option3"
-    },
-    {
-      "id": 35,
-      "question": "When would you prefer an adjacency matrix over an adjacency list for graph representation?",
-      "option1": "When the graph is sparse (few edges).",
-      "option2": "When you need to quickly check for the existence of an edge between two specific vertices.",
-      "option3": "When the graph has a very large number of vertices.",
-      "option4": "When performing BFS or DFS frequently.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 36,
-      "question": "What is a splay tree?",
-      "option1": "A self-balancing binary search tree that brings recently accessed nodes closer to the root.",
-      "option2": "A tree where all leaves are at the same level.",
-      "option3": "A tree optimized for range queries.",
-      "option4": "A tree used to store spatial data.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 37,
-      "question": "What is the amortized time complexity of an operation (like search, insert, delete) in a splay tree?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n log n)",
-      "correct_option": "option2"
-    },
-    {
-      "id": 38,
-      "question": "Which data structure is typically used for efficient prefix sum queries and point updates on an array?",
-      "option1": "Fenwick Tree (BIT)",
-      "option2": "Trie",
-      "option3": "Skip List",
-      "option4": "B-Tree",
-      "correct_option": "option1"
-    },
-    {
-      "id": 39,
-      "question": "What is the key advantage of a Skip List over balanced binary search trees?",
-      "option1": "Guaranteed O(log n) worst-case performance for all operations.",
-      "option2": "Simpler implementation with comparable average-case performance and good parallelism opportunities.",
-      "option3": "Less memory consumption.",
-      "option4": "Better cache locality.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 40,
-      "question": "What is a segment tree used for?",
-      "option1": "To represent a network flow problem.",
-      "option2": "To efficiently answer range queries (e.g., sum, min, max) and range updates on an array.",
-      "option3": "To store key-value pairs with fast lookups.",
-      "option4": "To find cycles in a graph.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 41,
-      "question": "In a max-heap, where is the largest element always located?",
-      "option1": "At any leaf node.",
-      "option2": "At the root node.",
-      "option3": "At the last node of the last level.",
-      "option4": "At the node with the most children.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 42,
-      "question": "What is the purpose of a Disjoint Set Union (DSU) data structure?",
-      "option1": "To find the shortest path in a graph.",
-      "option2": "To maintain a collection of disjoint sets and efficiently perform union and find operations.",
-      "option3": "To store elements in sorted order.",
-      "option4": "To perform string matching.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 43,
-      "question": "Which path compression technique in DSU makes every node on the path from an element to the root point directly to the root?",
-      "option1": "Union by rank",
-      "option2": "Union by size",
-      "option3": "Path halving",
-      "option4": "Full path compression",
-      "correct_option": "option4"
-    },
-    {
-      "id": 44,
-      "question": "What is the time complexity of the 'find' and 'union' operations in a DSU with both path compression and union by rank/size (amortized)?",
-      "option1": "O(log n)",
-      "option2": "O(n)",
-      "option3": "O(α(n)) (inverse Ackermann function, practically constant)",
-      "option4": "O(1)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 45,
-      "question": "What is the primary application of topological sorting?",
-      "option1": "Finding strongly connected components.",
-      "option2": "Determining a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for every directed edge (u, v), u comes before v in the ordering.",
-      "option3": "Calculating all-pairs shortest paths.",
-      "option4": "Detecting negative cycles in a graph.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 46,
-      "question": "Which algorithm is suitable for finding the shortest path in a graph with negative edge weights, provided there are no negative cycles reachable from the source?",
-      "option1": "Dijkstra's Algorithm",
-      "option2": "Prim's Algorithm",
-      "option3": "Bellman-Ford Algorithm",
-      "option4": "Kruskal's Algorithm",
-      "correct_option": "option3"
-    },
-    {
-      "id": 47,
-      "question": "What is the main drawback of using an adjacency matrix for a very sparse graph?",
-      "option1": "Slow edge lookup.",
-      "option2": "High memory consumption ($O(V^2)$) and slow iteration over edges ($O(V^2)$).",
-      "option3": "Difficulty in adding/removing vertices.",
-      "option4": "Inefficient for traversal algorithms.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 48,
-      "question": "Which data structure would be most efficient for a spell checker that suggests words based on prefixes and stores a large dictionary?",
-      "option1": "Hash Table",
-      "option2": "Binary Search Tree",
-      "option3": "Trie",
-      "option4": "Linked List",
-      "correct_option": "option3"
-    },
-    {
-      "id": 49,
-      "question": "Explain the concept of 'lazy propagation' in a segment tree.",
-      "option1": "It refers to delaying updates to child nodes until their range is queried or needs to be propagated further, to optimize performance for range updates.",
-      "option2": "It's a technique to make the tree self-balancing.",
-      "option3": "It's a method for compressing the tree's memory footprint.",
-      "option4": "It describes how elements are inserted into the tree in a non-strict order.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 50,
-      "question": "What is the difference between a complete binary tree and a full binary tree?",
-      "option1": "A complete binary tree has all leaves at the same level, while a full binary tree fills levels from left to right.",
-      "option2": "A complete binary tree fills all levels except possibly the last, and the last level is filled from left to right. A full binary tree has every node with either zero or two children.",
-      "option3": "A complete binary tree is always balanced, while a full binary tree is not.",
-      "option4": "There is no difference; the terms are interchangeable.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 51,
-      "question": "In a hash table using open addressing, what is primary clustering?",
-      "option1": "When multiple keys hash to the same initial index.",
-      "option2": "When a collision resolution technique like linear probing creates long sequences of occupied slots.",
-      "option3": "When keys are distributed unevenly across the hash table.",
-      "option4": "When the hash function produces identical hash values for different keys.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 52,
-      "question": "Which data structure provides $O(1)$ average-case time complexity for insertion, deletion, and lookup, but $O(N)$ worst-case?",
-      "option1": "Sorted Array",
-      "option2": "Balanced BST",
-      "option3": "Hash Table",
-      "option4": "Doubly Linked List",
-      "correct_option": "option3"
-    },
-    {
-      "id": 53,
-      "question": "What is the 'height' of a binary tree?",
-      "option1": "The number of nodes along the longest path from the root to any leaf node.",
-      "option2": "The number of edges along the longest path from the root to any leaf node.",
-      "option3": "The total number of levels in the tree.",
-      "option4": "The number of leaves in the tree.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 54,
-      "question": "When would a min-priority queue be preferred over a max-priority queue?",
-      "option1": "When you need to extract the smallest element efficiently.",
-      "option2": "When you need to extract the largest element efficiently.",
-      "option3": "When the order of insertion matters.",
-      "option4": "When implementing a LIFO structure.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 55,
-      "question": "What is the time complexity of deleting an arbitrary element from a hash table using linear probing in the worst case?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(N^2)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 56,
-      "question": "Which sorting algorithm's best-case time complexity is O(N log N) but worst-case is O(N^2) due to pivot selection?",
+      "question": "Which sorting algorithm has a worst-case time complexity of O(n^2) but an average-case complexity of O(n log n)?",
       "option1": "Merge Sort",
       "option2": "Heap Sort",
       "option3": "Quick Sort",
@@ -507,400 +66,841 @@
       "correct_option": "option3"
     },
     {
-      "id": 57,
-      "question": "What is the space complexity of BFS on a graph (in terms of V and E)?",
-      "option1": "O(V)",
-      "option2": "O(E)",
-      "option3": "O(V + E)",
-      "option4": "O(V^2)",
+      "id": 8,
+      "question": "Which sorting algorithm is stable and has a time complexity of O(n+k), where k is the range of input?",
+      "option1": "Radix Sort",
+      "option2": "Bucket Sort",
+      "option3": "Counting Sort",
+      "option4": "Insertion Sort",
+      "correct_option": "option3"
+    },
+    {
+      "id": 9,
+      "question": "A traversal that results in a sorted list of elements from a Binary Search Tree is known as what?",
+      "option1": "In-order",
+      "option2": "Level-order",
+      "option3": "Post-order",
+      "option4": "Pre-order",
       "correct_option": "option1"
     },
     {
-      "id": 58,
-      "question": "Which data structure is suitable for efficiently finding the K-th smallest element in a dynamic set of elements?",
-      "option1": "Hash Table",
-      "option2": "Queue",
-      "option3": "Min-Heap (for k largest) or Max-Heap (for k smallest) or Order Statistic Tree",
-      "option4": "Stack",
-      "correct_option": "option3"
-    },
-    {
-      "id": 59,
-      "question": "What is the primary characteristic of a B+ tree that makes it highly suitable for disk-based databases?",
-      "option1": "All data pointers are stored in internal nodes.",
-      "option2": "All leaf nodes are linked together forming a sequential access path.",
-      "option3": "It always has a height of log N.",
-      "option4": "It supports only exact match queries.",
+      "id": 10,
+      "question": "Which tree traversal method visits the root node last?",
+      "option1": "In-order",
+      "option2": "Post-order",
+      "option3": "Level-order",
+      "option4": "Pre-order",
       "correct_option": "option2"
     },
     {
-      "id": 60,
-      "question": "When building an optimal Huffman tree, which data structure is most commonly used to repeatedly extract the two nodes with the smallest frequencies?",
-      "option1": "Stack",
-      "option2": "Queue",
-      "option3": "Min-Priority Queue (Min-Heap)",
-      "option4": "Hash Map",
-      "correct_option": "option3"
-    },
-    {
-      "id": 61,
-      "question": "What is the maximum number of children an internal node can have in a B-tree of order 'm'?",
-      "option1": "m-1",
-      "option2": "m",
-      "option3": "$m/2$",
-      "option4": "2m",
+      "id": 11,
+      "question": "Given the in-order and pre-order traversal of a tree, which traversal is uniquely determined?",
+      "option1": "Zig-zag",
+      "option2": "Post-order",
+      "option3": "Level-order",
+      "option4": "Boundary",
       "correct_option": "option2"
     },
     {
-      "id": 62,
-      "question": "Which of the following is an application of a Fenwick Tree (Binary Indexed Tree)?",
-      "option1": "Finding the shortest path in a graph.",
-      "option2": "Efficiently computing prefix sums and updating elements in an array.",
-      "option3": "Implementing a dictionary for spell checking.",
-      "option4": "Managing memory allocation.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 63,
-      "question": "What is the core idea behind a Skip List?",
-      "option1": "To use multiple linked lists at different levels, allowing for faster traversal by skipping nodes.",
-      "option2": "To balance the tree by rotations during insertions and deletions.",
-      "option3": "To store data in a compressed format.",
-      "option4": "To use hashing for fast lookups.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 64,
-      "question": "What is the time complexity of performing a range sum query on a Segment Tree with 'N' elements?",
-      "option1": "O(1)",
-      "option2": "O(log N)",
-      "option3": "O(N)",
-      "option4": "O(N log N)",
-      "correct_option": "option2"
-    },
-    {
-      "id": 65,
-      "question": "Which type of graph would typically use an adjacency list for more efficient memory usage?",
-      "option1": "Dense graph",
-      "option2": "Complete graph",
-      "option3": "Sparse graph",
-      "option4": "Directed Acyclic Graph (DAG) with many edges",
-      "correct_option": "option3"
-    },
-    {
-      "id": 66,
-      "question": "What is the purpose of the 'rank' in the Union by Rank heuristic for DSU?",
-      "option1": "To track the number of elements in a set.",
-      "option2": "To keep track of the height of the tree representing the set, aiming to attach smaller trees to larger ones.",
-      "option3": "To assign a unique identifier to each set.",
-      "option4": "To count the number of times a set has been merged.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 67,
-      "question": "In the context of graphs, what does a 'bridge' refer to?",
-      "option1": "An edge whose removal increases the number of connected components.",
-      "option2": "An edge that connects two nodes with the highest degree.",
-      "option3": "An edge that forms a cycle.",
-      "option4": "An edge with the highest weight.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 68,
-      "question": "What is an articulation point (or cut vertex) in an undirected graph?",
-      "option1": "A vertex whose removal increases the number of connected components.",
-      "option2": "A vertex that has the highest degree.",
-      "option3": "A vertex that is part of every cycle.",
-      "option4": "A vertex that connects two bipartite components.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 69,
-      "question": "Which algorithm is used to find the maximum flow in a flow network?",
-      "option1": "Dijkstra's Algorithm",
-      "option2": "Ford-Fulkerson Algorithm (e.g., Edmonds-Karp implementation)",
-      "option3": "Prim's Algorithm",
-      "option4": "Bellman-Ford Algorithm",
-      "correct_option": "option2"
-    },
-    {
-      "id": 70,
-      "question": "What is a directed acyclic graph (DAG)?",
-      "option1": "A directed graph that contains at least one cycle.",
-      "option2": "An undirected graph with no cycles.",
-      "option3": "A directed graph that contains no cycles.",
-      "option4": "A graph where all vertices have an outgoing edge.",
-      "correct_option": "option3"
-    },
-    {
-      "id": 71,
-      "question": "What is the primary advantage of a self-balancing BST (like AVL or Red-Black) over a standard BST?",
-      "option1": "Reduced memory usage.",
-      "option2": "Simpler implementation.",
-      "option3": "Guaranteed logarithmic time complexity for most operations.",
-      "option4": "Faster deletion of leaf nodes.",
-      "correct_option": "option3"
-    },
-    {
-      "id": 72,
-      "question": "Which traversal of a BST produces elements in sorted order?",
-      "option1": "Pre-order traversal",
-      "option2": "In-order traversal",
-      "option3": "Post-order traversal",
-      "option4": "Level-order traversal",
-      "correct_option": "option2"
-    },
-    {
-      "id": 73,
-      "question": "What is the optimal average-case time complexity for searching in a well-implemented hash table?",
-      "option1": "O(log n)",
-      "option2": "O(n)",
-      "option3": "O(1)",
-      "option4": "O(n log n)",
-      "correct_option": "option3"
-    },
-    {
-      "id": 74,
-      "question": "Which of the following is NOT a property of a min-heap?",
-      "option1": "The value of each node is less than or equal to the value of its children.",
-      "option2": "The smallest element is at the root.",
-      "option3": "It is a complete binary tree.",
-      "option4": "The order of elements at the same level is sorted.",
+      "id": 12,
+      "question": "Which data structure is typically used to implement a priority queue?",
+      "option1": "Queue",
+      "option2": "Graph",
+      "option3": "Stack",
+      "option4": "Heap",
       "correct_option": "option4"
     },
     {
-      "id": 75,
-      "question": "What is the time complexity to find the minimum element in a min-heap?",
-      "option1": "O(log n)",
-      "option2": "O(n)",
-      "option3": "O(1)",
-      "option4": "O(n log n)",
+      "id": 13,
+      "question": "In hashing, what is the term for when two different keys map to the same hash value?",
+      "option1": "Collision",
+      "option2": "Clustering",
+      "option3": "Load Factor",
+      "option4": "Overflow",
+      "correct_option": "option1"
+    },
+    {
+      "id": 14,
+      "question": "What is the primary clustering problem in linear probing caused by?",
+      "option1": "Collision resolution path",
+      "option2": "Poor hash function",
+      "option3": "High load factor",
+      "option4": "Small table size",
+      "correct_option": "option1"
+    },
+    {
+      "id": 15,
+      "question": "Which MST algorithm's greedy approach involves growing a single tree from an arbitrary starting vertex?",
+      "option1": "Boruvka's",
+      "option2": "Prim's",
+      "option3": "Reverse-Delete",
+      "option4": "Kruskal's",
+      "correct_option": "option2"
+    },
+    {
+      "id": 16,
+      "question": "Dijkstra's algorithm may fail to find the correct shortest path in which type of graph?",
+      "option1": "Acyclic graphs",
+      "option2": "Graphs with cycles",
+      "option3": "Graphs with negative weights",
+      "option4": "Undirected graphs",
       "correct_option": "option3"
     },
     {
-      "id": 76,
-      "question": "Which data structure is typically used for implementing browser history (back/forward functionality)?",
-      "option1": "Single Stack (for back), Second Stack (for forward)",
-      "option2": "Queue",
-      "option3": "Linked List",
+      "id": 17,
+      "question": "Which algorithm is used to find the shortest paths between all pairs of vertices in a weighted graph?",
+      "option1": "Floyd-Warshall",
+      "option2": "Dijkstra's",
+      "option3": "Bellman-Ford",
+      "option4": "Prim's",
+      "correct_option": "option1"
+    },
+    {
+      "id": 18,
+      "question": "What is the tightest worst-case time complexity of Floyd-Warshall's all-pairs shortest path algorithm?",
+      "option1": "O(V*E)",
+      "option2": "O(V^3)",
+      "option3": "O(V^2)",
+      "option4": "O(E log V)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 19,
+      "question": "Which data structure is typically used to implement a Breadth-First Search (BFS)?",
+      "option1": "Queue",
+      "option2": "Heap",
+      "option3": "Stack",
       "option4": "Hash Table",
       "correct_option": "option1"
     },
     {
-      "id": 77,
-      "question": "What is a 'doubly-ended queue' (deque)?",
-      "option1": "A queue that allows insertions only at the front and deletions only at the rear.",
-      "option2": "A queue that allows insertions and deletions from both ends.",
-      "option3": "A queue that has two front pointers.",
-      "option4": "A queue that can store two types of data.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 78,
-      "question": "In memory management, which data structure is often used to implement a free list (available memory blocks)?",
-      "option1": "Stack",
-      "option2": "Queue",
-      "option3": "Linked List (especially doubly linked list)",
-      "option4": "Array",
+      "id": 20,
+      "question": "A topological sort can be generated by reversing the post-order traversal from which algorithm?",
+      "option1": "Dijkstra's",
+      "option2": "BFS",
+      "option3": "DFS",
+      "option4": "Prim's",
       "correct_option": "option3"
     },
     {
-      "id": 79,
-      "question": "What is the main characteristic that differentiates a graph from a tree?",
-      "option1": "Graphs have cycles, trees do not.",
-      "option2": "Graphs can be disconnected, trees are always connected.",
-      "option3": "Graphs can have multiple parents, trees have only one parent per node (except root).",
-      "option4": "All of the above.",
+      "id": 21,
+      "question": "In dynamic programming, what is the technique of storing results of subproblems to avoid re-computation?",
+      "option1": "Iteration",
+      "option2": "Greedy approach",
+      "option3": "Memoization",
+      "option4": "Recursion",
+      "correct_option": "option3"
+    },
+    {
+      "id": 22,
+      "question": "Which algorithmic paradigm makes the locally optimal choice at each stage with the hope of finding a global optimum?",
+      "option1": "Backtracking",
+      "option2": "Greedy Algorithm",
+      "option3": "Divide and Conquer",
+      "option4": "Dynamic Programming",
+      "correct_option": "option2"
+    },
+    {
+      "id": 23,
+      "question": "The traveling salesman problem is a classic example of which problem class, suggesting no efficient solution exists?",
+      "option1": "NP-Hard",
+      "option2": "P",
+      "option3": "ZPP",
+      "option4": "BPP",
+      "correct_option": "option1"
+    },
+    {
+      "id": 24,
+      "question": "What is the time complexity of the binary search algorithm?",
+      "option1": "O(n log n)",
+      "option2": "O(n)",
+      "option3": "O(log n)",
+      "option4": "O(1)",
+      "correct_option": "option3"
+    },
+    {
+      "id": 25,
+      "question": "Merge Sort is a classic example of which algorithmic paradigm?",
+      "option1": "Backtracking",
+      "option2": "Divide and Conquer",
+      "option3": "Greedy",
+      "option4": "Dynamic Programming",
+      "correct_option": "option2"
+    },
+    {
+      "id": 26,
+      "question": "What is the worst-case space complexity of Merge Sort?",
+      "option1": "O(log n)",
+      "option2": "O(n)",
+      "option3": "O(1)",
+      "option4": "O(n log n)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 27,
+      "question": "A data structure where elements can be inserted or deleted at both ends is called a what?",
+      "option1": "Stack",
+      "option2": "Queue",
+      "option3": "Heap",
+      "option4": "Deque",
       "correct_option": "option4"
     },
     {
-      "id": 80,
-      "question": "What is the definition of a 'sparse graph'?",
-      "option1": "A graph where the number of edges is much less than the maximum possible number of edges ($O(V^2)$).",
-      "option2": "A graph with very few vertices.",
-      "option3": "A graph that is disconnected.",
-      "option4": "A graph where all vertices have a low degree.",
-      "correct_option": "option1"
-    },
-    {
-      "id": 81,
-      "question": "Which algorithm is used to find the shortest path in a graph where edge weights can be negative, and negative cycles must be detected?",
-      "option1": "Dijkstra's Algorithm",
-      "option2": "Prim's Algorithm",
-      "option3": "Bellman-Ford Algorithm",
-      "option4": "Kruskal's Algorithm",
+      "id": 28,
+      "question": "What is the tightest time complexity for deleting an arbitrary element from a binary heap?",
+      "option1": "O(n log n)",
+      "option2": "O(n)",
+      "option3": "O(log n)",
+      "option4": "O(1)",
       "correct_option": "option3"
     },
     {
-      "id": 82,
-      "question": "What is a strongly connected component in an undirected graph?",
-      "option1": "The concept of strongly connected components applies only to directed graphs.",
-      "option2": "A subgraph where every pair of vertices is connected by an edge.",
-      "option3": "A component where all vertices have the same degree.",
-      "option4": "A component that is connected to all other components.",
+      "id": 29,
+      "question": "The 'Tower of Hanoi' puzzle is a classic problem that can be solved efficiently using what?",
+      "option1": "Recursion",
+      "option2": "Greedy method",
+      "option3": "Sorting",
+      "option4": "Iteration",
       "correct_option": "option1"
     },
     {
-      "id": 83,
-      "question": "In a Red-Black Tree, what color is a newly inserted node always initially?",
-      "option1": "Black",
-      "option2": "Red",
-      "option3": "Grey",
-      "option4": "Depends on its parent",
-      "correct_option": "option2"
+      "id": 30,
+      "question": "In a max-heap, the parent node must be what compared to its children?",
+      "option1": "Not equal to",
+      "option2": "Less than",
+      "option3": "Equal to",
+      "option4": "Greater or equal to",
+      "correct_option": "option4"
     },
     {
-      "id": 84,
-      "question": "What is a persistent data structure?",
-      "option1": "A data structure that stores data on disk permanently.",
-      "option2": "A data structure that retains its previous versions when modified, allowing access to any version.",
-      "option3": "A data structure that automatically backs up its state.",
-      "option4": "A data structure whose operations are atomic.",
-      "correct_option": "option2"
+      "id": 31,
+      "question": "A skip list achieves O(log n) search time on average by using what probabilistic technique?",
+      "option1": "Random sampling",
+      "option2": "Hashing",
+      "option3": "Random pivots",
+      "option4": "Randomized levels",
+      "correct_option": "option4"
     },
     {
-      "id": 85,
-      "question": "Which of the following sorting algorithms is stable (maintains the relative order of equal elements)?",
-      "option1": "Quick Sort",
-      "option2": "Heap Sort",
+      "id": 32,
+      "question": "Which of these is a 'stable' sorting algorithm?",
+      "option1": "Heap Sort",
+      "option2": "Quick Sort",
       "option3": "Merge Sort",
       "option4": "Selection Sort",
       "correct_option": "option3"
     },
     {
-      "id": 86,
-      "question": "What is the time complexity of merging two sorted linked lists of sizes M and N?",
-      "option1": "O(min(M, N))",
-      "option2": "O(max(M, N))",
-      "option3": "O(M + N)",
-      "option4": "O(M * N)",
+      "id": 33,
+      "question": "A back edge detected during a DFS traversal of a directed graph indicates the presence of a what?",
+      "option1": "Cycle",
+      "option2": "Source vertex",
+      "option3": "Forward edge",
+      "option4": "Tree edge",
+      "correct_option": "option1"
+    },
+    {
+      "id": 34,
+      "question": "What data structure is used to manage function calls and their local variables in most programming languages?",
+      "option1": "Call Stack",
+      "option2": "Heap",
+      "option3": "Hash Table",
+      "option4": "Queue",
+      "correct_option": "option1"
+    },
+    {
+      "id": 35,
+      "question": "The optimal substructure property is a required characteristic for a problem to be solvable by which paradigm?",
+      "option1": "Backtracking",
+      "option2": "Greedy",
+      "option3": "Dynamic Programming",
+      "option4": "Brute force",
       "correct_option": "option3"
     },
     {
+      "id": 36,
+      "question": "A circular queue is typically implemented using what data structure?",
+      "option1": "Heap",
+      "option2": "Linked List",
+      "option3": "Stack",
+      "option4": "Array",
+      "correct_option": "option4"
+    },
+    {
+      "id": 37,
+      "question": "What is the maximum allowed absolute difference in height between the left and right subtrees of any node in an AVL tree?",
+      "option1": "0",
+      "option2": "2",
+      "option3": "log n",
+      "option4": "1",
+      "correct_option": "option4"
+    },
+    {
+      "id": 38,
+      "question": "Which searching algorithm requires the data to be sorted beforehand?",
+      "option1": "Linear Search",
+      "option2": "Depth-First Search",
+      "option3": "Breadth-First Search",
+      "option4": "Binary Search",
+      "correct_option": "option4"
+    },
+    {
+      "id": 39,
+      "question": "The number of edges in a complete graph with 'n' vertices is what?",
+      "option1": "n",
+      "option2": "n * (n+1) / 2",
+      "option3": "n-1",
+      "option4": "n * (n-1) / 2",
+      "correct_option": "option4"
+    },
+    {
+      "id": 40,
+      "question": "Which optimization is crucial for achieving the near-constant amortized time complexity of disjoint set operations?",
+      "option1": "Lazy propagation",
+      "option2": "Adjacency matrix",
+      "option3": "Union by rank/size",
+      "option4": "Memoization",
+      "correct_option": "option3"
+    },
+    {
+      "id": 41,
+      "question": "Which operation in a disjoint set data structure recursively sets the parent of each node in a path to the root?",
+      "option1": "Path Compression",
+      "option2": "Find",
+      "option3": "Union by Rank",
+      "option4": "MakeSet",
+      "correct_option": "option1"
+    },
+    {
+      "id": 42,
+      "question": "The master theorem is used to determine the time complexity of which type of algorithms?",
+      "option1": "Randomized",
+      "option2": "Greedy",
+      "option3": "Recursive",
+      "option4": "Iterative",
+      "correct_option": "option3"
+    },
+    {
+      "id": 43,
+      "question": "The activity selection problem is a classic example of which algorithmic approach?",
+      "option1": "Dynamic Programming",
+      "option2": "Backtracking",
+      "option3": "Divide and Conquer",
+      "option4": "Greedy Method",
+      "correct_option": "option4"
+    },
+    {
+      "id": 44,
+      "question": "What is the key operation in a Fenwick tree (BIT) that allows for efficient prefix sum calculations?",
+      "option1": "Heapify",
+      "option2": "Isolating last set bit",
+      "option3": "Tree rotation",
+      "option4": "Path compression",
+      "correct_option": "option2"
+    },
+    {
+      "id": 45,
+      "question": "What does it mean if a sorting algorithm is 'adaptive'?",
+      "option1": "It uses extra memory",
+      "option2": "It works on any data type",
+      "option3": "It's always in-place",
+      "option4": "It's faster for nearly sorted data",
+      "correct_option": "option4"
+    },
+    {
+      "id": 46,
+      "question": "Which data structure would be most efficient for implementing a dictionary or phone book?",
+      "option1": "Array",
+      "option2": "Hash Table",
+      "option3": "Queue",
+      "option4": "Stack",
+      "correct_option": "option2"
+    },
+    {
+      "id": 47,
+      "question": "A graph where edges have a direction is called a what?",
+      "option1": "Complete Graph",
+      "option2": "Directed Graph",
+      "option3": "Undirected Graph",
+      "option4": "Weighted Graph",
+      "correct_option": "option2"
+    },
+    {
+      "id": 48,
+      "question": "For a hash table using open addressing, the load factor alpha must always be what?",
+      "option1": "Unrestricted",
+      "option2": "alpha = 1",
+      "option3": "alpha > 1",
+      "option4": "alpha < 1",
+      "correct_option": "option4"
+    },
+    {
+      "id": 49,
+      "question": "The process of re-arranging items in a hash table to a larger table when the load factor gets too high is called what?",
+      "option1": "Resizing",
+      "option2": "Rebalancing",
+      "option3": "Reloading",
+      "option4": "Rehashing",
+      "correct_option": "option4"
+    },
+    {
+      "id": 50,
+      "question": "Bellman-Ford's algorithm can detect what condition in a graph, which Dijkstra's cannot?",
+      "option1": "Self-loops",
+      "option2": "Disconnected components",
+      "option3": "Negative weight cycles",
+      "option4": "Positive weight cycles",
+      "correct_option": "option3"
+    },
+    {
+      "id": 51,
+      "question": "What is the Big O notation for an algorithm that takes constant time?",
+      "option1": "O(n^2)",
+      "option2": "O(1)",
+      "option3": "O(log n)",
+      "option4": "O(n)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 52,
+      "question": "The time complexity of Bubble Sort in the best-case scenario (already sorted array) is what?",
+      "option1": "O(n)",
+      "option2": "O(n^2)",
+      "option3": "O(1)",
+      "option4": "O(n log n)",
+      "correct_option": "option1"
+    },
+    {
+      "id": 53,
+      "question": "What is the worst-case time complexity for searching a key in a trie, where 'm' is the key length?",
+      "option1": "O(n)",
+      "option2": "O(m)",
+      "option3": "O(log m)",
+      "option4": "O(1)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 54,
+      "question": "A complete binary tree is a binary tree where every level, except possibly the last, is completely filled, and all nodes are as far to the what?",
+      "option1": "Top",
+      "option2": "Center",
+      "option3": "Right",
+      "option4": "Left",
+      "correct_option": "option4"
+    },
+    {
+      "id": 55,
+      "question": "An LR rotation in an AVL tree is a composite of which two simpler rotations?",
+      "option1": "Left then Right",
+      "option2": "Two Lefts",
+      "option3": "Two Rights",
+      "option4": "Right then Left",
+      "correct_option": "option1"
+    },
+    {
+      "id": 56,
+      "question": "Which algorithm finds articulation points (or cut vertices) in a connected graph?",
+      "option1": "Dijkstra's",
+      "option2": "Tarjan's",
+      "option3": "Kruskal's",
+      "option4": "Prim's",
+      "correct_option": "option2"
+    },
+    {
+      "id": 57,
+      "question": "A 'deque' is a data structure that is a generalization of what?",
+      "option1": "Both Stack and Queue",
+      "option2": "Stack",
+      "option3": "Heap",
+      "option4": "Queue",
+      "correct_option": "option1"
+    },
+    {
+      "id": 58,
+      "question": "The greedy approach for the fractional knapsack problem works because of what property?",
+      "option1": "Greedy-choice property",
+      "option2": "Optimal substructure",
+      "option3": "Memoization",
+      "option4": "Overlapping subproblems",
+      "correct_option": "option1"
+    },
+    {
+      "id": 59,
+      "question": "The 0/1 Knapsack problem, where items must be taken whole, is a classic example of what?",
+      "option1": "Dynamic Programming",
+      "option2": "Randomized Algorithm",
+      "option3": "Greedy",
+      "option4": "Sorting",
+      "correct_option": "option1"
+    },
+    {
+      "id": 60,
+      "question": "What is the amortized time complexity of an operation in a splay tree?",
+      "option1": "O(n)",
+      "option2": "O(log n)",
+      "option3": "O(n log n)",
+      "option4": "O(1)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 61,
+      "question": "Which of these data structures is not a linear data structure?",
+      "option1": "Array",
+      "option2": "Queue",
+      "option3": "Stack",
+      "option4": "Tree",
+      "correct_option": "option4"
+    },
+    {
+      "id": 62,
+      "question": "In a linked list, what does the 'head' pointer point to?",
+      "option1": "First node",
+      "option2": "Null",
+      "option3": "Last node",
+      "option4": "Middle node",
+      "correct_option": "option1"
+    },
+    {
+      "id": 63,
+      "question": "A sparse matrix is a matrix in which most of the elements are what?",
+      "option1": "Zero",
+      "option2": "Negative",
+      "option3": "One",
+      "option4": "Positive",
+      "correct_option": "option1"
+    },
+    {
+      "id": 64,
+      "question": "The height of a binary tree with N nodes is at least what?",
+      "option1": "N",
+      "option2": "log2(N)",
+      "option3": "floor(log2(N))",
+      "option4": "N-1",
+      "correct_option": "option3"
+    },
+    {
+      "id": 65,
+      "question": "Which notation is used to represent the lower bound of an algorithm's running time?",
+      "option1": "Big Theta",
+      "option2": "Big O",
+      "option3": "Big Omega",
+      "option4": "Little O",
+      "correct_option": "option3"
+    },
+    {
+      "id": 66,
+      "question": "A binary tree in which the height of the left and right subtrees of every node differ by at most one is a(n) what?",
+      "option1": "Balanced tree",
+      "option2": "Complete tree",
+      "option3": "Perfect tree",
+      "option4": "Full tree",
+      "correct_option": "option1"
+    },
+    {
+      "id": 67,
+      "question": "The process of arranging data in a specific order is known as what?",
+      "option1": "Merging",
+      "option2": "Sorting",
+      "option3": "Searching",
+      "option4": "Traversing",
+      "correct_option": "option2"
+    },
+    {
+      "id": 68,
+      "question": "In the context of complexity, what does 'amortized analysis' refer to?",
+      "option1": "Best-case analysis",
+      "option2": "Probabilistic analysis",
+      "option3": "Worst-case analysis",
+      "option4": "Average-case over a sequence",
+      "correct_option": "option4"
+    },
+    {
+      "id": 69,
+      "question": "What is a 'pointer' in data structures?",
+      "option1": "An index",
+      "option2": "A memory address",
+      "option3": "A keyword",
+      "option4": "A data value",
+      "correct_option": "option2"
+    },
+    {
+      "id": 70,
+      "question": "The pre-computation step of the KMP algorithm builds what structure to skip unnecessary comparisons?",
+      "option1": "LPS array",
+      "option2": "State machine",
+      "option3": "Suffix tree",
+      "option4": "Adjacency matrix",
+      "correct_option": "option1"
+    },
+    {
+      "id": 71,
+      "question": "A memory allocation that happens at compile time is known as what?",
+      "option1": "Heap allocation",
+      "option2": "Dynamic allocation",
+      "option3": "Static allocation",
+      "option4": "Lazy allocation",
+      "correct_option": "option3"
+    },
+    {
+      "id": 72,
+      "question": "Which garbage collection technique can suffer from cyclic reference issues?",
+      "option1": "Copying Collector",
+      "option2": "Reference Counting",
+      "option3": "Generational Collector",
+      "option4": "Mark and Sweep",
+      "correct_option": "option2"
+    },
+    {
+      "id": 73,
+      "question": "What data structure does a file system directory structure most resemble?",
+      "option1": "Queue",
+      "option2": "Tree",
+      "option3": "Graph",
+      "option4": "Array",
+      "correct_option": "option2"
+    },
+    {
+      "id": 74,
+      "question": "What is the primary drawback of using an array to implement a queue?",
+      "option1": "Slow access time",
+      "option2": "Fixed size",
+      "option3": "Memory wastage",
+      "option4": "Complex implementation",
+      "correct_option": "option2"
+    },
+    {
+      "id": 75,
+      "question": "An ADT specifies 'what' to do, while a data structure specifies 'how' to do it. This concept is known as what?",
+      "option1": "Abstraction",
+      "option2": "Polymorphism",
+      "option3": "Encapsulation",
+      "option4": "Inheritance",
+      "correct_option": "option1"
+    },
+    {
+      "id": 76,
+      "question": "A graph that has no cycles is called a what?",
+      "option1": "Complete Graph",
+      "option2": "Acyclic Graph",
+      "option3": "Bipartite Graph",
+      "option4": "Weighted Graph",
+      "correct_option": "option2"
+    },
+    {
+      "id": 77,
+      "question": "A Bloom filter can produce which type of error when testing for element membership?",
+      "option1": "Neither",
+      "option2": "Both",
+      "option3": "False negatives",
+      "option4": "False positives",
+      "correct_option": "option4"
+    },
+    {
+      "id": 78,
+      "question": "What is the key property of a 'bipartite graph'?",
+      "option1": "Vertices can be split into two sets",
+      "option2": "All edges are bidirectional",
+      "option3": "It has two components",
+      "option4": "It has no cycles",
+      "correct_option": "option1"
+    },
+    {
+      "id": 79,
+      "question": "What is the time complexity of the standard dynamic programming solution for the Longest Common Subsequence problem?",
+      "option1": "O(m log n)",
+      "option2": "O(m*n)",
+      "option3": "O(n log m)",
+      "option4": "O(m+n)",
+      "correct_option": "option2"
+    },
+    {
+      "id": 80,
+      "question": "The efficiency of an algorithm is most commonly measured by its what?",
+      "option1": "Ease of use",
+      "option2": "Code length",
+      "option3": "Number of functions",
+      "option4": "Time and space complexity",
+      "correct_option": "option4"
+    },
+    {
+      "id": 81,
+      "question": "What operation removes an item from the front of a queue?",
+      "option1": "Dequeue",
+      "option2": "Enqueue",
+      "option3": "Pop",
+      "option4": "Push",
+      "correct_option": "option1"
+    },
+    {
+      "id": 82,
+      "question": "After an insertion, a Red-Black tree may violate its properties. What operation is performed to restore them?",
+      "option1": "Path compression",
+      "option2": "Rehashing",
+      "option3": "Balancing",
+      "option4": "Recoloring and rotation",
+      "correct_option": "option4"
+    },
+    {
+      "id": 83,
+      "question": "What is the term for the number of edges incident to a vertex in an undirected graph?",
+      "option1": "Path",
+      "option2": "Degree",
+      "option3": "Level",
+      "option4": "Cycle",
+      "correct_option": "option2"
+    },
+    {
+      "id": 84,
+      "question": "Which data structure would be most suitable for modeling a network of roads between cities?",
+      "option1": "Graph",
+      "option2": "Tree",
+      "option3": "Heap",
+      "option4": "Array",
+      "correct_option": "option1"
+    },
+    {
+      "id": 85,
+      "question": "What is the primary trade-off when choosing between a doubly linked list and a singly linked list?",
+      "option1": "Speed vs Simplicity",
+      "option2": "Memory vs Traversal",
+      "option3": "Storage vs Access",
+      "option4": "Complexity vs Speed",
+      "correct_option": "option2"
+    },
+    {
+      "id": 86,
+      "question": "Radix sort works by sorting elements based on their what?",
+      "option1": "Individual digits",
+      "option2": "Comparison with others",
+      "option3": "Total value",
+      "option4": "Position in array",
+      "correct_option": "option1"
+    },
+    {
       "id": 87,
-      "question": "What is the primary benefit of using an indexed skip list over a regular skip list?",
-      "option1": "Faster random access by index.",
-      "option2": "Lower memory usage.",
-      "option3": "Guaranteed worst-case performance.",
-      "option4": "Easier implementation.",
+      "question": "A Monte Carlo algorithm is a type of randomized algorithm that always runs in polynomial time but may produce what?",
+      "option1": "An incorrect answer",
+      "option2": "An optimal answer",
+      "option3": "No answer",
+      "option4": "A delayed answer",
       "correct_option": "option1"
     },
     {
       "id": 88,
-      "question": "Which data structure is most suitable for implementing a Least Recently Used (LRU) cache?",
-      "option1": "Queue",
-      "option2": "Stack",
-      "option3": "Hash Map combined with a Doubly Linked List",
-      "option4": "Binary Search Tree",
-      "correct_option": "option3"
-    },
-    {
-      "id": 89,
-      "question": "What is the purpose of a 'sentinel node' in a linked list?",
-      "option1": "To store the total count of nodes.",
-      "option2": "To simplify edge cases (like empty list or insertion at head/tail) by always having dummy nodes at ends.",
-      "option3": "To mark the end of the list.",
-      "option4": "To indicate a corrupted list.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 90,
-      "question": "How is a min-heap typically represented in an array?",
-      "option1": "Elements are stored in sorted order.",
-      "option2": "The parent node is always at index (i-1)/2, left child at 2i+1, right child at 2i+2.",
-      "option3": "It's stored as a linked list within the array.",
-      "option4": "Only leaf nodes are stored.",
-      "correct_option": "option2"
-    },
-    {
-      "id": 91,
-      "question": "What is the primary application of a K-D Tree?",
-      "option1": "Text processing",
-      "option2": "Sorting arrays",
-      "option3": "Organizing points in a K-dimensional space for efficient range searches and nearest neighbor queries.",
-      "option4": "Graph traversal",
-      "correct_option": "option3"
-    },
-    {
-      "id": 92,
-      "question": "In network flow, what does 'residual capacity' refer to?",
-      "option1": "The maximum amount of flow that can still be sent through an edge.",
-      "option2": "The current flow passing through an edge.",
-      "option3": "The original capacity of an edge.",
-      "option4": "The total capacity of the network.",
+      "question": "Which type of expression does not require parentheses to specify the order of operations?",
+      "option1": "Both Prefix and Postfix",
+      "option2": "Postfix",
+      "option3": "Infix",
+      "option4": "Prefix",
       "correct_option": "option1"
     },
     {
+      "id": 89,
+      "question": "In a threaded binary tree, null pointers are replaced with pointers to what?",
+      "option1": "Parent node",
+      "option2": "Sibling nodes",
+      "option3": "In-order predecessor/successor",
+      "option4": "Root node",
+      "correct_option": "option3"
+    },
+    {
+      "id": 90,
+      "question": "A decision problem that is both in NP and NP-Hard is called what?",
+      "option1": "Co-NP",
+      "option2": "P",
+      "option3": "NP-Complete",
+      "option4": "PSPACE",
+      "correct_option": "option3"
+    },
+    {
+      "id": 91,
+      "question": "What is the process of converting a high-level data representation into a specific implementation?",
+      "option1": "Abstraction",
+      "option2": "Refinement",
+      "option3": "Polymorphism",
+      "option4": "Encapsulation",
+      "correct_option": "option2"
+    },
+    {
+      "id": 92,
+      "question": "What is the height of a well-constructed segment tree built on an array of N elements?",
+      "option1": "O(N)",
+      "option2": "O(log N)",
+      "option3": "O(N log N)",
+      "option4": "O(1)",
+      "correct_option": "option2"
+    },
+    {
       "id": 93,
-      "question": "What is the worst-case space complexity of recursion due to the call stack?",
-      "option1": "O(1)",
-      "option2": "O(log n)",
-      "option3": "O(n)",
-      "option4": "O(n log n)",
+      "question": "What is a major disadvantage of using recursion?",
+      "option1": "Hard to write",
+      "option2": "Not powerful enough",
+      "option3": "Stack overflow risk",
+      "option4": "Slow execution",
       "correct_option": "option3"
     },
     {
       "id": 94,
-      "question": "Which algorithm is used to find all-pairs shortest paths in a graph that can have negative edge weights (but no negative cycles)?",
-      "option1": "Dijkstra's Algorithm",
-      "option2": "Prim's Algorithm",
-      "option3": "Floyd-Warshall Algorithm",
-      "option4": "Bellman-Ford Algorithm (single source)",
-      "correct_option": "option3"
+      "question": "Which of the following is an example of an 'external' sorting algorithm?",
+      "option1": "Polyphase Merge Sort",
+      "option2": "Insertion Sort",
+      "option3": "Quick Sort",
+      "option4": "Bubble Sort",
+      "correct_option": "option1"
     },
     {
       "id": 95,
-      "question": "What is the 'in-degree' of a vertex in a directed graph?",
-      "option1": "The number of edges originating from the vertex.",
-      "option2": "The number of edges terminating at the vertex.",
-      "option3": "The total number of edges connected to the vertex.",
-      "option4": "The number of vertices reachable from it.",
-      "correct_option": "option2"
+      "question": "What is the name for the function that transforms keys into table addresses in a hash table?",
+      "option1": "Map function",
+      "option2": "Index function",
+      "option3": "Key function",
+      "option4": "Hash function",
+      "correct_option": "option4"
     },
     {
       "id": 96,
-      "question": "What is the purpose of hashing in data structures?",
-      "option1": "To sort elements quickly.",
-      "option2": "To map data of arbitrary size to data of fixed size (hash value) for efficient storage and retrieval.",
-      "option3": "To compress data for memory saving.",
-      "option4": "To create a unique identifier for every element.",
-      "correct_option": "option2"
+      "question": "An approximation algorithm has an approximation ratio of 'c'. What does this guarantee?",
+      "option1": "Solution is within factor c",
+      "option2": "Runs c times faster",
+      "option3": "Uses c times less memory",
+      "option4": "Solution is c% optimal",
+      "correct_option": "option1"
     },
     {
       "id": 97,
-      "question": "Which of the following is true about a hash function?",
-      "option1": "It must be injective (one-to-one).",
-      "option2": "It should distribute keys uniformly across the hash table.",
-      "option3": "It must produce unique hash values for all keys.",
-      "option4": "Its computation time should be O(n).",
-      "correct_option": "option2"
+      "question": "Which data structure represents a hierarchical structure?",
+      "option1": "Array",
+      "option2": "Linked List",
+      "option3": "Tree",
+      "option4": "Graph",
+      "correct_option": "option3"
     },
     {
       "id": 98,
-      "question": "What is a 'memory leak' in the context of data structures?",
-      "option1": "When a program attempts to access memory it doesn't own.",
-      "option2": "When dynamically allocated memory is no longer needed but is not deallocated, making it unavailable for future use.",
-      "option3": "When data overflows a buffer.",
-      "option4": "When a pointer points to an invalid memory address.",
-      "correct_option": "option2"
+      "question": "The time factor when determining the efficiency of an algorithm is measured by what?",
+      "option1": "Counting microseconds",
+      "option2": "Counting code lines",
+      "option3": "Counting key operations",
+      "option4": "Counting CPU cycles",
+      "correct_option": "option3"
     },
     {
       "id": 99,
-      "question": "Which data structure is optimized for storing hierarchical data with parent-child relationships?",
-      "option1": "Graph",
-      "option2": "Tree",
+      "question": "Which data structure is most suitable for finding the k-th smallest element in a set?",
+      "option1": "Max-heap",
+      "option2": "Queue",
       "option3": "Hash Table",
-      "option4": "Queue",
-      "correct_option": "option2"
+      "option4": "Order Statistic Tree",
+      "correct_option": "option4"
     },
     {
       "id": 100,
-      "question": "What is the primary difference between an Abstract Data Type (ADT) and a data structure?",
-      "option1": "An ADT is a concrete implementation, while a data structure is a logical model.",
-      "option2": "An ADT defines a set of operations and their behavior, independent of implementation, while a data structure is a concrete way to organize data to implement an ADT.",
-      "option3": "An ADT is only for theoretical concepts, while data structures are for practical programming.",
-      "option4": "There is no difference; the terms are interchangeable.",
-      "correct_option": "option2"
+      "question": "A linked list where the last node points back to the first node is called a what?",
+      "option1": "Doubly Linked List",
+      "option2": "Singly Linked List",
+      "option3": "Header Linked List",
+      "option4": "Circular Linked List",
+      "correct_option": "option4"
     }
   ]
 }
